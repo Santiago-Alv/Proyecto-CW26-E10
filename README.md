@@ -27,14 +27,14 @@
 
 ---
 
-- **Título del proyecto:**
+- **Título del proyecto:** nodesErTE
 - **Fecha de inicio:** 28 de mayo de 2026
 
 ---
 
 ## RESUMEN DEL PROYECTO, METAS Y OBJETIVOS
 
-- **Resumen:**
+- **Resumen:** 
 - **Metas:**
 - **Objetivos:**
 
@@ -47,7 +47,17 @@
 ## PROPÓSITO Y ALCANCE
 
 - **En alcance (Entregables):**
+  - Sistema de Inicio/Registro de sesion
+  - Formulario inicial de diagnóstico y modular de retroalimentación
+  - Formularios especiales para alumnos en riesgo de desercion, describiendo su situacion
+  - Foro de dudas para módulos específicos o dudas generales
+  - Publicación Recursos de apoyo / Material didactico por parte de los profesores
+  - Mostrar y observar situaciones academicas (tablas por grupo y año en orden decrescente) por parte de los profesores
+  - Division de Modulos del curso
 - **Fuera de alcance:**
+  - Mostrar calificaciones aproximadas
+  - Crear actividades y anuncios dentro de modulos
+  - Comunicacion entre alumnos directa
 
 ---
 
