@@ -1,7 +1,8 @@
 # Proyecto-CW26-E10
+---
 ## Tabla de Contenidos
-
-## 1. INFORMACIÓN GENERAL
+---
+## INFORMACIÓN GENERAL
 
 #### **Autores:**
 - Alvarado Pérez Santiago [@Santiago-Alv](https://github.com/Santiago-Alv)
@@ -11,10 +12,9 @@
 - Zamora Mora Julio César [@JulioCesarZamoraMora](https://github.com/JulioCesarZamoraMora)
 ---
 #### **Título del proyecto:** 
----
 #### **Fecha de inicio:** 
-
-## 2. RESUMEN DEL PROYECTO, METAS Y OBJETIVOS
+---
+## RESUMEN DEL PROYECTO, METAS Y OBJETIVOS
 - **Resumen:** 
     
 - **Metas:**
@@ -22,21 +22,21 @@
         
 - **Objetivos:**
 
-
-## 3. PÚBLICO OBJETIVO (UX)
-
-## 4. PROPÓSITO Y ALCANCE
+---
+## PÚBLICO OBJETIVO (UX)
+---
+## PROPÓSITO Y ALCANCE
 - **En alcance (Entregables):**
 
 - **Fuera de alcance:**
-
-## 5. ESPECIFICACIONES FUNCIONALES
-
-## 6. REQUISITOS NO FUNCIONALES
-
-## 7. ARQUITECTURA DE LA INFORMACIÓN Y UX
-
-## 8. ESPECIFICACIONES TÉCNICAS
+---
+## ESPECIFICACIONES FUNCIONALES
+---
+## REQUISITOS NO FUNCIONALES
+---
+## ARQUITECTURA DE LA INFORMACIÓN Y UX
+---
+## ESPECIFICACIONES TÉCNICAS
 
 - **Frontend:** 
 - **Backend:** 
