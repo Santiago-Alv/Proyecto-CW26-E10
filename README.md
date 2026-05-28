@@ -11,8 +11,8 @@
 - Tsugaoka Otomi [@Otomi26](https://github.com/Otomi26)
 - Zamora Mora Julio César [@JulioCesarZamoraMora](https://github.com/JulioCesarZamoraMora)
 ---
-#### **Título del proyecto:** 
-#### **Fecha de inicio:** 
+- **Título del proyecto:** 
+- **Fecha de inicio:** 28 de mayo de 2026
 ---
 ## RESUMEN DEL PROYECTO, METAS Y OBJETIVOS
 - **Resumen:** 
@@ -23,11 +23,10 @@
 - **Objetivos:**
 
 ---
-## PÚBLICO OBJETIVO (UX)
+## PÚBLICO OBJETIVO (UX) 
 ---
 ## PROPÓSITO Y ALCANCE
 - **En alcance (Entregables):**
-
 - **Fuera de alcance:**
 ---
 ## ESPECIFICACIONES FUNCIONALES
