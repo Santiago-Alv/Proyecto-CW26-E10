@@ -6,7 +6,7 @@
 
 - [Información General](#información-general)
 - []
-- [Público Objetivo](#público-objetivo-(ux))
+- [Público Objetivo](#público-objetivo-ux)
 - [Propósito y Alcance](#propósito-y-alcance)
 - [Escpecificaciones Funcionales](#especificaciones-funcionales)
 - [Requisitos NO Funcionales](#requisitos-no-funcionales)
