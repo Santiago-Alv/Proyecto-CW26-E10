@@ -4,6 +4,15 @@
 
 ## Tabla de Contenidos
 
+- [Información General](#información-general)
+- []
+- [Público Objetivo](#público-objetivo-(ux))
+- [Propósito y Alcance](#propósito-y-alcance)
+- [Escpecificaciones Funcionales](#especificaciones-funcionales)
+- [Requisitos NO Funcionales](#requisitos-no-funcionales)
+- [Arquitectura de la Información y UX](#arquitectura-de-la-información-y-ux)
+- [Especificaciones Técnicas](#especificaciones-técnicas)
+
 ---
 
 ## INFORMACIÓN GENERAL
@@ -12,7 +21,7 @@
 
 - Alvarado Pérez Santiago [@Santiago-Alv](https://github.com/Santiago-Alv)
 - Méndez Sánchez Sebastián [@sebmndz-s](https://github.com/sebmndz-s)
-- Nava Sandoval Itzili Abraham [@iabraham120](https://github.com/iabraham120)
+- Nava Sandoval Iztli Abraham [@iabraham120](https://github.com/iabraham120)
 - Tsugaoka Otomi [@Otomi26](https://github.com/Otomi26)
 - Zamora Mora Julio César [@JulioCesarZamoraMora](https://github.com/JulioCesarZamoraMora)
 
