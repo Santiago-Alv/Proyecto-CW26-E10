@@ -34,13 +34,21 @@
 
 ## RESUMEN DEL PROYECTO, METAS Y OBJETIVOS
 
-- **Resumen:**
+- **Resumen:** nodesErTE es una pagina web que permite al alumnado ver su progeso durante el curso y contar con distintos recursos didacticos
+para reforzar sus conocimientos. Al igual permitire al profesorado, tener una estadistica de su alumnado para poder observar el desempeño tanto grupal como individual, y poder tomar acciones tempranas que eviten la deserción del Estudio Tecnico.
 - **Metas:**
+  - Cumplir con los requerimientos en 8 dias.
+  - Disminuir la cantidad e deserciones del ETE de computación.
+  - Crear una pagina web interactiva y facil de comprender.
 - **Objetivos:**
 
 ---
 
 ## PÚBLICO OBJETIVO (UX)
+
+- Alumnado y profesorado del Estudio Tecnico Especializado en Computación, que buscan una pagina web interactiva y funcional.
+  - Alumnado, que busca reforzar sus conocimientos y resolver dudas a traves de un foro con sus profesores.
+  - Profesorado, que quiere observar el desempeño de sus alumnos y proporcionarle diferentes materiales didacticos.
 
 ---
 
@@ -63,9 +71,19 @@
 
 ## ESPECIFICACIONES FUNCIONALES
 
+| **MODULO**                   | **DESCRIPCIÓN**                                                                                      |
+|------------------------------|------------------------------------------------------------------------------------------------------|
+| Sistema de Incio de Sesión   | El profesorador podra registrar previamente usuarios y los usuarios podran inicar en su sesión       |
+| Formulario                   | El sistema generara un formulario especial que el usuario debera contestar                           |
+| Publicación de dudas         | El usuario podra escribir y subir dudas, y el profesorado podra contestarlas                         |
+| Estadistica de usuario       | En base a un indice de deserción (grade*[asistance%]/100) se mostrara una tabla en orden descendente |
+
 ---
 
 ## REQUISITOS NO FUNCIONALES
+
+| **CATEGORÍA** | **REQUISITOS** |
+|---------------|----------------|
 
 ---
 
@@ -75,6 +93,6 @@
 
 ## ESPECIFICACIONES TÉCNICAS
 
-- **Frontend:**
-- **Backend:**
-- **Base de Datos:**
+- **Frontend:** HTML y CSS para el diseño responsivo.
+- **Backend:** PHP para el control de la interaccion con la base de datos.
+- **Base de Datos:** MariaDB para relacionar alumnado, grupos, profesorado y calificaciones de manera estructurada.
