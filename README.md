@@ -5,7 +5,7 @@
 ## Tabla de Contenidos
 
 - [Información General](#información-general)
-- []
+- [Metas y Objetivos](#resumen-del-proyecto-metas-y-objetivos)
 - [Público Objetivo](#público-objetivo-ux)
 - [Propósito y Alcance](#propósito-y-alcance)
 - [Escpecificaciones Funcionales](#especificaciones-funcionales)
@@ -34,7 +34,7 @@
 
 ## RESUMEN DEL PROYECTO, METAS Y OBJETIVOS
 
-- **Resumen:** 
+- **Resumen:**
 - **Metas:**
 - **Objetivos:**
 
