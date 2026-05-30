@@ -1,4 +1,4 @@
-# Proyecto-CW26-E10
+# nodesErTE - Proyecto Web con PHP 
 
 ---
 
@@ -38,9 +38,13 @@
 para reforzar sus conocimientos. Al igual permitire al profesorado, tener una estadistica de su alumnado para poder observar el desempeño tanto grupal como individual, y poder tomar acciones tempranas que eviten la deserción del Estudio Tecnico.
 - **Metas:**
   - Cumplir con los requerimientos en 8 dias.
-  - Disminuir la cantidad e deserciones del ETE de computación.
+  - Disminuir la cantidad de deserciones del ETE de computación.
   - Crear una pagina web interactiva y facil de comprender.
+  - Proporcionar información estadística de los alumnos para una mejor atención a ellos.
 - **Objetivos:**
+  - Desarrollar una plataforma web funcional utilizando la aqrquitectura cliente-servidor.
+  - Habilitar un foro de resolución de dudas categorizado por módulos para tratar situaciones de riesgo.
+  - Generar una estadistica en base a los niveles de asistencias y calificaciones de los alumnos por grupo.
 
 ---
 
@@ -82,12 +86,19 @@ para reforzar sus conocimientos. Al igual permitire al profesorado, tener una es
 
 ## REQUISITOS NO FUNCIONALES
 
-| **CATEGORÍA** | **REQUISITOS** |
-|---------------|----------------|
+| **CATEGORÍA** | **REQUISITOS**                                                          |
+|---------------|-------------------------------------------------------------------------|
+| Diseño        | Dependiendo de tu tipo de usuario la web muestra distintas vistas       |
+| Accesibilidad | Capacidad de navegar con cursor y teclado                               |
+| Seguridad     | No se pueden registrar usuarios que no esten dentro de la base de datos |
 
 ---
 
 ## ARQUITECTURA DE LA INFORMACIÓN Y UX
+
+- **Patron de Navegración:** Barra de Navegación con controles para dirigirse a los sitios principales del sistema y Sidebar fija en el apartado izquierdo con:
+  - Alumno: Dudas, Modulos y Recursos
+  - Profesorado: Dudas, Grupos y Recursos
 
 ---
 
