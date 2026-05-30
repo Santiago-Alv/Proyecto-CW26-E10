@@ -19,7 +19,20 @@
                 </article>
 
                 <article class="articleLogin"> <!--Articulo para el apartado de bienvenida-->
-
+                    <!--Formulario para el inicio de sesion-->
+                    <form class="loginForm">
+                        <h1>Iniciar Sesión</h1>
+                        <!--Apartado para ingresar usuario-->
+                        <label for="userLog" class="input">
+                            <input type="text" id="userLog" name="userLog" minlength="3" maxlength="15" placeholder="Nombre de Usuario" required>
+                        </label>
+                        <!--Apartado para ingresar contraseña-->
+                        <label for="passwordLog" class="input">  
+                            <input type="password" id="passwordLog" name="passwordLog" minlength="3" maxlength="15" placeholder="Contraseña" required>
+                        </label>
+                        <button type="submit">INGRESAR</button>
+                        <article>No tienes una cuenta?, <a id="registerRelocation">Registrate aquí.</a></article>
+                    </form>
                 </article>
             </section>
 
