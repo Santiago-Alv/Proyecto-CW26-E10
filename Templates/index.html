@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,7 @@
             </section>
 
             <section class="generalContainer"> <!--Sección inferior-->
-                <article class="articleIcon"> <!--Articulo para el logo-->
+                <article class="articleIcon"><img src="../Statics/img/login-icon.jpg" alt="Logo"></article> <!--Articulo para el logo-->
 
                 </article>
 
@@ -23,13 +23,15 @@
                     <form class="loginForm">
                         <h1>Iniciar Sesión</h1>
                         <!--Apartado para ingresar usuario-->
-                        <label for="userLog" class="input">
-                            <input type="text" id="userLog" name="userLog" minlength="3" maxlength="15" placeholder="Nombre de Usuario" required>
-                        </label>
+                        <div class="inputContainer">
+                            <label for="userLog" class="input">
+                                <input type="text" id="userLog" name="userLog" minlength="3" maxlength="15" placeholder="Nombre de Usuario" required>
+                            </label>
                         <!--Apartado para ingresar contraseña-->
-                        <label for="passwordLog" class="input">  
-                            <input type="password" id="passwordLog" name="passwordLog" minlength="3" maxlength="15" placeholder="Contraseña" required>
-                        </label>
+                            <label for="passwordLog" class="input">  
+                                <input type="password" id="passwordLog" name="passwordLog" minlength="3" maxlength="15" placeholder="Contraseña" required>
+                            </label>
+                        </div>
                         <button type="submit">INGRESAR</button>
                         <article>No tienes una cuenta?, <a id="registerRelocation">Registrate aquí.</a></article>
                     </form>
