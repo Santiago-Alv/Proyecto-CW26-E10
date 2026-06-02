@@ -49,6 +49,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 1vw;
 }
 
 .avatarIcon {
@@ -63,12 +64,13 @@ main {
 
 .icon{
     width: 80%;
-    height: 70%;
+    height: 50%;
 }
 
 .signupForm {
     width: 100%;
     display: flex;
+    font-size: 1vw;
     flex-direction: column;
 }
 
