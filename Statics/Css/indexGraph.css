@@ -1,15 +1,11 @@
 /* ==== SETTINGS ===== */
 
-*{
+* {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
-
-/* ======================================================================== */
-
 /* ==== GENERIC ==== */
-
 main {
     width: 100%;
     height: 100vh;
@@ -18,13 +14,11 @@ main {
     flex-direction: column;
     align-items: center;
 }
-
 /* ==== OBJECTS ==== */
-
 .welcomeContainer {
     width: 100%;
-    height: 30vh;
-    font-size: 40px;
+    height: 30vh; 
+    font-size: clamp(1.8rem, 5vw, 2.5rem);/* segun con esto ya no se rompe, en mi monitor no se rompe, chequenlo */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,8 +32,9 @@ main {
     flex-direction: row;
     justify-content: center;
 }
+
 .articleIcon {
-    width: 70%;
+    width: 50%; /* tamb se corrige esta madre, hacia suma de 120 xddd */
     height: 100%;
     align-items: center;
     display: flex;
@@ -56,19 +51,19 @@ main {
 
 .loginForm {
     background-color: #3165CD; 
-    border-radius: 30px; 
-    padding: 50px 40px;
+    border-radius: 2rem; 
+    padding: 3rem 2.5rem; 
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px; 
-    width: 90%;
-    max-width: 460px;
+    gap: 2rem; 
+    width: 90%; 
+    max-width: 29rem; 
 }
 
 .loginForm h1 {
     color: black;
-    font-size: 32px;
+    font-size: 2rem; 
     text-align: center;
     text-transform: uppercase;
     margin: 0;
@@ -82,9 +77,9 @@ main {
     width: 100%;
     background-color: #D9D9D9; 
     border: none;
-    border-radius: 30px; 
-    padding: 15px 20px;
-    font-size: 20px;
+    border-radius: 2rem; 
+    padding: 1rem 1.25rem; 
+    font-size: 1.25rem; 
     font-weight: bold;
     font-family: "Comic Sans MS", "Chalkboard SE", cursive, sans-serif;
     color: black;
@@ -97,24 +92,24 @@ main {
 .loginForm button {
     background-color: #FFA500;
     border: none;
-    border-radius: 15px;
-    padding: 12px 45px;
-    font-size: 24px;
+    border-radius: 1rem; 
+    padding: 0.75rem 2.8rem; 
+    font-size: 1.5rem; 
     font-weight: bold;
     font-family: "Comic Sans MS", "Chalkboard SE", cursive, sans-serif;
     color: black;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 0.6rem; 
 }
 
 .loginForm .inputContainer {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.15); 
-    border: 2px solid #94B1E7; 
-    border-radius: 20px; 
-    padding: 25px 15px; 
+    border: 0.15rem solid #94B1E7; 
+    border-radius: 1.25rem; 
+    padding: 1.5rem 1rem; 
     display: flex; 
     flex-direction: column;
-    gap: 25px; 
-    box-shadow: inset 0 4px 6px rgba(0,0,0,0.2); 
+    gap: 1.5rem; 
+    box-shadow: inset 0 0.25rem 0.4rem rgba(0,0,0,0.2); 
 }
