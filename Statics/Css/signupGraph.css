@@ -31,15 +31,14 @@ main {
 
 /* ==== OBJECTS ==== */
 .generalContainer {
-    width: 100%;
-    height: 100vh;
+    width: 100%; 
+    height: 100vh; 
     background-color: #94B1E7; 
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* --- TARJETAxd --- */
 .articleSignup {
     background-color: #3165CD; 
     width: 90%;
@@ -59,7 +58,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow: hidden; 
 }
 
 .icon{
@@ -68,7 +67,7 @@ main {
 }
 
 .signupForm {
-    width: 100%;
+    width: 100%; 
     display: flex;
     font-size: 1vw;
     flex-direction: column;
@@ -91,12 +90,12 @@ main {
 }
 
 .signupForm .input:last-child {
-    border-bottom: none;/* linea dela ultima casilla */
+    border-bottom: none;
 }
 
 .signupForm input {
     border: none; 
-    background: transparent;
+    background: transparent; 
     width: 100%;
     font-size: 0.9vw;
     outline: none; 
