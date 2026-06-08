@@ -10,6 +10,8 @@
     $cuenta_buscada = isset($_GET['cuenta']) ? trim($_GET['cuenta']) : "";
     //noseque consulta noseque noseque fetch noseque
     }
+    //PLACEHOLDER
+    $nombre_admin = "Angela";
 ?>
 <!--  ya desp incorporo el foreach y eso -->
 <!DOCTYPE html>
