@@ -17,13 +17,16 @@
 
         <div class="mainCont">
             <aside>
-            
+                <div class="menuOp"> 61B </div>
+                <div class="menuOp"> 61D </div>
+                <div class="menuOp"> RECURSOS </div>
+                <div class="menuOp"> DUDAS </div>
             </aside>
 
             <main>
 
             </main>
         </div>
-        
+
     </body>
 </html>
