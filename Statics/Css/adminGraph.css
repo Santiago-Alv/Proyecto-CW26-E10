@@ -141,3 +141,130 @@ body {
     margin: 0 auto; 
     margin-top: 10px;
 }
+/* --- VISTA RESULTADO SEARCH DE ALUMNO --- */
+.header-perfil {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.titulos-perfil h1 {
+    font-weight: normal;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.titulos-perfil h2 {
+    font-weight: normal;
+    font-size: 28px;
+}
+
+.acciones-perfil {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-secundario {
+    background-color: #e2e8f0;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.btn-peligro {
+    background-color: #ffb3b3; /* Rosa pastel SIIIIIIIIIIIIII */
+    border: none;
+    padding: 8px 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    color: black;
+}
+
+.grid-informacion {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.tarjeta-datos {
+    background-color: #e2e8f0;
+    padding: 20px;
+    flex: 2; 
+    line-height: 1.6;
+}
+
+.metricas-rapidas {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.metrica-box {
+    background-color: #e2e8f0;
+    text-align: center;
+}
+
+.metrica-titulo {
+    background-color: #050b14; 
+    color: white;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.metrica-valor {
+    padding: 15px;
+    font-size: 26px;
+}
+
+.titulo-estado {
+    font-weight: normal;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.tabla-modulos {
+    width: 100%;
+    max-width: 600px;
+    background-color: #e2e8f0;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.tabla-modulos th, .tabla-modulos td {
+    padding: 10px;
+}
+
+.tabla-modulos th {
+    font-weight: normal;
+}
+
+.nombre-modulo {
+    text-align: left;
+}
+/* --- VISTA RESULTADO SEARCH PROFESOR --- */
+
+.tarjeta-profesor {
+    max-width: 450px;
+    flex: none; /* SE ESTIRAAAAA YA CON ESTO NO */
+}
+
+.grupos-profesor {
+    margin: 10px 0;
+}
+
+.grupos-profesor ul {
+    list-style-type: disc; /* Cambia el tipo de viñeta a disco */
+    margin-left: 30px;     
+    padding: 5px 0;
+}
+
+.grupos-profesor li {
+    margin-bottom: 2px;
+}
+
+.espacio-vacioxd {
+    flex: 1;
+}
