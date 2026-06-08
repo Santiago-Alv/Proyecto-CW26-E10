@@ -47,8 +47,17 @@ aside {
 main {
     width: 85%;
     height: 86vh;
-
+    
     background-color: #5F8ADC;
+    font-size: 2vw;
+  
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+        margin: 1%;
+        color: #FFFFFF;
+    }
 }
 
 /* ==== OBJECTS ==== */

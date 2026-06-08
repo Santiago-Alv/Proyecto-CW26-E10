@@ -24,7 +24,7 @@
             </aside>
 
             <main>
-
+                <h1>Bienvenido Profesor Jirafales</h1>
             </main>
         </div>
 
