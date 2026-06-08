@@ -35,6 +35,13 @@ aside {
     height: 86vh;
 
     background-color: #22468D;
+
+    display: flex;
+ 
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    
 }
 
 main {
@@ -42,4 +49,22 @@ main {
     height: 86vh;
 
     background-color: #5F8ADC;
+}
+
+/* ==== OBJECTS ==== */
+
+.menuOp{
+    width: 175px;
+    height: 90px;
+    
+    border-radius: 1vw;
+    margin: 10%;
+    cursor: pointer;
+    
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #C9D8F3;
 }
