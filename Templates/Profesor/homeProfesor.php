@@ -8,7 +8,9 @@
     </head>
     <body>
         <header>
-            
+            <img class="logo" src= "..\..\Statics\img\logo-unam.png">
+
+            <a href="..\index.html">Cerrar Sesión</a>
         </header>
         
         <nav>
