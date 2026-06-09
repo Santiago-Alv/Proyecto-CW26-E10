@@ -3,7 +3,7 @@
 ?>    
     <header class="top-header">
     <div class="logo">
-        <img src="../../Statics/Img/logo-unam.png" alt="Logo UNAM"> 
+        <img src="../../Statics/img/logo-unam.png" alt="Logo UNAM"> 
     </div>
     <button class="btn-logout">Cerrar Sesión</button>
     </header>
