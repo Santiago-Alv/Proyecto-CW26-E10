@@ -1,13 +1,22 @@
+<?php
+    $nombre_admin = "Angela";
+?>
 <!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Administrador modificación de profesor</title>
-        <link rel="stylesheet" href="../Statics/Css/AdminProfe.css">
+        <link rel="stylesheet" href="../../Statics/Css/AdminProfe.css">
+        <link rel="stylesheet" href="../../Statics/Css/adminGraph.css">
     </head>
     <body>
-        <main id= "contenido">
+        <?php include '../../utilities/navbarAdmin.php'; ?>
+        
+        <div class="main-layout">
+            <?php include '../../utilities/sidebarAdmin.php'; ?>
+            
+            <main id= "contenido">
             <div class="input-datosprof">
                 <h1>Profesor<br>Jirafales</h1>   
                 <p id="txt-modificar">Modificar</p>
@@ -34,6 +43,8 @@
             </div>
           
         </main>   
+        </div>
+        
     </body>
 </html>
     
