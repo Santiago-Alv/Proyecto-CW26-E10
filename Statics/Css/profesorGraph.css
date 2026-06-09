@@ -12,6 +12,9 @@ header {
     width: 100%;
     height: 10vh;
     
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     background-color: #051D3C;
 }
 
@@ -76,4 +79,30 @@ main {
     justify-content: center;
 
     background-color: #C9D8F3;
+}
+
+.logo {
+    width: 6vw;
+    height: 9vh;
+    margin: 0.5vw;
+
+    position: relative;
+    left: 10%;
+}
+
+header a {
+
+    width: 10vw;
+    height: 5vh;
+    border-radius: 1vw;
+
+    background-color: #FF7700;
+    color: black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    left: 80%;
 }
