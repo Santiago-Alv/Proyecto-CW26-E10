@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['usuario']) || $_SESSION['tipo'] !== 'profesor') {
+    
+    //header("Location: ../index.html"); 
+    // echo ¨vete wei no eres porfe¨
+    // Matar pa q no cargue lo demas
+    //exit(); 
+}
+?>
 <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -8,11 +19,19 @@
     </head>
     <body>
         <header>
-            
+            <div class="logo">
+                <img src="../../Statics/img/logo-unam.png" alt="Logo">
+            </div>
+            <button class="btn-logout">Cerrar Sesión</button>
         </header>
-        
+    
         <nav>
-
+            <div class="breadcrumbs">
+                <span>🏠</span>
+                <span>&lt;</span>
+                <span>&gt;</span>
+                <span>Profesor Jirafales</span>
+            </div>
         </nav>
 
         <div class="mainCont">

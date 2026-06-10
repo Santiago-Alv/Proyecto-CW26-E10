@@ -11,14 +11,16 @@
 header {
     width: 100%;
     height: 10vh;
-    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #051D3C;
 }
 
 nav{
     width: 100%;
     height: 4vh;
-
+    display: flex;
     background-color: #0A3265;
 }
 
@@ -76,4 +78,28 @@ main {
     justify-content: center;
 
     background-color: #C9D8F3;
+}
+
+.logo img {
+    height: 5vh; 
+}
+
+.btn-logout {
+    background-color: #ff8c00;
+    color: black;
+    border: none;
+    padding: 1vh 1.5vw;
+    border-radius: 2vh;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.8vh;
+}
+/* las cositas pa irse pa atras como el hansel */
+.breadcrumbs {
+    color: white;
+    font-size: 1.8vh;
+}
+
+.breadcrumbs span {
+    margin-right: 1vw;
 }
