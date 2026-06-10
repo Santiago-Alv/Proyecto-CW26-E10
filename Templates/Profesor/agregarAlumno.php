@@ -1,8 +1,3 @@
-<?php
-
-$grupoAct="61B";
-
-?>
 
 <!DOCTYPE html>
     <html lang="en">
@@ -10,7 +5,7 @@ $grupoAct="61B";
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href = "..\..\Statics\Css\profesorGraph.css">
-        <?php echo "<title> $grupoAct </title>"; ?>
+        <title>Home</title>
     </head>
     <body>
         <header>
@@ -36,27 +31,17 @@ $grupoAct="61B";
                 <a class="menuOp"> DUDAS </a>
             </aside>
 
-            <main>
-                <section class="grupoGeneral">
-                    <article class="grupoConfig">
-                        <h2> 61B </h2>
-                        <a href="./agregarAlumno.php" >Agregar Alumno</a>
-                        <a href="./buscarAlumno.php">Buscar Alumno </a>
-                        <a>Seleccionar módulo </a>
-                    </article>
-                    <article class="grupoLista">
-                        <div class = "alumnoData">
-                            
-                        </div>
-                    </article>
-                </section>
+            <main class="opModProfe">
+                <h2> 61B </h2>
+                <div class="search-title">
+                    <span>➕ Agregar alumno</span>
+                </div>
+                <form action="" method="GET" class="search-form">
+                    <input type="text" name="nombre" placeholder="Nombre del alumno">
+                    <input type="text" name="cuenta" placeholder="Número de cuenta">
+                    <button type="submit" class="btn-search">Buscar</button>
+                </form>
 
-                <section class="grupoData">
-                    <div class="indiceGrupo">86%</div>
-                    <h3>Indice de Deserción</h3>
-                    <a>Lista de asistencia</a>
-                    <a>Registrar calificación</a>
-                </section>
             </main>
         </div>
 

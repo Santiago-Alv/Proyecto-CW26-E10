@@ -26,7 +26,7 @@ if (!isset($_SESSION['usuario']) || $_SESSION['tipo'] !== 'profesor') {
     
         <nav>
             <div class="breadcrumbs">
-                <span>🏠</span>
+                <a href="./homeProfesor.php">🏠</a>
                 <span>&lt;</span>
                 <span>&gt;</span>
                 <span>Profesor Jirafales</span>
@@ -35,10 +35,10 @@ if (!isset($_SESSION['usuario']) || $_SESSION['tipo'] !== 'profesor') {
 
         <div class="mainCont">
             <aside>
-                <div class="menuOp"> 61B </div>
-                <div class="menuOp"> 61D </div>
-                <div class="menuOp"> RECURSOS </div>
-                <div class="menuOp"> DUDAS </div>
+                <a class="menuOp" href="./grupoProfesor.php"> 61B </a>
+                <a class="menuOp" href="./grupoProfesor.php"> 61D </a>
+                <a class="menuOp"> RECURSOS </a>
+                <a class="menuOp"> DUDAS </a>
             </aside>
 
             <main>
