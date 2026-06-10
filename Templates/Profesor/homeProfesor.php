@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['usuario']) || $_SESSION['tipo'] !== 'profesor') {
+    
+    //header("Location: ../index.html"); 
+    // echo ¨vete wei no eres porfe¨
+    // Matar pa q no cargue lo demas
+    //exit(); 
+}
+?>
 <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -12,9 +23,14 @@
 
             <a href="..\index.html">Cerrar Sesión</a>
         </header>
-        
+    
         <nav>
-
+            <div class="breadcrumbs">
+                <span>🏠</span>
+                <span>&lt;</span>
+                <span>&gt;</span>
+                <span>Profesor Jirafales</span>
+            </div>
         </nav>
 
         <div class="mainCont">
