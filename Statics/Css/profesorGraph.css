@@ -224,8 +224,40 @@ header a {
     flex-direction: column !important;
     gap: 2%;
 }
-.opGrupoProfe {
 
-    width: 30%;
-    height: 2vh;
+.search-title {
+    width: 10vw;
+    margin-left: 1%;
+    background-color: #e2e8f0;
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin-left: 20px;
+}
+
+.search-form input {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #e2e8f0;
+}
+
+.btn-search {
+    background-color: #e2e8f0;
+    border: none;
+    padding: 10px;
+    border-radius: 15px;
+    width: 100px;
+    cursor: pointer;
+    margin: 0 auto; 
+    margin-top: 10px;
 }
