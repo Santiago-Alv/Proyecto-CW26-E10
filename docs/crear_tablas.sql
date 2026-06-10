@@ -98,6 +98,14 @@ INSERT INTO duda(id_alumno,id_grupo,id_profesor,estado_duda, duda_text, respuest
 (1, 1, 1, "M","Que es git", "Es un controlador de versiones");
 
 
+--Tabla que relaciona el formulario inicial con alumno
 
+CREATE TABLE formulario(
+    id_formulario INT PRIMARY KEY AUTO_INCREMENT,
+    pregunta_1 VARCHAR(50) NOT NULL,
+    pregunta_2 CHAR(2) NOT NULL,
+    pregunta_3 VARCHAR(500) NOT NULL,
+    id_alumno INT NOT NULL,
+)
 
 
