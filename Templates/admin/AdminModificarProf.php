@@ -35,7 +35,7 @@
             <div class="boton-modprofe">
                 <div class = "boton-mod-elim">
                     <button type="submit" id="modprofe-submit">Modificar</button>
-                    <form action="historialpreguntas.php">
+                    <form action="AdminEliminarProfe.php">
                         <button type="submit" id="elimprof-submit">Eliminar</button>
                     </form>
                 </div>
