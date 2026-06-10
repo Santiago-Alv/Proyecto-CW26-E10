@@ -1,8 +1,8 @@
 <?php    
-    const DBHOST = "localhost";
-    const DBUSER = "root";
-    const PASSWORD = "";
-    const DB = "nodeserte";
+    const DBHOST = ""; //"localhost"
+    const DBUSER = ""; // "root"
+    const PASSWORD = ""; // ""
+    const DB = ""; // "nodeserte"
 
     function connect()
     {
