@@ -41,8 +41,17 @@ if (!isset($_SESSION['usuario']) || $_SESSION['tipo'] !== 'profesor') {
                 <a class="menuOp"> DUDAS </a>
             </aside>
 
-            <main>
-            
+            <main class="opModProfe">
+                <h2> 61B </h2>
+                <div class="search-title">
+                    <span>🔍 Buscar alumno</span>
+                </div>
+                <form action="alumnos.php" method="GET" class="search-form">
+                    <input type="text" name="nombre" placeholder="Nombre del alumno">
+                    <input type="text" name="cuenta" placeholder="Número de cuenta">
+                    <button type="submit" class="btn-search">Buscar</button>
+                </form>
+
             </main>
         </div>
 
