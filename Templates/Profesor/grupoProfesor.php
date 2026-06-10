@@ -21,7 +21,7 @@ $grupoAct="61B";
     
         <nav>
             <div class="breadcrumbs">
-                <span>🏠</span>
+                <a href="./homeProfesor.php">🏠</a>
                 <span>&lt;</span>
                 <span>&gt;</span>
                 <span>Profesor Jirafales</span>
@@ -30,18 +30,18 @@ $grupoAct="61B";
 
         <div class="mainCont">
             <aside>
-                <div class="menuOp"> 61B </div>
-                <div class="menuOp"> 61D </div>
-                <div class="menuOp"> RECURSOS </div>
-                <div class="menuOp"> DUDAS </div>
+                <a class="menuOp" href="./grupoProfesor.php"> 61B </a>
+                <a class="menuOp" href="./grupoProfesor.php"> 61D </a>
+                <a class="menuOp"> RECURSOS </a>
+                <a class="menuOp"> DUDAS </a>
             </aside>
 
             <main>
                 <section class="grupoGeneral">
                     <article class="grupoConfig">
                         <h2> 61B </h2>
-                        <a>Agregar Alumno</a>
-                        <a>Buscar Alumno </a>
+                        <a href="./agregarAlumno.php" >Agregar Alumno</a>
+                        <a href="./buscarAlumno.php">Buscar Alumno </a>
                         <a>Seleccionar módulo </a>
                     </article>
                     <article class="grupoLista">
