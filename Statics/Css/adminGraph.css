@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #6a96e3; 
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Header principal */
+.top-header {
+    background-color: #0b1d3a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 2px solid #b8860b; 
+}
+
+.logo img {
+    height: 50px;
+}
+
+.btn-logout {
+    background-color: #ff8c00;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.sub-navbar {
+    background-color: #17376e;
+    color: white;
+    padding: 8px 20px;
+    font-size: 14px;
+}
+
+.breadcrumbs span {
+    margin-right: 10px;
+}
+
+.main-layout {
+    display: flex;
+    flex: 1;
+}
+
+.sidebar {
+    background-color: #2b4d82;
+    width: 220px;
+    padding: 20px 15px;
+    border-right: 2px solid #1a325a;
+}
+
+.sidebar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: black;
+    background-color: #d1e3fa;
+    padding: 12px;
+    border-radius: 15px;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Main Content */
+.content {
+    flex: 1;
+    padding: 30px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header-content h1 {
+    color: black;
+    font-weight: normal;
+}
+
+.btn-add {
+    background-color: #e2e8f0;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.search-container {
+    background-color: transparent;
+}
+
+.search-title {
+    background-color: #e2e8f0;
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin-left: 20px;
+}
+
+.search-form input {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #e2e8f0;
+}
+
+.btn-search {
+    background-color: #e2e8f0;
+    border: none;
+    padding: 10px;
+    border-radius: 15px;
+    width: 100px;
+    cursor: pointer;
+    margin: 0 auto; 
+    margin-top: 10px;
+}
+/* --- VISTA RESULTADO SEARCH DE ALUMNO --- */
+.header-perfil {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.titulos-perfil h1 {
+    font-weight: normal;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.titulos-perfil h2 {
+    font-weight: normal;
+    font-size: 28px;
+}
+
+.acciones-perfil {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-secundario {
+    background-color: #e2e8f0;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.btn-peligro {
+    background-color: #ffb3b3; /* Rosa pastel SIIIIIIIIIIIIII */
+    border: none;
+    padding: 8px 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    color: black;
+}
+
+.grid-informacion {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.tarjeta-datos {
+    background-color: #e2e8f0;
+    padding: 20px;
+    flex: 2; 
+    line-height: 1.6;
+}
+
+.metricas-rapidas {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.metrica-box {
+    background-color: #e2e8f0;
+    text-align: center;
+}
+
+.metrica-titulo {
+    background-color: #050b14; 
+    color: white;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.metrica-valor {
+    padding: 15px;
+    font-size: 26px;
+}
+
+.titulo-estado {
+    font-weight: normal;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.tabla-modulos {
+    width: 100%;
+    max-width: 600px;
+    background-color: #e2e8f0;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.tabla-modulos th, .tabla-modulos td {
+    padding: 10px;
+}
+
+.tabla-modulos th {
+    font-weight: normal;
+}
+
+.nombre-modulo {
+    text-align: left;
+}
+/* --- VISTA RESULTADO SEARCH PROFESOR --- */
+
+.tarjeta-profesor {
+    max-width: 450px;
+    flex: none; /* SE ESTIRAAAAA YA CON ESTO NO */
+}
+
+.grupos-profesor {
+    margin: 10px 0;
+}
+
+.grupos-profesor ul {
+    list-style-type: disc; /* Cambia el tipo de viñeta a disco */
+    margin-left: 30px;     
+    padding: 5px 0;
+}
+
+.grupos-profesor li {
+    margin-bottom: 2px;
+}
+
+.espacio-vacioxd {
+    flex: 1;
+}
