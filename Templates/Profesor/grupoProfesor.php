@@ -45,7 +45,9 @@ $grupoAct="61B";
                         <a>Seleccionar módulo </a>
                     </article>
                     <article class="grupoLista">
-                        <div></div>
+                        <div class = "alumnoData">
+                            
+                        </div>
                     </article>
                 </section>
 
