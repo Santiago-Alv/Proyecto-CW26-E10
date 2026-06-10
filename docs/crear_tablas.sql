@@ -105,7 +105,8 @@ CREATE TABLE formulario(
     pregunta_1 VARCHAR(50) NOT NULL,
     pregunta_2 CHAR(2) NOT NULL,
     pregunta_3 VARCHAR(500) NOT NULL,
-    id_alumno INT NOT NULL,
+    id_alumno INT NOT NULL
+    FOREIGN KEY (id_alumno) REFERENCES alumno(id_alumno)
 );
 
 
