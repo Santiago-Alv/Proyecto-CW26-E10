@@ -1,21 +1,16 @@
 <?php
-session_start();
 
-if (!isset($_SESSION['usuario']) || $_SESSION['tipo'] !== 'profesor') {
-    
-    //header("Location: ../index.html"); 
-    // echo ¨vete wei no eres porfe¨
-    // Matar pa q no cargue lo demas
-    //exit(); 
-}
+$grupoAct="61B";
+
 ?>
+
 <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href = "..\..\Statics\Css\profesorGraph.css">
-        <title>Home</title>
+        <?php echo "<title> $grupoAct </title>"; ?>
     </head>
     <body>
         <header>
@@ -42,7 +37,24 @@ if (!isset($_SESSION['usuario']) || $_SESSION['tipo'] !== 'profesor') {
             </aside>
 
             <main>
-                <h1>Bienvenido Profesor Jirafales</h1>
+                <section class="grupoGeneral">
+                    <article class="grupoConfig">
+                        <h2> 61B </h2>
+                        <a>Agregar Alumno</a>
+                        <a>Buscar Alumno </a>
+                        <a>Seleccionar módulo </a>
+                    </article>
+                    <article class="grupoLista">
+                        <div></div>
+                    </article>
+                </section>
+
+                <section class="grupoData">
+                    <div class="indiceGrupo">86%</div>
+                    <h3>Indice de Deserción</h3>
+                    <a>Lista de asistencia</a>
+                    <a>Registrar calificación</a>
+                </section>
             </main>
         </div>
 
