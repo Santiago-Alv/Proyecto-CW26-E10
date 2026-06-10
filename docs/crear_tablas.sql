@@ -106,6 +106,6 @@ CREATE TABLE formulario(
     pregunta_2 CHAR(2) NOT NULL,
     pregunta_3 VARCHAR(500) NOT NULL,
     id_alumno INT NOT NULL,
-)
+);
 
 
