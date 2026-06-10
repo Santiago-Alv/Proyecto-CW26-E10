@@ -1,0 +1,56 @@
+body{
+    margin: 0;
+}
+main {
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    padding: 3vw;
+    background-color: #5F8ADC;
+    display: flex;
+    flex-direction: column;
+}
+.input-pregunta {
+    width: 80vw;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    label {
+        background-color: #000000;
+        font-size: 1.5vw;
+        padding: 0.5vw;
+        color: white;
+        flex-grow: 1/2;
+    }
+
+}
+#ipt-pregunta {
+    font-size: 1.5vw;
+    border: 2vw solid #CDDBF4;
+    background-color: #B4C0D3;
+    flex-grow: 4;
+}
+.botonesforo {
+    width: 80vw;
+    height: 10vh;
+    font-size: 1.5vw;
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#pregunta-submit {
+    width: 10vw;
+    height: 5vw;
+    background-color: #D9D9D9;
+    color: black;
+    border-radius: 5vw;
+
+}
+#historial-submit {
+    width: 20vw;
+    height: 5vw;
+    background-color: #D9D9D9;
+    color: black;
+    border-radius: 5vw;
+}
