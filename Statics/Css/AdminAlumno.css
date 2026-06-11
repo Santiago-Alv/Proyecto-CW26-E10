@@ -1,0 +1,185 @@
+
+body{
+    margin: 0;
+}
+main {
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    padding: 3vw;
+    background-color: #5F8ADC;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 3vh;
+}
+h1{
+    margin: 0;
+    padding: 0;
+}
+#txt-modificar, input, #select-grupo {
+    padding: 1% 2%;
+    border-radius: 10vh;
+    margin: 1vh;
+    background-color: #D9D9D9;
+    color: black;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+#txt-modificar{
+    width: 40%;
+    text-align: center;
+}
+.grupo-seleccion {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 5vw;
+    gap: 15px;
+}  
+.grupo-seleccion label {
+    font-size: 1.5vw;
+    color: #000000;
+    white-space: nowrap;
+}
+#select-grupo {
+    width: 40%;
+    margin: 0;
+}
+.input-datosalumn{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 1.5vh;
+
+}
+.boton-modalumn{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 60%;
+    justify-content: space-between;
+    align-items:end;
+    
+}
+.boton-mod-elim{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+}
+#acept-modalumn-submit, #elimalumn-submit, #modalumn-submit{
+    padding: 1vw;
+    border-radius: 10vh;
+    border: none;
+    margin: 2vw;
+    width: fit-content;
+}
+#acept-modalumn-submit{
+    padding: 1vw 2vw; 
+    border: none;
+    border-radius: 10vh;
+    font-weight: bold;
+    cursor: pointer;
+    color: #092039;
+    transition: all 1000ms;
+    font-size: 1rem;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    outline: 2px solid #092039;
+}
+#acept-modalumn-submit:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+    outline: 2px solid #092039;
+    box-shadow: 4px 5px 17px -4px #092039;
+}
+#acept-modalumn-submit:hover {
+    background-color: #ff7926f5;
+}
+#elimalumn-submit{
+    background-color: #FF9F9F;
+    color: black;
+}
+#modalumn-submit{
+    background-color: #C9D8F3;
+    color: black;
+}
+.checkboxgrupos{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+}
+
+/*Contenedor de mensaje de confirmacion para elimninar */
+#confi-elimalumn{
+    width: 70%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-self:flex-start;
+}
+#NombAlumAdmin{
+    flex-grow: 1;
+    align-self: flex-start;
+}
+.cont-confirma-elimalumn{
+    flex-grow: 2;
+    width: 50vw;
+    height: 50vh;
+    border-radius: 1vh;
+    background-color: #D9D9D9;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-self:flex-start;
+}
+#preg-confirma-elimalumn{
+    font-size: 5vh;
+    padding: 4vh;
+    text-align: center;
+    margin-top: -2px;
+}   
+.botones-confelim{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+#aceptelim-submit, #cancelelim-submit{
+    font-size: 3vh;
+    padding: 2vh;
+    border-radius: 10vh;
+    border: none;
+    margin: 2vh;
+}
+#aceptelim-submit{
+    background-color: #FF9F9F;
+}
+#cancelelim-submit{
+    background-color: #BFECC0;
+}
+.barra-navegacion {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 2vh;
+}
+.barra-navegacion button {
+    background-color: #D9D9D9;
+    border: 1px solid #999;
+    padding: 8px 18px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+    border-radius: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+
