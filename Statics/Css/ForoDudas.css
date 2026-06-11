@@ -12,9 +12,10 @@ main {
 }
 .input-pregunta {
     width: 80vw;
-    height: 30vh;
+    height: 50vh;
     display: flex;
     flex-direction: column;
+
     label {
         background-color: #000000;
         font-size: 1.5vw;
@@ -22,7 +23,6 @@ main {
         color: white;
         flex-grow: 1/2;
     }
-
 }
 #ipt-pregunta {
     font-size: 1.5vw;
@@ -40,11 +40,13 @@ main {
     justify-content: space-between;
 }
 #pregunta-submit {
+    align-self: flex-end;
     width: 10vw;
     height: 5vw;
     background-color: #D9D9D9;
     color: black;
     border-radius: 5vw;
+    margin: 1vh;
 
 }
 #historial-submit {
