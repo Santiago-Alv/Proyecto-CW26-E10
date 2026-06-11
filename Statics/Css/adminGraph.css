@@ -268,3 +268,62 @@ body {
 .espacio-vacioxd {
     flex: 1;
 }
+
+/* --- ESTILOS PARA LOS RESULTADOS DE BÚSQUEDA --- */
+
+.content {
+    background-color: #6a92e4; 
+    padding: 30px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.header-content h1 {
+    color: #1a1a1a;
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.results-container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 850px;
+}
+
+.selection-label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+    margin-left: 15px;
+}
+
+
+.result-card {
+    flex-grow: 1;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #1a1a1a;
+    border: 1px solid #ccc;
+}
+
+.result-card span {
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+.alumno-nombre {
+    flex: 1;
+    text-align: left;
+}
+
+.alumno-grupo {
+    flex: 1;
+    text-align: center;
+}
