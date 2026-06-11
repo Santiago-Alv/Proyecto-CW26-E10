@@ -18,55 +18,62 @@
             </div>
 
             <div class="results-container">
-                <p>Resultados para: "Nombre del alumno"</p>
-                <div class="result-list">
-                    <?php
+                <?php
                     include '../../config/config_bd.php';
                     $conexion = connect();
-                    // sanitizar y eso
+
+                    // datos y sanitizar y eso
                     $nombre_buscado = isset($_GET['nombre']) ? mysqli_real_escape_string($conexion, $_GET['nombre']) : '';
                     $cuenta_buscada = isset($_GET['cuenta']) ? mysqli_real_escape_string($conexion, $_GET['cuenta']) : '';
-
-                    $sql = "SELECT a.id_alumno, a.nombre, g.nombre_grupo 
-                            FROM alumno a
-                            INNER JOIN grupo g ON a.id_grupo = g.id_grupo 
-                            WHERE 1=0"; // 1=0 para que funcione el truco del OR
-                            //daba sintax error la perrita, no se puede OR dsps de WHERE
-                            //1=0 SIEMPRE sera falso, entonces no necesita que se cumpla todo
-                            //ni de pedo lo cerebre yo solo, digamos que me inspire de stackoverflow
-                            //EN RESUMEN, FALSO PARA QUE WHERE SE SALTE Y PASE AL OR
+                    $texto_busqueda = "Todos los alumnos";//default porsi busca por noctaonada
                     if ($nombre_buscado != '') {
-                        // Si escribió nombre, busca por nombre
-                        $sql .= " OR a.nombre LIKE '%$nombre_buscado%'";
-                    }              
-
+                    $texto_busqueda = '"' . htmlspecialchars($nombre_buscado) . '"';
+                    } elseif ($cuenta_buscada != '') {
+                    $texto_busqueda = 'Cuenta: "' . htmlspecialchars($cuenta_buscada) . '"';
+                    }
+                ?>
+                <p style="color: white; margin-bottom: 2vh">Resultados para: <?php echo $texto_busqueda; ?></p>
+                <div class="result-list">
+                    <?php
+                    $sql_alumno = "SELECT id_alumno, nombre, id_grupo FROM alumno WHERE 1=0";
+                    // 1=0 para que funcione el truco del OR
+                    //daba sintax error la respetable query, no se puede OR dsps de WHERE
+                    //1=0 SIEMPRE sera falso, entonces no necesita que se cumpla todo
+                    //EN RESUMEN, FALSO PARA QUE WHERE SE SALTE Y PASE AL OR
+                    if ($nombre_buscado != '') {
+                        $sql_alumno .= " OR nombre LIKE '%$nombre_buscado%'";
+                    }
                     if ($cuenta_buscada != '') {
-                        // Si escribió cuenta, busca por cuenta
-                        $sql .= " OR a.nocta = '$cuenta_buscada'";
+                        $sql_alumno .= " OR nocta = '$cuenta_buscada'";
                     }
-
-                    // podriamos poner esto en otro boton para mostrar todo jejeje
                     if ($nombre_buscado == '' && $cuenta_buscada == '') {
-                        $sql = "SELECT a.id_alumno, a.nombre, g.nombre_grupo 
-                        FROM alumno a
-                        INNER JOIN grupo g ON a.id_grupo = g.id_grupo";
+                        $sql_alumno = "SELECT id_alumno, nombre, id_grupo FROM alumno"; //todos los alumnos
                     }
+                    $resultado_alumno = mysqli_query($conexion, $sql_alumno);
+                    if ($resultado_alumno && mysqli_num_rows($resultado_alumno) > 0) { //si hay resultados
+                        while ($fila_alumno = mysqli_fetch_assoc($resultado_alumno)) {
+                            $id_grupo_alumno = $fila_alumno['id_grupo'];
+                            $nombre_grupo_final = "Sin Grupo"; //placeholder super chido pa q avise si no tiene grupo o q fallo la consulta xddd
+                            if (!empty($id_grupo_alumno) && is_numeric($id_grupo_alumno)) { //se rompia aveces por el id_grupo null o vacio QUE NO SE PQ LO RECIBIA NULL PERO LO RECIBIA JAJJAJA
+                                $sql_grupo = "SELECT nombre_grupo FROM grupo WHERE id_grupo = " . intval($id_grupo_alumno);
+                                $resultado_grupo = mysqli_query($conexion, $sql_grupo);
 
-                    // Ejecutamos la consulta final
-                    $resultado = mysqli_query($conexion, $sql);
-
-                    if ($resultado && mysqli_num_rows($resultado) > 0) {
-                        while ($fila = mysqli_fetch_assoc($resultado)) {
-                            echo '<a href="alumnos.php?id=' . $fila['id_alumno'] . '" class="result-item-link">';
-                            echo '  <div class="result-card">';
-                            echo '      <span class="alumno-nombre">' . htmlspecialchars($fila['nombre']) . '</span>';
-                            echo '      <span class="alumno-grupo">' . htmlspecialchars($fila['nombre_grupo']) . '</span>';
-                            echo '  </div>';
-                            echo '</a>';
+                                if ($resultado_grupo && mysqli_num_rows($resultado_grupo) > 0) {
+                                    $fila_grupo = mysqli_fetch_assoc($resultado_grupo);
+                                    $nombre_grupo_final = $fila_grupo['nombre_grupo'];
+                                }
+                            }
+                            echo "<a href='alumnos.php?id=" . $fila_alumno['id_alumno'] . "' class='result-item-link'>";//AQUI VA EL REDIRECCIONAMIENTO SANTI O QN SEA Q ANDABA HACIENDO LA PANTALLA DE ALUM
+                            echo "  <div class='result-card'>";
+                            echo "      <span class='alumno-nombre'>" . htmlspecialchars($fila_alumno['nombre']) . "</span>";
+                            echo "      <span class='alumno-grupo'>" . htmlspecialchars($nombre_grupo_final) . "</span>";
+                            echo "  </div>";
+                            echo "</a>";
                         }
                     } else {
-                        echo '<p style="color: #fff; padding-left: 15px;">No se encontraron alumnos.</p>';
+                        echo '<p style="color: white; padding-left: 15px;">No se encontraron alumnos.</p>';
                     }
+
                     mysqli_close($conexion);
                     ?>
                 </div>
