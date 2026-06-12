@@ -26,7 +26,7 @@ INSERT INTO profesor (nombre_profesor) VALUES
 
 CREATE TABLE grupo(
     id_grupo INT PRIMARY KEY AUTO_INCREMENT,
-    nombre_grupo CHAR(3) NOT NULL,
+    nombre_grupo CHAR(3) UNIQUE NOT NULL,
     id_profesor INT NOT NULL,
     modulo_activo INT NOT NULL,
     FOREIGN KEY (id_profesor) REFERENCES profesor(id_profesor),
@@ -34,7 +34,7 @@ CREATE TABLE grupo(
 ); 
 
 INSERT INTO grupo (nombre_grupo, id_profesor, modulo_activo) VALUES 
-("61B", 1, 3), ("61D", 2, 3);
+("61B", 3, 3), ("61D", 4, 3);
 
 -- Definición de la tabla alumno
 CREATE TABLE alumno(
@@ -82,11 +82,12 @@ CREATE TABLE estadodeanimo(
     id_alumno INT NOT NULL,
     fecha DATE NOT NULL,
     emocion VARCHAR(10) NOT NULL,
+    id_modulo INT NOT NULL,
     FOREIGN KEY (id_alumno) REFERENCES alumno(id_alumno),
     FOREIGN KEY (id_modulo) REFERENCES modulo(id_modulo)
 );
-INSERT INTO estadodeanimo(id_alumno, emocion) VALUES 
-(1,"Feliz");
+INSERT INTO estadodeanimo(id_alumno, fecha, emocion, id_modulo) VALUES 
+(1, "2026-06-11","Feliz", 1);
 
 -- Definición de la tabla duda
 CREATE TABLE duda(
@@ -102,7 +103,7 @@ CREATE TABLE duda(
     FOREIGN KEY (id_profesor) REFERENCES profesor(id_profesor)
 );
 INSERT INTO duda(id_alumno,id_grupo,id_profesor,estado_duda, duda_text, respuesta) VALUES 
-(1, 1, 1, "M","Que es git", "Es un controlador de versiones");
+(1, 1, 3, "M","Que es git", "Es un controlador de versiones");
 
 
 --Tabla que relaciona el formulario inicial con alumno
@@ -112,7 +113,7 @@ CREATE TABLE formulario(
     pregunta_1 VARCHAR(50) NOT NULL,
     pregunta_2 CHAR(2) NOT NULL,
     pregunta_3 VARCHAR(500) NOT NULL,
-    id_alumno INT NOT NULL
+    id_alumno INT NOT NULL,
     FOREIGN KEY (id_alumno) REFERENCES alumno(id_alumno)
 );
 
