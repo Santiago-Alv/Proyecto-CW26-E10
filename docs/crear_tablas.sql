@@ -1,5 +1,3 @@
-
-
 CREATE TABLE modulo(
     id_modulo INT PRIMARY KEY AUTO_INCREMENT,
     nombre_modulo VARCHAR(30) NOT NULL,
@@ -12,7 +10,10 @@ INSERT INTO modulo (nombre_modulo, modulo_activo) VALUES
 
 CREATE TABLE profesor(
     id_profesor INT PRIMARY KEY AUTO_INCREMENT,
-    nombre_profesor VARCHAR(60) NOT NULL
+    nombre_profesor VARCHAR(60) NOT NULL,
+    numero_trabajador INT UNIQUE KEY NOT NULL,
+    correo_institucional VARCHAR(100) NOT NULL,
+    contraseña VARCHAR(260)
 );
 
 INSERT INTO profesor (nombre_profesor) VALUES 
@@ -40,7 +41,8 @@ CREATE TABLE alumno(
     nombre VARCHAR(60) NOT NULL,
     asistencia INT,
     id_grupo INT NOT NULL,
-    FOREIGN KEY (id_grupo) REFERENCES grupo(id_grupo)
+    FOREIGN KEY (id_grupo) REFERENCES grupo(id_grupo),
+    ontraseña VARCHAR(260)
 );
 INSERT INTO alumno(nocta, nombre, asistencia, id_grupo) VALUES 
 (324487285, "Juanito Juanito", 10, 1);
@@ -76,7 +78,8 @@ CREATE TABLE estadodeanimo(
     id_alumno INT NOT NULL,
     fecha DATE NOT NULL,
     emocion VARCHAR(10) NOT NULL,
-    FOREIGN KEY (id_alumno) REFERENCES alumno(id_alumno)
+    FOREIGN KEY (id_alumno) REFERENCES alumno(id_alumno),
+    FOREIGN KEY (id_modulo) REFERENCES modulo(id_modulo)
 );
 INSERT INTO estadodeanimo(id_alumno, emocion) VALUES 
 (1,"Feliz");
@@ -109,4 +112,11 @@ CREATE TABLE formulario(
     FOREIGN KEY (id_alumno) REFERENCES alumno(id_alumno)
 );
 
+CREATE TABLE administrador(
+    id_administrador INT PRIMARY KEY AUTO_INCREMENT,
+    nombre_administrador VARCHAR(100),
+    numero_trabajador VARCHAR(100),
+    correo VARCHAR(150),
+    contraseña VARCHAR(260)
+);
 
