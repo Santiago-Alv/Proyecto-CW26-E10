@@ -1,0 +1,84 @@
+.circulo-carita {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #051d3c;
+    overflow: hidden;
+    cursor: pointer;
+}
+.circulo-carita img{
+    width: 100%;
+    height: 100%;   
+    object-fit: cover;
+}
+.contenedor-d {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    z-index: 10;
+    cursor: pointer;
+}
+.circulo-lista {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #051d3c;
+    overflow: hidden;
+}
+.c-lista {
+    width: 100%;
+    height: 100%;
+}
+/*tarjetas*/
+
+.contenido {
+    flex: 1;
+    background-color: #ddc7c7;
+    padding: 40px;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.cuadros-contenido {
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+    width: 100%;
+    margin-top: 40px;
+    margin-left: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    max-width: 250px;
+    box-sizing: border-box;
+}
+.tarjeta-titulo {
+    background-color: #0b0c1e;
+    color: #ffffff;
+    text-align: center;
+    padding: 12px;
+    font-size: clamp(14px, 1.4vw, 18px);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.tarjeta-valor {
+    background-color: #cddbf4;
+    color: #000;
+    text-align: center;
+    font-size: clamp(24px, 2.5vw, 48px);
+    font-weight: bold;
+    padding: 20px 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    flex: 1;
+    align-items: center;
+    justify-content:center ;
+}

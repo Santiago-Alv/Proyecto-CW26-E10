@@ -24,6 +24,7 @@ $nombre_alumn = "Panchito";
 
             <main id= "contenido">
                 <a href="ForoDudas.php" class="enlace-dudas"></a>
+                
                 <a href="Modulo1Alumno.php" class="enlace-modulo1"></a>
                 <a href="Modulo2Alumno.php" class="enlace-modulo2"></a>
                     <div class="cuadros-contenido">
