@@ -21,7 +21,7 @@
                 <p>Resultados para: "Nombre del alumno"</p>
                 <div class="result-list">
                     <?php
-                    include '../../config/config_bd.php';
+                    include '../../config/config_db.php';
                     $conexion = connect();
                     // sanitizar y eso
                     $nombre_buscado = isset($_GET['nombre']) ? mysqli_real_escape_string($conexion, $_GET['nombre']) : '';
