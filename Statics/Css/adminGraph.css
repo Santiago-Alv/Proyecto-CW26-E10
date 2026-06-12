@@ -311,6 +311,7 @@ body {
     align-items: center;
     color: #1a1a1a;
     border: 1px solid #ccc;
+    margin-bottom: 0.75vh;
 }
 
 .result-card span {

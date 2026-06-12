@@ -1,5 +1,6 @@
 <?php
 // navbarAdmin.php
+$nombre_admin = "Angela"; // Placeholder
 ?>    
     <header class="top-header">
     <div class="logo">
