@@ -6,7 +6,8 @@
 // consulta db
 
 // placeholder
-$nombre_alumn = "Panchito"; 
+$nombre_alumn = "Panchito";
+$grupo_alumn = "61D"; 
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -14,7 +15,7 @@ $nombre_alumn = "Panchito";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Historial de foro de dudas de alumno</title>
-    <link rel="stylesheet" href="../../Statics/Css/adminGraph.css">
+    <link rel="stylesheet" href="../../Statics/Css/AlumGraph.css">
     <link rel="stylesheet" href="../../Statics/Css/HistorialForoDudas.css">
 </head>
 <body>

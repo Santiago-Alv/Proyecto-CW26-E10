@@ -6,7 +6,7 @@
 // consulta db
 
 // placeholder
-$nombre_alumn = "Panchito";
+$nombre_alumn = "Panchito"; 
 $grupo_alumn = "61D";
 ?>
 <!DOCTYPE html>
@@ -24,7 +24,7 @@ $grupo_alumn = "61D";
             <?php include '../../utilities/sidebarAlumno.php'; ?>
         <main id= "contenido">
             <div id = "tituloModulo">
-                <h1>Modulo 2 - Tu estado</h1>
+                <h1>Modulo 5 - Tu estado</h1>
             </div>
             <div class = "tablas">
                 <div id = "asistencia">
