@@ -10,7 +10,9 @@ INSERT INTO modulo (nombre_modulo, modulo_activo) VALUES
 
 CREATE TABLE profesor(
     id_profesor INT PRIMARY KEY AUTO_INCREMENT,
-    nombre_profesor VARCHAR(60) NOT NULL,
+    nombre_profesor VARCHAR(100) NOT NULL,
+    apell_pat_prof VARCHAR(30) NOT NULL,
+    apell_mat_prof VARCHAR(30),
     numero_trabajador INT UNIQUE KEY NOT NULL,
     correo_institucional VARCHAR(100) NOT NULL,
     contraseña VARCHAR(260)
@@ -38,7 +40,9 @@ INSERT INTO grupo (nombre_grupo, id_profesor, modulo_activo) VALUES
 CREATE TABLE alumno(
     id_alumno INT PRIMARY KEY AUTO_INCREMENT,
     nocta INT NOT NULL, 
-    nombre VARCHAR(60) NOT NULL,
+    nombre VARCHAR(100) NOT NULL,
+    apell_pat_alum VARCHAR(100) NOT NULL,
+    apell_mat_alum VARCHAR(100),
     asistencia INT,
     id_grupo INT NOT NULL,
     FOREIGN KEY (id_grupo) REFERENCES grupo(id_grupo),
@@ -115,6 +119,8 @@ CREATE TABLE formulario(
 CREATE TABLE administrador(
     id_administrador INT PRIMARY KEY AUTO_INCREMENT,
     nombre_administrador VARCHAR(100),
+    apell_pat_admin VARCHAR(30) NOT NULL,
+    apell_mat_admin VARCHAR(30),
     numero_trabajador VARCHAR(100),
     correo VARCHAR(150),
     contraseña VARCHAR(260)
