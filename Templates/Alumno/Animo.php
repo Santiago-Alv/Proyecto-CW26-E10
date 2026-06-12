@@ -18,7 +18,7 @@ $nombre_alumn = "Panchito";
         <title>Pregunta ánimo</title>
 </head>
 <body>
-        <?php include '../../utilities/navbarAlumno.php'; ?>
+        <?php include '../../utilities/alumno.php'; ?>
         <div class="main-layout">
             <?php include '../../utilities/sidebarAlumno.php'; ?>
 
