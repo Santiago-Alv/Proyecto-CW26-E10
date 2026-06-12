@@ -38,10 +38,10 @@ $nombre_admin = "Angela";
                 </div> 
                 <div class="boton-modprofe">
                     <div class = "boton-mod-elim">
-                        <button type="submit" id="modprofe-submit">Modificar</button>
-                        <form action="historialpreguntas.php">
-                            <button type="submit" id="elimprof-submit">Eliminar</button>
+                        <form action="AdminModificarProf.php">
+                            <button type="submit" id="modprofe-submit">Modificar</button>
                         </form>
+                            <button type="submit" id="elimprof-submit">Eliminar</button>
                     </div>
                 </div>
             </main>   

@@ -1,0 +1,33 @@
+body{
+    margin: 0;
+}
+main {
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    padding: 2vh;
+    background-color: #5F8ADC;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.lista-asist{
+    width: 90vw;
+    height: 50vh;
+    overflow-x: auto;
+    overflow-y: auto; 
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+table{
+    width: 85vw;
+    height: fit-content;
+    overflow-y: auto;
+    border-radius: 1.5vh;
+    margin: 0.5vw;
+    background-color: #D9D9D9;
+    .nombalumlista{
+        width: 50vh;
+    }
+}
