@@ -4,12 +4,14 @@
     $nombreBuscado = "";
     $noctaBuscado = "";
     $listaResultados = array();
+    $listaAsistencias = array();
+    $countAsist = 0;
 
     if(isset($_GET['nombre']) && isset($_GET['cuenta'])){
         $nombreBuscado = $_GET['nombre'];
         $noctaBuscado = $_GET['cuenta'];
 
-        $sql = "SELECT * FROM alumno WHERE nombre LIKE '%" . $nombreBuscado . "%' OR nocta= $noctaBuscado";
+            $sql = "SELECT * FROM alumno WHERE nombre LIKE '%" . $nombreBuscado . "%' OR nocta= $noctaBuscado";
         
         $resultado_query = mysqli_query($conexion,$sql);
         
@@ -18,34 +20,58 @@
                 $id_alumno = $fila["id_alumno"];
                 $nombreAlumno = $fila["nombre"];
                 $noctaAlumno = $fila["nocta"];
-                $asistenciaTotal = $fila["asistencia"];
                 $id_grupo = $fila["id_grupo"];
             }
 
             $sql2 = "SELECT nombre_grupo, modulo_activo FROM grupo WHERE id_grupo = $id_grupo";
-            $resultado_query2 = mysqli_query($conexion,$sql2);
-            $fila2 = mysqli_fetch_assoc($resultado_query2);
-            $grupoAlumno = $fila2 ["nombre_grupo"];
-            $moduloAct = $fila2 ["modulo_activo"];
+            $query2 = mysqli_query($conexion,$sql2);
+            if($query2){
+                $fila2 = mysqli_fetch_assoc($query2);
+                $grupoAlumno = $fila2 ["nombre_grupo"];
+                $moduloAct = $fila2 ["modulo_activo"];
+            }
 
             $sql3 = "SELECT id_modulo,calificacion FROM calif_mod WHERE id_alumno = $id_alumno";
-            $resultado_query3 = mysqli_query($conexion,$sql3);
-            while($fila3 = mysqli_fetch_assoc($resultado_query3)){
-                $sql4 = "SELECT nombre_modulo FROM modulo WHERE id_modulo = ". $fila3['id_modulo'] ."";
-                $query4 = mysqli_query($conexion,$sql4);
-                $res = mysqli_fetch_assoc($query4);
-                $fila3['name_modulo'] = $res['nombre_modulo']; 
-                $listaResultados[] = $fila3;
+            $query3 = mysqli_query($conexion,$sql3);
+            if($query3){
+                while($fila3 = mysqli_fetch_assoc($query3)){
+                    $sql4 = "SELECT nombre_modulo FROM modulo WHERE id_modulo = ". $fila3['id_modulo'] ."";
+                    $query4 = mysqli_query($conexion,$sql4);
+                    $res = mysqli_fetch_assoc($query4);
+                    $fila3['name_modulo'] = $res['nombre_modulo']; 
+                    $listaResultados[] = $fila3;
+                }
+            }
+            
+            $sql5 = "SELECT * FROM asistencia WHERE id_alumno = $id_alumno";
+            $query5 = mysqli_query($conexion,$sql5);
+            if($query5){
+                while($fila5 = mysqli_fetch_assoc($query5)){
+                    $listaAsistencias[] = $fila5;
+                }
             }
         }
-    }
-     $promedioAlumno = 0;
-    foreach ($listaResultados as $califs) {
-        $promedioAlumno += $califs["calificacion"];
-    }
-    $promedioAlumno = number_format($promedioAlumno / count($listaResultados), 2);
 
-    $asistenciaTotal *= 10;
+        if($listaResultados){
+            $promedioAlumno = 0;
+            foreach ($listaResultados as $califs) {
+                $promedioAlumno += $califs["calificacion"];
+            }
+            $promedioAlumno = number_format($promedioAlumno / count($listaResultados), 2);
+        }
+
+        if($listaAsistencias){
+            foreach($listaAsistencias as $asist){
+                if($asist['estatus'] == 'A' || $asist['estatus'] == 'J'){
+                    $countAsist++;
+                }
+            }
+            $countAsist/=(count($listaAsistencias)*.01);
+            var_dump($countAsist);
+        }
+
+
+    }
 
 ?>
 <!DOCTYPE html>
@@ -92,7 +118,7 @@
             <div class="metricas-rapidas">
                 <div class="metrica-box">
                     <div class="metrica-titulo">Asistencia total</div>
-                    <?php echo "<div class='metrica-valor'>$asistenciaTotal%</div>"; ?>
+                    <?php echo "<div class='metrica-valor'>$countAsist%</div>"; ?>
                 </div>
             
                 <div class="metrica-box">
