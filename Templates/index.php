@@ -1,35 +1,18 @@
 <?php
+include '../config/config_bd.php';
+include '../Dynamics/validaciones.php'
+
 session_start();
 
-//include '../config/config_bd.php';
+if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["userLog"]) && isset($_POST["passwordLog"])){
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    //sanitizar xd
-    $correo = mysqli_real_escape_string($conexion, trim($_POST['correo']));
-    $password = mysqli_real_escape_string($conexion, trim($_POST['password']));
+    $usuario = sanitizarEntrada($conexion,$_POST['userLog']);
 
-    $sql = "SELECT id_usuario, nombre, tipo, password FROM usuarios WHERE correo = '$correo'";
-    
-    $resultado_query = mysqli_query($conexion, $sql);
+    $sql = "SELECT nocta,password FROM ";
 
-    if ($resultado_query) {
-        $usuario = mysqli_fetch_assoc($resultado_query);
-        if ($usuario && $password === $usuario['password']) {
-            $_SESSION['id_usuario'] = $usuario['id_usuario'];
-            $_SESSION['nombre']     = $usuario['nombre'];
-            $_SESSION['tipo']       = $usuario['tipo']; 
-            if ($_SESSION['tipo'] === 'profesor') {
-                header("Location: profesorGraph.php");
-            } else {
-                header("Location: ../../index.html");
-            }
-            exit();
-            
-        } else {
-            $error = "Correo o contraseña incorrectos.";
-        }
-    }
 }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -53,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <article class="articleLogin"> <!--Articulo para el apartado de bienvenida-->
                     <!--Formulario para el inicio de sesion-->
-                    <form class="loginForm">
+                    <form action="index.php" method="post" class="loginForm">
                         <h1>Iniciar Sesión</h1>
                         <!--Apartado para ingresar usuario-->
                         <div class="inputContainer">
