@@ -1,12 +1,6 @@
-body{
-    margin: 0;
-}
 main {
     box-sizing: border-box;
-    width: 100vw;
-    height: 100vh;
     padding: 3vw;
-    background-color: #5F8ADC;
     display: flex;
     flex-direction: column;
 }
@@ -28,13 +22,12 @@ main {
     font-size: 1.5vw;
     border: 2vw solid #CDDBF4;
     background-color: #B4C0D3;
-    flex-grow: 4;
+    flex-grow: 9;
 }
 .botonesforo {
     width: 80vw;
     height: 10vh;
     font-size: 1.5vw;
-    margin-top: 2vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -46,7 +39,9 @@ main {
     background-color: #D9D9D9;
     color: black;
     border-radius: 5vw;
-    margin: 1vh;
+    margin-top: 1vh;
+    margin-bottom: 0;
+    flex-grow: 1;
 
 }
 #historial-submit {
