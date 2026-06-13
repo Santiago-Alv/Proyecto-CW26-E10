@@ -11,7 +11,8 @@
     //noseque consulta noseque noseque fetch noseque
     }
     //PLACEHOLDER
-    $nombre_admin = "Angela";
+    $tipo_usu = "Administrador";
+    $nombre_usu = "Angela"; 
 ?>
 <!--  ya desp incorporo el foreach y eso -->
 <!DOCTYPE html>
@@ -24,7 +25,7 @@
 </head>
 <body>
 
-    <?php include '../../utilities/navbarAdmin.php'; ?>
+    <?php include '../../utilities/navbar.php'; ?>
 
     <div class="main-layout">
         <?php include '../../utilities/sidebarAdmin.php'; ?>

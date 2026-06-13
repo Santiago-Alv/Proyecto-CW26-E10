@@ -1,7 +1,7 @@
 <?php
      // placeholder
-    $nombre_alumno = "Juanito Juanito"; 
-
+    $tipo_usu = "Alumno";
+    $nombre_usu = "Juanito Juanito"; 
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -13,12 +13,12 @@
         <link rel="stylesheet" href="../../Statics/Css/alumGraph.css">
     </head>
     <body>
-        <?php include '../../utilities/navbarAlumn.php'; ?>
+        <?php include '../../utilities/navbar.php'; ?>
         <div class="main-layout">
             <?php include '../../utilities/sidebarAlumn.php'; ?>
             <main id= "contenido">
                 <div id = "tituloModulo">
-                    <h1>Modulo 4 - Tu estado</h1>
+                    <h1>Modulo 1 - Tu estado</h1>
                 </div>
                 <div class = "tablas">
                     <div id = "asistencia">

@@ -1,5 +1,5 @@
 <?php
-// sidebarAdmin.php
+    // sidebarAdmin.php
 ?>
 
     <aside class="sidebar">

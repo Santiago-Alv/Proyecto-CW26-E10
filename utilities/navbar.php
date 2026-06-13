@@ -1,7 +1,11 @@
-<header class="top-header">
+<?php
+// navbarAdmin.php
+?>    
+    <header class="top-header">
     <div class="logo">
         <img src="../../Statics/img/logo-unam.png" alt="Logo UNAM"> 
     </div>
+    <p id = "nomb_proyecto">No desErTE</p>
     <button class="btn-logout">Cerrar Sesión</button>
     </header>
 
@@ -11,6 +15,8 @@
             <span><</span>
             <span>></span>
             <!-- Sanitizar -->
-            <span>Alumno <?php echo htmlspecialchars($nombre_alumno); ?></span>
+            <span><?php
+                echo $tipo_usu." ".htmlspecialchars($nombre_usu); 
+                ?></span>
         </div>
     </div>

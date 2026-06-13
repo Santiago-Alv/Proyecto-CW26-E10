@@ -1,7 +1,8 @@
 
 <?php
     // placeholder
-    $nombre_alumno = "Juanito Juanito"; 
+    $tipo_usu = "Profesor";
+    $nombre_usu = "Jirafales";
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -13,7 +14,7 @@
         <link rel="stylesheet" href="../../Statics/Css/profeGraph.css">
     </head>
     <body>
-        <?php include '../../utilities/navbarAlumn.php'; ?>
+        <?php include '../../utilities/navbar.php'; ?>
         <div class="main-layout">
             <?php include '../../utilities/sidebarProfe.php'; ?>
             <main id= "contenido">

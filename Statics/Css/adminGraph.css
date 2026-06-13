@@ -35,6 +35,14 @@ body {
     font-weight: bold;
     cursor: pointer;
 }
+ #nomb_proyecto{
+    color:#b8860b;
+    font-size:x-large;
+    padding: 5px;
+    border-color: #b8860b;
+    border-style: double;
+ }
+
 
 .sub-navbar {
     background-color: #17376e;

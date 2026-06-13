@@ -3,7 +3,7 @@
 
     $sql = "SELECT nombre_grupo FROM grupo WHERE id_profesor = 3";
     $query = mysqli_query($conexion, $sql); 
-    $nomb_grupo = array();
+    $nomb_grupos = array();
     if($query)
     {
         while($fila = mysqli_fetch_assoc($query))

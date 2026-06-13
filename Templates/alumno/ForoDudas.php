@@ -1,5 +1,4 @@
 <?php
-    include '../../config/config_db.php';
     
     //$nomb_alumno 
     //$grupo
@@ -12,13 +11,15 @@
 
         $sql = "INSERT INTO duda (estado_duda, duda_text, respuesta, id_alumno, id_grupo, id_profesor)
                 VALUES ('P','$duda', 'respuesta', 1,1,1)";
+
+        include '../../config/config_db.php';
         $query = mysqli_query($conexion, $sql); 
 
     }
 
     // placeholder
-    $nombre_alumno = "Juanito Juanito"; 
-
+    $tipo_usu = "Alumno";
+    $nombre_usu = "Juanito Juanito";
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -30,7 +31,7 @@
         <link rel="stylesheet" href="../../Statics/Css/alumGraph.css">
     </head>
     <body>
-        <?php include '../../utilities/navbarAlumn.php'; ?>
+        <?php include '../../utilities/navbar.php'; ?>
         <div class="main-layout">
             <?php include '../../utilities/sidebarAlumn.php'; ?>
             <main id= "contenido">
