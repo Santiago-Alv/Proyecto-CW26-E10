@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-/config/config_bd.php
-=======
 /config/config_db.php
->>>>>>> origin/feature/otomiphp
+/Statics/img/recursos/*
+!/Statics/img/recursos/.gitkeep
