@@ -7,20 +7,21 @@
 
 // placeholder
 $nombre_alumn = "Panchito"; 
+$grupo_alumn = "61D";
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-    <link rel="stylesheet" href="../../Statics/Css/adminGraph.css">
+    <link rel="stylesheet" href="../../Statics/Css/AlumGraph.css">
     <link rel="stylesheet" href="../../Statics/Css/HomeAlumno.css">
         <title>Home alumno</title>
 </head>
 <body>
         <?php include '../../utilities/navbarAlumno.php'; ?>
         <div class="main-layout">
-            <?php include '../../utilities/sidebarAlumno.php'; ?>
+            <?php include '../../utilities/sidebarAlumn.php'; ?>
 
             <main id= "contenido">
                 <a href="ForoDudas.php" class="enlace-dudas"></a>

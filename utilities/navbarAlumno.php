@@ -15,5 +15,6 @@
             <span>></span>
             <!-- Sanitizar -->
             <span>Alumno: <?php echo htmlspecialchars($nombre_alumn); ?></span>
+            <span>Grupo: <?php echo htmlspecialchars($grupo_alumn); ?></span>
         </div>
     </div>
