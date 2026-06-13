@@ -1,12 +1,7 @@
 <?php
     include '../../config/config_bd.php';
 
-    $nombreProfesor = "Fersa y beto ";
-    $noctaProfesor = "122000045";
-    $correoProfesor = "Ferto@prof.enp.unam";
-    $contrasenaProfesor = "321Fersa.beto";
-    $modulo_activo = "Sistemas";
-    $listaGrupos = array("61B, 61D");
+    
 
     
     if(isset($_GET['nombre']) && isset($_GET['cuenta'])){

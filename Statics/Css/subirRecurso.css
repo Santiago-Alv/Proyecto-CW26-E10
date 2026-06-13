@@ -201,31 +201,12 @@ body, html {
     padding: 5px 20px; 
 }
 
-.falso-input-file {
-    background-color: #ffffff;
-    border: 1px solid #999;
-    padding: 3px 6px;
-    display: flex;
-    align-items: center;
-    width: 60%;
-    height: 26px;
-}
-
-.file-oculto {
-    display: none; /* Ocultamos el input original */
-}
-
-.btn-browse {
-    background-color: #e0e0e0;
-    border: 1px solid #999;
-    padding: 1px 12px;
-    font-size: 12px;
-    color: #333;
+input[type="file"] {
+    background-color: transparent;
+    border: none;
     cursor: pointer;
-    margin-left: auto; 
-    user-select: none;
+    font-size: 14px;
 }
-
 
 .alinear-boton {
     margin-left: 140px; 
@@ -257,4 +238,213 @@ body, html {
 
 .seccion-eliminar .capsula-header {
     margin-bottom: 0; 
+}
+/* ==========================================================================
+   6. CONTENIDO CENTRAL (Vista de Recursos Actualizada)
+   ========================================================================== */
+.view-recursos {
+    background-color: #6a95e9; 
+    flex: 1; 
+    padding: 30px 40px; /* Reduje un poco el padding superior para igualar tu imagen */
+    overflow-y: auto; 
+}
+
+.recursos-container {
+    max-width: 750px;
+    width: 100%;
+}
+
+/* El nuevo encabezado rectangular plano */
+.header-rectangular {
+    background-color: #e0e0e0;
+    width: fit-content;
+    min-width: 350px;
+    padding: 12px 30px;
+    display: inline-flex;
+    align-items: center;
+    font-size: 18px;
+    color: #1a1a1a;
+    margin-bottom: 25px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* Ligera sombrita para que resalte del fondo */
+}
+
+.icono-mas {
+    font-size: 26px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+/* Contenedor de inputs: Se movió a la derecha para respetar la sangría del diseño */
+.contenedor-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-left: 30px; 
+}
+
+.input-gris {
+    background-color: #e0e0e0;
+    border: none; /* En tu nueva imagen ya no se ven con borde negro marcado */
+    border-radius: 15px; /* Bordes un poco menos redondeados */
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    box-shadow: inset 1px 1px 3px rgba(0,0,0,0.1); /* Le da ese toque de profundidad al input */
+}
+
+.input-gris::placeholder {
+    color: #777;
+}
+
+.input-largo {
+    width: 90%;
+    max-width: 500px;
+}
+
+.input-corto {
+    width: 250px;
+    appearance: auto;
+}
+
+/* Campo Browse */
+.wrapper-archivo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 20px; 
+}
+
+.texto-archivo {
+    color: #777;
+}
+
+.falso-input-file {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    width: 65%;
+    height: 24px;
+}
+
+.file-oculto {
+    display: none; 
+}
+
+.btn-browse {
+    background-color: #d0d0d0;
+    border: 1px solid #aaa;
+    padding: 2px 10px;
+    font-size: 11px;
+    color: #111;
+    cursor: pointer;
+    margin-left: auto; 
+}
+
+/* Botón de Subir */
+.alinear-boton {
+    margin-left: 150px; /* Centrado visual relativo a los inputs */
+    margin-top: 5px;
+}
+
+.btn-gris {
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 40px;
+    font-size: 15px;
+    color: #1a1a1a;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+    transition: background-color 0.2s ease;
+}
+
+.btn-gris:hover {
+    background-color: #c8c8c8;
+}
+/* ==========================================================================
+   5. SIDEBAR IZQUIERDO (Acordeón Dinámico de Grupos)
+   ========================================================================== */
+.sidebar-izquierdo {
+    background-color: #1d3557; /* Azul marino del menú lateral */
+    width: 240px;
+    min-width: 240px;
+    padding: 30px 20px;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre cada grupo */
+}
+
+/* Configuraciones para el acordeón nativo de HTML */
+.grupo-acordeon {
+    width: 100%;
+}
+
+.grupo-acordeon summary {
+    list-style: none; /* Quita la flechita negra por defecto en Firefox/Chrome */
+    outline: none;
+}
+.grupo-acordeon summary::-webkit-details-marker {
+    display: none; /* Quita la flechita negra en Safari */
+}
+
+/* El botón principal del grupo (Cápsula gris) */
+.summary-grupo {
+    background-color: #cbd5e1;
+    color: #1a1a1a;
+    padding: 12px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    transition: all 0.2s ease;
+    display: block;
+    user-select: none;
+}
+
+.summary-grupo:hover {
+    background-color: #b2c2d7;
+}
+
+/* Efecto cuando el profesor le da clic y se abre el menú */
+.grupo-acordeon[open] .summary-grupo {
+    background-color: #e2e8f0;
+    border: 2px solid #0b2545;
+    /* Quitamos el redondeo de abajo para que pegue con el submenú */
+    border-bottom-left-radius: 5px; 
+    border-bottom-right-radius: 5px;
+}
+
+/* El cajoncito azul oscuro que se despliega con las opciones */
+.enlaces-grupo {
+    background-color: #0b2545; /* Un azul más oscuro para dar profundidad */
+    border-radius: 0 0 15px 15px; /* Redondeado solo por abajo */
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    margin-top: -2px; /* Sube un poco para pegarse a la cápsula gris */
+    box-shadow: inset 0 3px 5px rgba(0,0,0,0.2); /* Sombra interna para que se vea hundido */
+}
+
+/* Los links de Info, Dudas y Recursos */
+.btn-sublink {
+    color: #a0c4ff; /* Azul clarito */
+    text-decoration: none;
+    padding: 8px 20px;
+    font-size: 14px;
+    text-align: center;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-sublink:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1); /* Resalta sutilmente al pasar el mouse */
 }
