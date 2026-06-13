@@ -1,16 +1,38 @@
 <?php
-// sidebarAdmin.php
+    include '../../config/config_db.php';
+
+  /*  $sql = "SELECT id_modulo FROM modulo";
+    $query = mysqli_query($conexion, $sql); 
+
+    $num_modulo = array();
+
+    if($query)
+    {
+        while($fila = mysqli_fetch_assoc($query))
+        {   
+            $num_modulo = $fila["id_modulo"];
+            var_dump($num_modulo[$x]);
+        }
+    }
+*/
 ?>
 
     <aside class="sidebar">
         <nav>
             <ul>
-                <li><a href="ForoDudas.php">Dudas al<br>profesor</a></li>
-                <li><a href="Modulo1Alumno.php">Modulo 1</a></li>
-                <li><a href="Modulo2Alumno.php">Modulo 2</a></li>
-                <li><a href="Modulo3Alumno.php">Modulo 3</a></li>
-                <li><a href="Modulo4Alumno.php">Modulo 4</a></li>
-                <li><a href="Modulo5Alumno.php">Modulo 5</a></li>
+                <li><a id="botonDuda" href="ForoDudas.php">Dudas al<br>profesor</a></li>
+                <?php
+                    for($cuentamod = 1; $cuentamod<=5; $cuentamod++)
+                    {
+                        echo "<li>";
+                        echo "<details class = 'modulo' >";
+                        echo "<summary>Modulo $cuentamod </summary>";
+                        echo "<a href= 'EstadoModuloAlumno.php'>Estado</a>";
+                        echo "<a href='#'>Recursos</a>";
+                        echo "</details>";
+                        echo "</li>";
+                    }
+                ?>
             </ul>
         </nav>
     </aside>
