@@ -54,12 +54,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['btn_subir'])) {
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Subir Recurso</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursos Profesor</title>
+    <link rel="stylesheet" href="../../Statics/Css/adminGraph.css">
+
     <link rel="stylesheet" href="../../Statics/Css/subirRecurso.css">
 </head>
 <body>
 
-    <?php include '../../utilities/navbarProfe.php'; ?>
+    <?php include '../../utilities/navbar.php'; ?>
 
     <div class="main-layout">
         <?php 

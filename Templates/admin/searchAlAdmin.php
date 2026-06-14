@@ -1,12 +1,15 @@
 <?php
 
-//session_start();
-
+session_start();
+//var_dump($_SESSION);
 
 // consulta db
 
 // placeholder
-$nombre_admin = "Angela"; 
+$tipo_usu = "Administrador";
+$nombre_usu = "Angela";  
+
+$nombre_admin = $_SESSION["nombre_administrador"];
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +22,7 @@ $nombre_admin = "Angela";
 </head>
 <body>
 
-    <?php include '../../utilities/navbarAdmin.php'; ?>
+    <?php include '../../utilities/navbar.php'; ?>
 
     <div class="main-layout">
         <?php include '../../utilities/sidebarAdmin.php'; ?>

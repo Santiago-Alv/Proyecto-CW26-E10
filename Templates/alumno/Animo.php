@@ -21,7 +21,7 @@ $grupo_alumn = "61D";
 <body>
         <?php include '../../utilities/navbarAlumno.php'; ?>
         <div class="main-layout">
-            <?php include '../../utilities/sidebarAlumno.php'; ?>
+            <?php include '../../utilities/sidebarAlumn.php'; ?>
 
             <main id= "contenido">
                 <div class="circulo-carita"><img src="../../Statics/img/carita.png" alt="carita"></div>

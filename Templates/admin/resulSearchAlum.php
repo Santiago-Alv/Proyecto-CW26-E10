@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../Statics/Css/adminGraph.css">
 </head>
 <body>
-    <?php include '../../utilities/navbarAdmin.php'; ?>
+    <?php include '../../utilities/navbar.php'; ?>
 
     <div class="main-layout">
         <?php include '../../utilities/sidebarAdmin.php'; ?>

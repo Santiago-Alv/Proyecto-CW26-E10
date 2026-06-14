@@ -1,10 +1,4 @@
-body{
-    margin: 0;
-}
 main {
-    box-sizing: border-box;
-    width: 100vw;
-    height: 100vh;
     padding: 2vh;
     background-color: #5F8ADC;
     display: flex;
@@ -12,7 +6,7 @@ main {
     flex-grow: 1;
 }
 .lista-asist{
-    width: 90vw;
+    width: 85vw;
     height: 50vh;
     overflow-x: auto;
     overflow-y: auto; 

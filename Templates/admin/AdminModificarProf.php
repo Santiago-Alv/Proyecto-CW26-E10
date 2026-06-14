@@ -1,5 +1,6 @@
 <?php
-    $nombre_admin = "Angela";
+    $tipo_usu = "Administrador";
+    $nombre_usu = "Angela"; 
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -11,7 +12,7 @@
         <link rel="stylesheet" href="../../Statics/Css/adminGraph.css">
     </head>
     <body>
-        <?php include '../../utilities/navbarAdmin.php'; ?>
+        <?php include '../../utilities/navbar.php'; ?>
         
         <div class="main-layout">
             <?php include '../../utilities/sidebarAdmin.php'; ?>
@@ -21,7 +22,7 @@
                 <h1>Profesor<br>Jirafales</h1>   
                 <p id="txt-modificar">Modificar</p>
                 <input type="text" name="nomb-profe" id="ipt-mod-nomb-prof" placeholder="Nombre: Jirafales" required>
-                <input type="number" name="numcuenta-profe" id="ipt-mod-numcuenta-prof" placeholder="Número de cuenta: 123456789" required>
+                <input type="number" name="numcuenta-profe" id="ipt-mod-numcuenta-prof" placeholder="Número de trabajador: 123456789" required>
                 <input type="email" name="correo-profe" id="ipt-mod-correo-prof" placeholder="Correo: " required>
                 <input type="password" name="passw-profe" id="ipt-mod-passw-prof" placeholder="Contraseña: " required>
                 <p id="txt-grupo">Grupo</p> 

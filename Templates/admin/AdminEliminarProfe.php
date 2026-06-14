@@ -6,7 +6,8 @@
 // consulta db
 
 // placeholder
-$nombre_admin = "Angela"; 
+$tipo_usu = "Administrador";
+$nombre_usu = "Angela"; 
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -18,7 +19,7 @@ $nombre_admin = "Angela";
         <link rel="stylesheet" href="../../Statics/Css/adminGraph.css">
     </head>
     <body>
-        <?php include '../../utilities/navbarAdmin.php'; ?>
+        <?php include '../../utilities/navbar.php'; ?>
         <div class="main-layout">
             <?php include '../../utilities/sidebarAdmin.php'; ?>
 
