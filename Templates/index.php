@@ -1,19 +1,119 @@
 <?php
-include '../config/config_bd.php';
-include '../Dynamics/validaciones.php'
+    include '../config/config_bd.php';
+    include '../Dynamics/validaciones.php';
 
-session_start();
+    session_start();
 
-if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["userLog"]) && isset($_POST["passwordLog"])){
 
-    $usuario = sanitizarEntrada($conexion,$_POST['userLog']);
+    if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["userLog"]) && isset($_POST["passwordLog"])){
 
-    $sql = "SELECT nocta,password FROM ";
+        $usuario = sanitizarEntrada($conexion,$_POST['userLog']);
+        $password = $_POST["passwordLog"];
+        $tipoUsuario = buscarUsuario($conexion,$usuario);
 
-}
+        $sql = "SELECT * FROM $tipoUsuario WHERE $usuario";
+
+        $query = mysqli_query($conexion,$sql);
+        if($query){
+            $fila = mysqli_fetch_assoc($query);
+
+            if($tipoUsuario == 'alumno' && hash_equals($fila["contraseña"],hash("sha256",$password))){
+
+                $_SESSION['usuario'] = $tipoUsuario;
+                $_SESSION['id_alumno'] = $fila['id_alumno'];
+                $_SESSION['nocta'] = $fila['nocta'];
+                $_SESSION['nombre'] = $fila['nombre'];
+                $_SESSION['grupo'] = "";
+                $sql2 = "SELECT nombre_grupo FROM grupo WHERE id_grupo = ". $fila['id_grupo'] ."";
+                if($query2 = mysqli_query($conexion,$sql2)){
+                    $fila2 = mysqli_fetch_assoc($query2);
+                    $_SESSION['grupo'] = $fila2['nombre_grupo'];
+                }
+
+                setcookie("user", $fila['nocta'], time() + (86400));
+                //header("Location: ./Profesor/homeProfesor.php");
+            }
+            if($tipoUsuario == 'profesor' && hash_equals($fila["contraseña"],hash(sha256,$password))){
+
+                $_SESSION['usuario'] = $tipoUsuario;
+                $_SESSION['id_profesor'] = $fila['id_profesor'];
+                $_SESSION['numero_trabajador'] = $fila['numero_trabajador'];
+                $_SESSION['nombre_profesor'] = $fila['nombre_profesor'];
+
+                setcookie("user", $fila['numero_trabajador'], time() + (86400));
+                header("Location: ./Profesor/homeProfesor.php");
+            }
+            if($tipoUsuario == 'administrador' && hash_equals($fila["contraseña"],hash(sha256,$password))){
+                
+                $_SESSION['usuario'] = $tipoUsuario;
+                $_SESSION['id_administrador'] = $fila['id_administrador'];
+                $_SESSION['numero_trabajador'] = $fila['numero_trabajador'];
+                $_SESSION['nombre_administrador'] = $fila['nombre_administrador'];
+
+                setcookie("user", $fila['numero_trabajador'], time() + (86400));
+                header("Location: ./admin/searchAlAdmin.php");
+            }
+        } else {
+            header("Location: ./index.php");
+        }
+        
+    } else {
+        if(isset($_COOKIE["user"])){
+            $usuario = $_COOKIE["user"];
+
+            $tipoUsuario = buscarUsuario($conexion,$usuario);
+            
+            $sql = "SELECT * FROM $tipoUsuario WHERE $usuario";
+            $query = mysqli_query($conexion,$sql);
+            
+            if($query){
+                $fila = mysqli_fetch_assoc($query);
+
+                if($tipoUsuario == 'alumno'){
+
+                    $_SESSION['usuario'] = $tipoUsuario;
+                    $_SESSION['id_alumno'] = $fila['id_alumno'];
+                    $_SESSION['nocta'] = $fila['nocta'];
+                    $_SESSION['nombre'] = $fila['nombre'];
+                    $_SESSION['grupo'] = "";
+
+                    $sql2 = "SELECT nombre_grupo FROM grupo WHERE id_grupo = ". $fila['id_grupo'] ."";
+                    if($query2 = mysqli_query($conexion,$sql2)){
+                        $fila2 = mysqli_fetch_assoc($query2);
+                        $_SESSION['grupo'] = $fila2['nombre_grupo'];
+                    }
+
+                    setcookie("user", $fila['nocta'], time() + (86400));
+                    //header("Location: ./Profesor/homeProfesor.php");
+                }
+                if($tipoUsuario == 'profesor'){
+
+                    $_SESSION['usuario'] = $tipoUsuario;
+                    $_SESSION['id_profesor'] = $fila['id_profesor'];
+                    $_SESSION['numero_trabajador'] = $fila['numero_trabajador'];
+                    $_SESSION['nombre_profesor'] = $fila['nombre_profesor'];
+
+                    setcookie("user", $fila['numero_trabajador'], time() + (86400));
+                    header("Location: ./Profesor/homeProfesor.php");
+                }
+                if($tipoUsuario == 'administrador'){
+                    
+                    $_SESSION['usuario'] = $tipoUsuario;
+                    $_SESSION['id_administrador'] = $fila['id_administrador'];
+                    $_SESSION['numero_trabajador'] = $fila['numero_trabajador'];
+                    $_SESSION['nombre_administrador'] = $fila['nombre_administrador'];
+
+                    setcookie("user", $fila['numero_trabajador'], time() + (86400));
+                    header("Location: ./admin/searchAlAdmin.php");
+                }
+            }
+
+        }
+    }
 
 
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -41,7 +141,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["userLog"]) && isset($_P
                         <!--Apartado para ingresar usuario-->
                         <div class="inputContainer">
                             <label for="userLog" class="input">
-                                <input type="text" id="userLog" name="userLog" minlength="3" maxlength="15" placeholder="Nombre de Usuario" required>
+                                <input type="text" id="userLog" name="userLog" minlength="3" maxlength="15" placeholder="Numero de cuenta/trabajador" required>
                             </label>
                         <!--Apartado para ingresar contraseña-->
                             <label for="passwordLog" class="input">  
@@ -49,7 +149,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["userLog"]) && isset($_P
                             </label>
                         </div>
                         <button type="submit">INGRESAR</button>
-                        <article>No tienes una cuenta?, <a id="registerRelocation" href="signup.html">Registrate aquí.</a></article>
                     </form>
                 </article>
             </section>
