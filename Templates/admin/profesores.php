@@ -1,5 +1,5 @@
 <?php
-    include '../../config/config_db.php';
+    //include '../../config/config_bd.php';
 
     $nombreProfesor = "Fersa y beto ";
     $noctaProfesor = "122000045";

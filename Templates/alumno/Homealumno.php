@@ -21,7 +21,7 @@ $grupo_alumn = "61D";
 <body>
         <?php include '../../utilities/navbarAlumno.php'; ?>
         <div class="main-layout">
-            <?php include '../../utilities/sidebarAlumn.php'; ?>
+            <?php include '../../utilities/sidebarAlumno.php'; ?>
 
             <main id= "contenido">
                 <a href="ForoDudas.php" class="enlace-dudas"></a>

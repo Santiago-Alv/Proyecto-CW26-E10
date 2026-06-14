@@ -1,7 +1,13 @@
 <?php
-     // placeholder
-    $nombre_alumno = "Juanito Juanito"; 
 
+//session_start();
+
+
+// consulta db
+
+// placeholder
+$nombre_alumn = "Panchito"; 
+$grupo_alumn = "61D";
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -9,44 +15,43 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Modulo alumno</title>
+        <link rel="stylesheet" href="../../Statics/Css/AlumGraph.css">
         <link rel="stylesheet" href="../../Statics/Css/ModuloAlumno.css">
-        <link rel="stylesheet" href="../../Statics/Css/alumGraph.css">
     </head>
     <body>
-        <?php include '../../utilities/navbarAlumn.php'; ?>
+        <?php include '../../utilities/navbarAlumno.php'; ?>
         <div class="main-layout">
-            <?php include '../../utilities/sidebarAlumn.php'; ?>
-            <main id= "contenido">
-                <div id = "tituloModulo">
-                    <h1>Modulo 4 - Tu estado</h1>
+            <?php include '../../utilities/sidebarAlumno.php'; ?>
+        <main id= "contenido">
+            <div id = "tituloModulo">
+                <h1>Modulo 4 - Tu estado</h1>
+            </div>
+            <div class = "tablas">
+                <div id = "asistencia">
+                    <table>
+                        <thead>
+                            <td>Asistencia de modulo</td>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>88%</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <div class = "tablas">
-                    <div id = "asistencia">
-                        <table>
-                            <thead>
-                                <td>Asistencia de modulo</td>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>88%</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div id = "calificacion">
-                        <table>
-                            <thead>
-                                <td>Calificación modular</td>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>9</td>
-                                </tr>
-                        </table>
-                    </div>
-                </div> 
-            </main> 
-        </div>  
+                <div id = "calificacion">
+                    <table>
+                        <thead>
+                            <td>Calificación modular</td>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>9</td>
+                            </tr>
+                    </table>
+                </div>
+            </div> 
+        </main>   
     </body>
 </html>
     
