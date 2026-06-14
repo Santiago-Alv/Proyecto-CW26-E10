@@ -14,7 +14,7 @@ $nombre_admin = "Angela";
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Eliminar profesor Administrador</title>
-        <link rel="stylesheet" href="../../Statics/Css/AdminProfe.css">
+        <link rel="stylesheet" href="../../Statics/Css/AdminAlumno.css">
         <link rel="stylesheet" href="../../Statics/Css/adminGraph.css">
     </head>
     <body>
@@ -22,12 +22,11 @@ $nombre_admin = "Angela";
         <div class="main-layout">
             <?php include '../../utilities/sidebarAdmin.php'; ?>
 
-            
             <main id= "contenido">
-                <div id="confi-elimprof">
-                    <h1 id="NombProfAdmin">Profesor<br>Jirafales</h1>   
-                    <div class="cont-confirma-elimprof">
-                        <label for="pregunta" id= "preg-confirma-elimprof">¿Estás seguro de eliminar a<br>Jirafales ?</label>
+                <div id="confi-elimalumn">
+                    <h1 id="NombAlumAdmin">Alumno<br>Juanito Juana</h1>   
+                    <div class="cont-confirma-elimalumn">
+                        <label for="pregunta" id= "preg-confirma-elimalumn">¿Estás seguro de eliminar a<br>Juanito Juanito ?</label>
                         <div class="botones-confelim">
                             <form action="Holaprofe.php">
                                 <button type="submit" id="cancelelim-submit">Cancelar</button>
@@ -36,12 +35,16 @@ $nombre_admin = "Angela";
                         </div>
                     </div> 
                 </div> 
-                <div class="boton-modprofe">
-                    <div class = "boton-mod-elim">
-                        <form action="AdminModificarProf.php">
-                            <button type="submit" id="modprofe-submit">Modificar</button>
-                        </form>
-                            <button type="submit" id="elimprof-submit">Eliminar</button>
+                <div class="boton-modalumn">
+                    <div class="barra-navegacion">
+                        <button class="btn-nav">Ver resultado de formulario</button>
+
+                        <a href="?accion=modificar">
+                            <button type="submit" id="modalumn-submit" class="<?php echo $accion == 'modificar' ? 'activo' : ''; ?>">Modificar</button>
+                        </a>
+                        <a href="?accion=eliminar">
+                            <button type="submit" id="elimalumn-submit" class="<?php echo $accion == 'modificar' ? 'activo' : ''; ?>">Eliminar</button>
+                        </a>
                     </div>
                 </div>
             </main>   

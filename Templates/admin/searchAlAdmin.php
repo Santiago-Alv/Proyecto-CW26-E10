@@ -31,7 +31,7 @@ $nombre_admin = $_SESSION["nombre_administrador"];
                 <div class="search-title">
                     <span>🔍 Buscar alumno</span>
                 </div>
-                <form action="alumnos.php" method="GET" class="search-form">
+                <form action="resulSearchAlum.php" method="GET" class="search-form">
                     <input type="text" name="nombre" placeholder="Nombre del alumno">
                     <input type="text" name="cuenta" placeholder="Número de cuenta">
                     <button type="submit" class="btn-search">Buscar</button>

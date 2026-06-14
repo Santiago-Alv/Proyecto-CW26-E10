@@ -1,13 +1,8 @@
-<?php
-// navbarAdmin.php
-$nombre_admin = "Angela"; // Placeholder
-?>    
-    <header class="top-header">
+<header class="top-header">
     <div class="logo">
         <img src="../../Statics/img/logo-unam.png" alt="Logo UNAM"> 
     </div>
-    
-    <a href="./../../Dynamics/cerrar_sesion.php"><button class="btn-logout">Cerrar Sesión</button></a>
+    <button class="btn-logout">Cerrar Sesión</button>
     </header>
 
     <div class="sub-navbar">
@@ -16,6 +11,6 @@ $nombre_admin = "Angela"; // Placeholder
             <span><</span>
             <span>></span>
             <!-- Sanitizar -->
-            <span>Admin <?php echo htmlspecialchars($nombre_admin); ?></span>
+            <span>Alumno <?php echo htmlspecialchars($nombre_alumno); ?></span>
         </div>
     </div>
