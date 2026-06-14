@@ -94,13 +94,13 @@ CREATE TABLE duda(
     id_duda INT PRIMARY KEY AUTO_INCREMENT,
     estado_duda CHAR(2) NOT NULL,
     duda_text VARCHAR(2000) NOT NULL,
-    respuesta VARCHAR(2000)  NOT NULL,
+    respuesta VARCHAR(2000) NULL,
     id_alumno INT NOT NULL,
     id_grupo INT NOT NULL,
-    id_profesor INT NOT NULL,
+    id_modulo INT NOT NULL,
     FOREIGN KEY (id_alumno) REFERENCES alumno(id_alumno),
     FOREIGN KEY (id_grupo) REFERENCES grupo(id_grupo),
-    FOREIGN KEY (id_profesor) REFERENCES profesor(id_profesor)
+    FOREIGN KEY (id_modulo) REFERENCES modulo(id_modulo)
 );
 INSERT INTO duda(id_alumno,id_grupo,id_profesor,estado_duda, duda_text, respuesta) VALUES 
 (1, 1, 3, "M","Que es git", "Es un controlador de versiones");
@@ -119,10 +119,10 @@ CREATE TABLE formulario(
 
 CREATE TABLE administrador(
     id_administrador INT PRIMARY KEY AUTO_INCREMENT,
-    nombre_administrador VARCHAR(100),
-    apell_pat_admin VARCHAR(30) NOT NULL,
+    nombre_administrador VARCHAR(100) NOT NULL,
+    apell_pat_admin VARCHAR(30),
     apell_mat_admin VARCHAR(30),
-    numero_trabajador VARCHAR(100),
+    numero_trabajador VARCHAR(100) UNIQUE,
     correo VARCHAR(150),
     contraseña VARCHAR(260)
 );

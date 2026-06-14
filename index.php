@@ -1,6 +1,6 @@
 <?php
-    include '../config/config_db.php';
-    include '../Dynamics/validaciones.php';
+    include './config/config_db.php';
+    include './Dynamics/validaciones.php';
 
     session_start();
 
@@ -14,45 +14,61 @@
         $sql = "SELECT * FROM $tipoUsuario WHERE $usuario";
 
         $query = mysqli_query($conexion,$sql);
+
         if($query){
-            $fila = mysqli_fetch_assoc($query);
+            //añado esta linea para que no agarre el primer usuario, sino que busque entre todos los posibles usuarios
+            //brute force al fallo la verdad
+            while($fila = mysqli_fetch_assoc($query)){
+                /*
+                var_dump($fila);
 
-            if($tipoUsuario == 'alumno' && hash_equals($fila["contraseña"],hash("sha256",$password))){
-
-                $_SESSION['usuario'] = $tipoUsuario;
-                $_SESSION['id_alumno'] = $fila['id_alumno'];
-                $_SESSION['nocta'] = $fila['nocta'];
-                $_SESSION['nombre'] = $fila['nombre'];
-                $_SESSION['grupo'] = "";
-                $sql2 = "SELECT nombre_grupo FROM grupo WHERE id_grupo = ". $fila['id_grupo'] ."";
-                if($query2 = mysqli_query($conexion,$sql2)){
-                    $fila2 = mysqli_fetch_assoc($query2);
-                    $_SESSION['grupo'] = $fila2['nombre_grupo'];
-                }
-
-                setcookie("user", $fila['nocta'], time() + (86400));
-                //header("Location: ./Profesor/homeProfesor.php");
-            }
-            if($tipoUsuario == 'profesor' && hash_equals($fila["contraseña"],hash(sha256,$password))){
-
-                $_SESSION['usuario'] = $tipoUsuario;
-                $_SESSION['id_profesor'] = $fila['id_profesor'];
-                $_SESSION['numero_trabajador'] = $fila['numero_trabajador'];
-                $_SESSION['nombre_profesor'] = $fila['nombre_profesor'];
-
-                setcookie("user", $fila['numero_trabajador'], time() + (86400));
-                header("Location: ./Profesor/homeProfesor.php");
-            }
-            if($tipoUsuario == 'administrador' && hash_equals($fila["contraseña"],hash(sha256,$password))){
+                echo '<br>';
+                echo$password;
+                echo '<br>';
+                echo $fila["contraseña"];
                 
-                $_SESSION['usuario'] = $tipoUsuario;
-                $_SESSION['id_administrador'] = $fila['id_administrador'];
-                $_SESSION['numero_trabajador'] = $fila['numero_trabajador'];
-                $_SESSION['nombre_administrador'] = $fila['nombre_administrador'];
+                echo '<br>';
+                echo hash("sha256",$password);
+                var_dump(hash_equals($fila["contraseña"],hash("sha256",$password)));
+                */
+                if($tipoUsuario == 'alumno' && hash_equals($fila["contraseña"],hash("sha256",$password))){
 
-                setcookie("user", $fila['numero_trabajador'], time() + (86400));
-                header("Location: ./admin/searchAlAdmin.php");
+                    $_SESSION['usuario'] = $tipoUsuario;
+                    $_SESSION['id_alumno'] = $fila['id_alumno'];
+                    $_SESSION['nocta'] = $fila['nocta'];
+                    $_SESSION['nombre'] = $fila['nombre'];
+                    $_SESSION['grupo'] = "";
+                    $sql2 = "SELECT nombre_grupo FROM grupo WHERE id_grupo = ". $fila['id_grupo'] ."";
+                    if($query2 = mysqli_query($conexion,$sql2)){
+                        $fila2 = mysqli_fetch_assoc($query2);
+                        $_SESSION['grupo'] = $fila2['nombre_grupo'];
+                    }
+
+                    setcookie("user", $fila['nocta'], time() + (86400), "/");
+                    //header("Location: ./Templates/Profesor/homeProfesor.php");
+                }
+                if($tipoUsuario == 'profesor' && hash_equals($fila["contraseña"],hash("sha256",$password))){
+
+                    $_SESSION['usuario'] = $tipoUsuario;
+                    $_SESSION['id_profesor'] = $fila['id_profesor'];
+                    $_SESSION['numero_trabajador'] = $fila['numero_trabajador'];
+                    $_SESSION['nombre_profesor'] = $fila['nombre_profesor'];
+
+                    setcookie("user", $fila['numero_trabajador'], time() + (86400), "/");
+                    header("Location: ./Templates/profesor/homeProfesor.php");
+                }
+                if($tipoUsuario == 'administrador' && hash_equals($fila["contraseña"],hash("sha256",$password))){
+                    
+                    $_SESSION['usuario'] = $tipoUsuario;
+                    $_SESSION['id_administrador'] = $fila['id_administrador'];
+                    $_SESSION['numero_trabajador'] = $fila['numero_trabajador'];
+                    $_SESSION['nombre_administrador'] = $fila['nombre_administrador'];
+
+                    setcookie("user", $fila['numero_trabajador'], time() + (86400), "/");
+                    header("Location: ./Templates/admin/searchAlAdmin.php");
+                }
             }
+            
         } else {
             header("Location: ./index.php");
         }
@@ -83,7 +99,7 @@
                         $_SESSION['grupo'] = $fila2['nombre_grupo'];
                     }
 
-                    setcookie("user", $fila['nocta'], time() + (86400));
+                    setcookie("user", $fila['nocta'], time() + (86400), "/");
                     //header("Location: ./Profesor/homeProfesor.php");
                 }
                 if($tipoUsuario == 'profesor'){
@@ -93,8 +109,8 @@
                     $_SESSION['numero_trabajador'] = $fila['numero_trabajador'];
                     $_SESSION['nombre_profesor'] = $fila['nombre_profesor'];
 
-                    setcookie("user", $fila['numero_trabajador'], time() + (86400));
-                    header("Location: ./Profesor/homeProfesor.php");
+                    setcookie("user", $fila['numero_trabajador'], time() + (86400), "/");
+                    //header("Location: ./Profesor/homeProfesor.php");
                 }
                 if($tipoUsuario == 'administrador'){
                     
@@ -103,8 +119,8 @@
                     $_SESSION['numero_trabajador'] = $fila['numero_trabajador'];
                     $_SESSION['nombre_administrador'] = $fila['nombre_administrador'];
 
-                    setcookie("user", $fila['numero_trabajador'], time() + (86400));
-                    header("Location: ./admin/searchAlAdmin.php");
+                    setcookie("user", $fila['numero_trabajador'], time() + (86400), "/");
+                    //header("Location: ./admin/searchAlAdmin.php");
                 }
             }
 
@@ -119,7 +135,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../Statics/Css/indexGraph.css">
+        <link rel="stylesheet" href="./Statics/Css/indexGraph.css">
         <title>nodeserte</title>
     </head>
     <body>
@@ -130,7 +146,7 @@
             </section>
 
             <section class="generalContainer"> <!--Sección inferior-->
-                <article class="articleIcon"><img  class="icon" src="../Statics/img/login-icon.jpg" alt="Logo"></article> <!--Articulo para el logo-->
+                <article class="articleIcon"><img  class="icon" src="./Statics/img/login-icon.jpg" alt="Logo"></article> <!--Articulo para el logo-->
 
                 </article>
 

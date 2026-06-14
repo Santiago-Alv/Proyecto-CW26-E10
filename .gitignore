@@ -2,3 +2,5 @@
 /config/playground.php
 /Statics/img/recursos/*
 !/Statics/img/recursos/.gitkeep
+
+**/tests*.*
