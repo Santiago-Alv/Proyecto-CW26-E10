@@ -1,5 +1,5 @@
 <?php
-    include '../../config/config_bd.php';
+    include '../../config/config_db.php';
 
     $nombreBuscado = "";
     $noctaBuscado = "";
@@ -7,17 +7,18 @@
     $listaAsistencias = array();
     $countAsist = 0;
 
-    if(isset($_GET['nombre']) && isset($_GET['cuenta'])){
-        $nombreBuscado = $_GET['nombre'];
-        $noctaBuscado = $_GET['cuenta'];
+    if(isset($_GET['id'])){
+        //$nombreBuscado = $_GET['nombre'];
+        //$noctaBuscado = $_GET['cuenta'];
+        $id_alumno = $_GET["id"];
 
-            $sql = "SELECT * FROM alumno WHERE nombre LIKE '%" . $nombreBuscado . "%' OR nocta= $noctaBuscado";
+            $sql = "SELECT * FROM alumno WHERE id_alumno = $id_alumno";
         
         $resultado_query = mysqli_query($conexion,$sql);
         
         if($resultado_query){
             while ($fila = mysqli_fetch_assoc($resultado_query)){
-                $id_alumno = $fila["id_alumno"];
+                //$id_alumno = $fila["id_alumno"];
                 $nombreAlumno = $fila["nombre"];
                 $noctaAlumno = $fila["nocta"];
                 $id_grupo = $fila["id_grupo"];
@@ -67,7 +68,7 @@
                 }
             }
             $countAsist/=(count($listaAsistencias)*.01);
-            var_dump($countAsist);
+            //var_dump($countAsist);
         }
 
 
