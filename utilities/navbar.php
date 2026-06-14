@@ -1,12 +1,16 @@
 <?php
 // navbarAdmin.php
+$nombre_admin = "Angela"; // Placeholder
+$tipo_usu = "Administrador";
+$nombre_usu = "Angela"; 
 ?>    
     <header class="top-header">
     <div class="logo">
         <img src="../../Statics/img/logo-unam.png" alt="Logo UNAM"> 
     </div>
     <p id = "nomb_proyecto">No desErTE</p>
-    <button class="btn-logout">Cerrar Sesión</button>
+    <a href="./../../Dynamics/cerrar_sesion.php"><button class="btn-logout">Cerrar Sesión</button></a>
+
     </header>
 
     <div class="sub-navbar">
