@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['btn_subir'])) {
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Recursos Profesor</title>
+    <title>Subir Recurso</title>
     <link rel="stylesheet" href="../../Statics/Css/subirRecurso.css">
 </head>
 <body>

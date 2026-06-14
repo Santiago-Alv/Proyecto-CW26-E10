@@ -77,9 +77,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['btn_eliminar'])) {
                                         <?php if (!empty($recurso['url_imagen']) && $recurso['url_imagen'] !== 'temp'): ?>
                                             <a href="../../Statics/img/recursos/<?php echo $recurso['url_imagen']; ?>" target="_blank" class="btn-ver">
                                                 Ver imagen
-                                            </a>
+                                            </a><!-- blank pa q abra otra pestania -->
                                         <?php endif; ?><!-- la solucion q se me ocurrio, cerrar el if manual pq no se cerraba normal-->
-                                        <button class="btn-editar">Editar</button>
+                                        <a href="editarRecurso.php?id_recurso=<?php echo $recurso['id_recurso']; ?>&id_grupo=<?php echo $id_grupo_actual; ?>" class="btn-editar" style="text-decoration: none; text-align: center;">
+                                            Editar
+                                        </a>
                                         <form action="" method="POST" style="margin: 0; padding: 0; display: inline;">
                                             <input type="hidden" name="id_recurso_eliminar" value="<?php echo $recurso['id_recurso']; ?>">
                                             <button type="submit" name="btn_eliminar" class="btn-eliminar" onclick="return confirm('¿Estás seguro de que deseas eliminar este recurso de forma permanente?');">
