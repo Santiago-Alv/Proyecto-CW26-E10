@@ -240,12 +240,12 @@ input[type="file"] {
     margin-bottom: 0; 
 }
 /* ==========================================================================
-   6. CONTENIDO CENTRAL (Vista de Recursos Actualizada)
+   Formulario y Lista
    ========================================================================== */
 .view-recursos {
     background-color: #6a95e9; 
     flex: 1; 
-    padding: 30px 40px; /* Reduje un poco el padding superior para igualar tu imagen */
+    padding: 30px 40px;
     overflow-y: auto; 
 }
 
@@ -254,7 +254,6 @@ input[type="file"] {
     width: 100%;
 }
 
-/* El nuevo encabezado rectangular plano */
 .header-rectangular {
     background-color: #e0e0e0;
     width: fit-content;
@@ -265,7 +264,7 @@ input[type="file"] {
     font-size: 18px;
     color: #1a1a1a;
     margin-bottom: 25px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* Ligera sombrita para que resalte del fondo */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1); /*  sombrita */
 }
 
 .icono-mas {
@@ -274,7 +273,6 @@ input[type="file"] {
     margin-right: 20px;
 }
 
-/* Contenedor de inputs: Se movió a la derecha para respetar la sangría del diseño */
 .contenedor-inputs {
     display: flex;
     flex-direction: column;
@@ -284,13 +282,13 @@ input[type="file"] {
 
 .input-gris {
     background-color: #e0e0e0;
-    border: none; /* En tu nueva imagen ya no se ven con borde negro marcado */
-    border-radius: 15px; /* Bordes un poco menos redondeados */
+    border: none; 
+    border-radius: 15px;
     padding: 12px 20px;
     font-size: 14px;
     color: #333;
     outline: none;
-    box-shadow: inset 1px 1px 3px rgba(0,0,0,0.1); /* Le da ese toque de profundidad al input */
+    box-shadow: inset 1px 1px 3px rgba(0,0,0,0.1); /* profundidad */
 }
 
 .input-gris::placeholder {
@@ -307,7 +305,6 @@ input[type="file"] {
     appearance: auto;
 }
 
-/* Campo Browse */
 .wrapper-archivo {
     display: flex;
     justify-content: space-between;
@@ -343,9 +340,8 @@ input[type="file"] {
     margin-left: auto; 
 }
 
-/* Botón de Subir */
 .alinear-boton {
-    margin-left: 150px; /* Centrado visual relativo a los inputs */
+    margin-left: 150px; 
     margin-top: 5px;
 }
 
@@ -365,10 +361,10 @@ input[type="file"] {
     background-color: #c8c8c8;
 }
 /* ==========================================================================
-   5. SIDEBAR IZQUIERDO (Acordeón Dinámico de Grupos)
+  SIDEBAR 
    ========================================================================== */
 .sidebar-izquierdo {
-    background-color: #1d3557; /* Azul marino del menú lateral */
+    background-color: #1d3557;
     width: 240px;
     min-width: 240px;
     padding: 30px 20px;
@@ -378,23 +374,18 @@ input[type="file"] {
 .sidebar-menu {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Espacio entre cada grupo */
+    gap: 15px; 
 }
 
-/* Configuraciones para el acordeón nativo de HTML */
 .grupo-acordeon {
     width: 100%;
 }
 
 .grupo-acordeon summary {
-    list-style: none; /* Quita la flechita negra por defecto en Firefox/Chrome */
+    list-style: none; 
     outline: none;
 }
-.grupo-acordeon summary::-webkit-details-marker {
-    display: none; /* Quita la flechita negra en Safari */
-}
 
-/* El botón principal del grupo (Cápsula gris) */
 .summary-grupo {
     background-color: #cbd5e1;
     color: #1a1a1a;
@@ -414,29 +405,25 @@ input[type="file"] {
     background-color: #b2c2d7;
 }
 
-/* Efecto cuando el profesor le da clic y se abre el menú */
 .grupo-acordeon[open] .summary-grupo {
     background-color: #e2e8f0;
     border: 2px solid #0b2545;
-    /* Quitamos el redondeo de abajo para que pegue con el submenú */
     border-bottom-left-radius: 5px; 
     border-bottom-right-radius: 5px;
 }
 
-/* El cajoncito azul oscuro que se despliega con las opciones */
 .enlaces-grupo {
-    background-color: #0b2545; /* Un azul más oscuro para dar profundidad */
-    border-radius: 0 0 15px 15px; /* Redondeado solo por abajo */
+    background-color: #0b2545; 
+    border-radius: 0 0 15px 15px; 
     padding: 10px 0;
     display: flex;
     flex-direction: column;
-    margin-top: -2px; /* Sube un poco para pegarse a la cápsula gris */
-    box-shadow: inset 0 3px 5px rgba(0,0,0,0.2); /* Sombra interna para que se vea hundido */
+    margin-top: -2px; 
+    box-shadow: inset 0 3px 5px rgba(0,0,0,0.2); /* Sombra */
 }
 
-/* Los links de Info, Dudas y Recursos */
 .btn-sublink {
-    color: #a0c4ff; /* Azul clarito */
+    color: #a0c4ff;
     text-decoration: none;
     padding: 8px 20px;
     font-size: 14px;
@@ -446,5 +433,172 @@ input[type="file"] {
 
 .btn-sublink:hover {
     color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.1); /* Resalta sutilmente al pasar el mouse */
+    background-color: rgba(255, 255, 255, 0.1); 
+}
+/* ==========================================================================
+   ver recursos YEEEIII (recursosProfesor.php)
+   ========================================================================== */
+
+.tabs-superiores {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.tab-activo {
+    background-color: #e0e0e0;
+    padding: 12px 40px;
+    font-weight: bold;
+    color: #333;
+    font-size: 16px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
+}
+
+.tab-verde {
+    background-color: #c0ebb2; 
+    color: #1a1a1a;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
+    transition: background-color 0.2s;
+}
+
+.tab-verde:hover {
+    background-color: #a8df99;
+}
+
+.lista-recursos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+}
+
+.tarjeta-recurso {
+    background-color: #e2e2e2;
+    border-radius: 25px;
+    padding: 20px 25px;
+    box-shadow: inset 1px 1px 2px #fff, 3px 3px 6px rgba(0,0,0,0.1);
+}
+
+.tarjeta-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.textos-tarjeta h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: normal;
+    color: #111;
+}
+
+.textos-tarjeta p {
+    margin: 5px 0 0 0;
+    font-size: 14px;
+    color: #444;
+}
+
+.botones-tarjeta {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-editar {
+    background-color: #e6e61a; 
+    border: none;
+    border-radius: 15px;
+    padding: 6px 20px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #111;
+    cursor: pointer;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.btn-eliminar {
+    background-color: #f08a8a; 
+    border: none;
+    border-radius: 15px;
+    padding: 6px 20px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #111;
+    cursor: pointer;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.btn-editar:hover { background-color: #d1d115; }
+.btn-eliminar:hover { background-color: #d87676; }
+
+.caja-url {
+    background-color: #b3b3b3;
+    padding: 15px 20px;
+    font-size: 18px;
+    color: #777;
+    border-radius: 5px; 
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.15); 
+}
+.tarjeta-recurso {
+    background-color: #e2e2e2;
+    border-radius: 25px;
+    padding: 20px 25px;
+    box-shadow: inset 1px 1px 2px #fff, 3px 3px 6px rgba(0,0,0,0.1);
+    width: 100%;
+    display: flex; 
+    gap: 20px; 
+}
+
+.imagen-recurso-contenedor {
+    width: 120px;
+    min-width: 120px;
+    height: 120px;
+    background-color: #ccc;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-tarjeta {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* sin deformarse */
+}
+
+.sin-imagen {
+    font-size: 12px;
+    color: #666;
+    font-weight: bold;
+}
+
+.contenido-tarjeta-derecha {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.btn-ver {
+    background-color: #6a95e9; 
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 15px;
+    padding: 6px 20px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s ease;
+}
+
+.btn-ver:hover { 
+    background-color: #4b7ad6; 
 }
