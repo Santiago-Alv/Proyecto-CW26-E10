@@ -1,2 +1,4 @@
-/config/config_bd.php
+/config/config_db.php
 /config/playground.php
+/Statics/img/recursos/*
+!/Statics/img/recursos/.gitkeep
