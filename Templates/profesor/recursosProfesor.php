@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['btn_eliminar'])) {
     <link rel="stylesheet" href="../../Statics/Css/subirRecurso.css">
 </head>
 <body>
-    <?php include '../../utilities/navbarProfe.php'; ?>
+    <?php include '../../utilities/navbar.php'; ?>
     <div class="main-layout">
         <?php 
         $pagina_activa = 'recursos'; 
