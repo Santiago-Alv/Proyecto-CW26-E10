@@ -1,6 +1,6 @@
 <?php
 
-    $sql = "SELECT nombre_grupo FROM grupo WHERE id_profesor = 3";
+    $sql = "SELECT nombre_grupo FROM grupo WHERE id_profesor = 2";
     $query = mysqli_query($conexion, $sql); 
     $nomb_grupos = array();
     if($query)

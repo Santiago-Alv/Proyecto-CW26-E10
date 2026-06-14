@@ -1,0 +1,103 @@
+.circulo-carita {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #051d3c;
+    margin-top: 20px;
+    margin-left: 20px;
+    overflow: hidden;
+}
+.circulo-carita img{
+    width: 70px;
+    height: 70px;   ;
+    object-fit: cover;
+}
+/*cuadro y uadro info*/
+.cuadro-principal {
+    width: 90%;
+    height: auto;
+    max-width: 600px;
+    background-color: beige;
+    border: 2px solid #000;
+    padding: 20px;
+    border-radius: 15px;
+
+    margin-top: 35px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    gap: 25px;
+}
+.cuadro-pregunta {
+    background-color: #d9d9d9;
+    border-radius: 12px;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    box-sizing: border-box;
+}
+.cuadro-pregunta p {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.4;
+    color: 000000;
+}
+.contenedor-opc {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    gap: 15px;
+}
+.opcion-carita {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+}
+.opcion-carita img {
+    height: auto;
+    width: 80px;
+
+}
+.opcion-carita input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+.boton-enviar {
+    padding: 1em 2em;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #092039;
+    transition: all 1000ms;
+    font-size: 12px;
+    position: relative;
+    overflow: hidden;
+    outline: 2px solid #000000;
+}
+.boton-enviar:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+    outline: 2px solid #000000;
+    box-shadow: 4px 5px 17px -4px #092039;
+}
+.boton-enviar:hover {
+    background-color: #ff7926f5;
+}
+.texto-carita {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333333;
+    margin-top: -5px;
+    margin-bottom: 5px;
+}
