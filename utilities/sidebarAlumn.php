@@ -1,7 +1,8 @@
 <?php
+ /*
     include '../../config/config_db.php';
 
-  /*  $sql = "SELECT id_modulo FROM modulo";
+   $sql = "SELECT id_modulo FROM modulo";
     $query = mysqli_query($conexion, $sql); 
 
     $num_modulo = array();

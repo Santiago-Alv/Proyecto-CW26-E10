@@ -1,4 +1,20 @@
 <?php
+    include '../../config/config_db.php';
+    $modulo_activo = 3;
+    $id_alumno= 2;
+
+    $sql = "SELECT duda_text, respuesta,estado_duda FROM duda WHERE id_alumno = $id_alumno";
+    $query = mysqli_query($conexion, $sql); 
+    $dudas_resps = array();
+    if($query)
+    {
+        while($fila = mysqli_fetch_assoc($query))
+        {   
+            $dudas_resps[]= $fila;
+            //var_dump($fila);
+        }
+    }
+
      // placeholder
     $tipo_usu = "Alumno";
     $nombre_usu = "Juanito Juanito";
@@ -21,37 +37,39 @@
                     <h2>Historial de tus dudas y respuestas</h2>
                 </div> 
                 <div class="HistPregunta">
-                    <table>
-                        <tbody>
-                            <tr class="tituloDuda">
-                                <td>Pregunta o duda</td>
-                            </tr>
-                            <tr class = "moduloDuda">
-                                <td>Modulo 1</td>                            
-                            </tr>
-                            <tr class= "RespDuda">
-                                <td>Respuesta:</td>
-                            </tr>
-                            <tr class = "RespHistorialForo">
-                                <td> Sin repuesta</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table>
-                        <tbody>
-                            <tr class="tituloDuda">
-                                <td>Pregunta o duda</td>
-                            </tr>
-                            <tr class = "moduloDuda">
-                                <td>Modulo 1</td>                            </tr>
-                            <tr class= "RespDuda">
-                                <td>Respuesta:</td>
-                            </tr>
-                            <tr class = "RespHistorialForo">
-                                <td> Sin repuesta</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <?php
+                    if(count($dudas_resps)>0)
+                    {
+                        foreach($dudas_resps as $duda_resp)
+                        {
+                            $duda= $duda_resp["duda_text"];
+                            $respuesta = $duda_resp["respuesta"];
+                            $estado_duda = $duda_resp["estado_duda"];
+
+                            if($estado_duda == 'R')
+                                $colorestado = "contestado";
+                            else
+                                $colorestado = "pendiente";
+
+                            echo "<table class= $colorestado >";
+                            echo "<tbody>";
+                                echo "<tr class='tituloDuda'>";
+                                    echo "<td>Duda: $duda</td>";
+                                echo "</tr>";
+                                echo"<tr class = 'moduloDuda'>";
+                                    echo "<td>Modulo $modulo_activo</td>";                         
+                                echo "</tr>";
+                                echo "<tr class= 'RespDuda'>";
+                                    echo "<td>Respuesta:</td>";
+                                echo "</tr>";
+                                echo "<tr class = 'RespHistorialForo'>";
+                                    echo "<td>$respuesta</td>";
+                                echo "</tr>";
+                                echo "</tbody>";
+                            echo "</table>";
+                        }
+                    }
+                ?>
                 </div>
             </main> 
         </div>  

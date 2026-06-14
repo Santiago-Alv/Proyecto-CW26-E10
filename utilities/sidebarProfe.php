@@ -1,5 +1,4 @@
 <?php
-   include '../../config/config_db.php';
 
     $sql = "SELECT nombre_grupo FROM grupo WHERE id_profesor = 3";
     $query = mysqli_query($conexion, $sql); 
