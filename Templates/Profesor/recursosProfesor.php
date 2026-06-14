@@ -9,6 +9,24 @@ if (!isset($_GET['id_grupo']) || empty($_GET['id_grupo'])) {
     die("Error: No se ha seleccionado un grupo válido.");
 }
 $id_grupo_actual = (int)$_GET['id_grupo'];
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['btn_eliminar'])) {
+    $id_eliminar = (int)$_POST['id_recurso_eliminar'];
+    $sql_buscar_img = "SELECT url_imagen FROM recurso WHERE id_recurso = $id_eliminar";
+    $res_buscar = mysqli_query($conexion, $sql_buscar_img);
+    if ($row = mysqli_fetch_assoc($res_buscar)) {
+        $nombre_archivo = $row['url_imagen'];
+        if ($nombre_archivo !== 'temp' && !empty($nombre_archivo)) {
+            $ruta_fisica = "../../Statics/img/recursos/" . $nombre_archivo;
+            if (file_exists($ruta_fisica)) {
+                unlink($ruta_fisica); // unlink es la función de PHP para borrar archivos
+            }
+        }
+    }
+    $sql_borrar = "DELETE FROM recurso WHERE id_recurso = $id_eliminar";
+    mysqli_query($conexion, "$sql_borrar");
+    header("Location: recursosProfesor.php?id_grupo=" . $id_grupo_actual);
+    exit();// 
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -56,8 +74,18 @@ $id_grupo_actual = (int)$_GET['id_grupo'];
                                         </div>
                                     
                                     <div class="botones-tarjeta">
+                                        <?php if (!empty($recurso['url_imagen']) && $recurso['url_imagen'] !== 'temp'): ?>
+                                            <a href="../../Statics/img/recursos/<?php echo $recurso['url_imagen']; ?>" target="_blank" class="btn-ver">
+                                                Ver imagen
+                                            </a>
+                                        <?php endif; ?><!-- la solucion q se me ocurrio, cerrar el if manual pq no se cerraba normal-->
                                         <button class="btn-editar">Editar</button>
-                                        <button class="btn-eliminar">Eliminar</button>
+                                        <form action="" method="POST" style="margin: 0; padding: 0; display: inline;">
+                                            <input type="hidden" name="id_recurso_eliminar" value="<?php echo $recurso['id_recurso']; ?>">
+                                            <button type="submit" name="btn_eliminar" class="btn-eliminar" onclick="return confirm('¿Estás seguro de que deseas eliminar este recurso de forma permanente?');">
+                                                Eliminar
+                                            </button>
+                                        </form>
                                     </div>
                                 </div>
         
