@@ -1,13 +1,21 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['usuario']) || $_SESSION['tipo'] !== 'profesor') {
-    
-    //header("Location: ../index.html"); 
-    // echo ¨vete wei no eres porfe¨
-    // Matar pa q no cargue lo demas
-    //exit(); 
-}
+include '../../config/config_db.php';
+$listaGrupos = array();
+
+    if (isset($_SESSION['usuario']) && $_SESSION['usuario'] == 'profesor') {
+        
+        $sql = "SELECT id_grupo, nombre_grupo FROM grupo WHERE id_profesor = " . $_SESSION['id_profesor'] . "";
+        $query = mysqli_query($conexion,$sql);
+        while($fila = mysqli_fetch_assoc($query)){
+            $listaGrupos[] = $fila;
+        }
+    } else {
+        header("Location: ../index.php");
+    }
+
+
 ?>
 <!DOCTYPE html>
     <html lang="en">
@@ -35,8 +43,11 @@ if (!isset($_SESSION['usuario']) || $_SESSION['tipo'] !== 'profesor') {
 
         <div class="mainCont">
             <aside>
-                <a class="menuOp" href="./grupoProfesor.php"> 61B </a>
-                <a class="menuOp" href="./grupoProfesor.php"> 61D </a>
+                <?php
+                    foreach($listaGrupos as $grupo){
+                        echo "<a class='menuOp' href='./grupoProfesor.php?id_grupo=". $grupo['id_grupo'] ." '> " . $grupo['nombre_grupo'] . " </a>";
+                    }
+                ?>
                 <a class="menuOp"> RECURSOS </a>
                 <a class="menuOp"> DUDAS </a>
             </aside>
