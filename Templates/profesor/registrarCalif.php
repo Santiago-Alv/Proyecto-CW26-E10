@@ -97,74 +97,51 @@
 
 ?>
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href = "..\..\Statics\Css\profesorGraph.css">
-        <title>Home</title>
-    </head>
-    <body>
-        <header>
-            <img class="logo" src= "..\..\Statics\img\logo-unam.png">
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <title>Info Grupo</title>
+   <link rel="stylesheet" href="../../Statics/Css/subirRecurso.css">
+</head>
+<body>
+   <?php include '../../utilities/navbarProfe.php'; ?>
+   <div class="main-layout">
+       <?php include '../../utilities/sidebarProfe.php'; ?>
 
-            <a href="..\index.php">Cerrar Sesión</a>
-        </header>
-    
-        <nav>
-            <div class="breadcrumbs">
-                <a href="./homeProfesor.php">🏠</a>
-                <span>&lt;</span>
-                <span>&gt;</span>
-                <span>Profesor Jirafales</span>
-            </div>
-        </nav>
 
-        <div class="mainCont">
-            <aside>
-                <?php
-                    foreach($listaGrupos as $grupo){
-                        echo "<a class='menuOp' href='./grupoProfesor.php?id_grupo=". $grupo['id_grupo'] ." '> " . $grupo['nombre_grupo'] . " </a>";
-                    }
-                ?>
-                <a class="menuOp"> RECURSOS </a>
-                <a class="menuOp"> DUDAS </a>
-            </aside>
-
-            <main>
-                <section class ="grupoGeneral">
-                    
-                    <?php   
-                        foreach($listaModulos as $modulo){
-                            echo "<h3>Modulo: ".$modulo['nombre_modulo']."<h3>";
-
-                                foreach($listaResultados as $alumno){
-                                    foreach($listaCalificaciones as $calificacion){
-                                            if($calificacion['id_alumno'] == $alumno['id_alumno'] && $calificacion['id_modulo'] == $modulo['id_modulo']){
-                                                $califActual = $calificacion['calificacion'];
-                                                break;
-                                            } else {
-                                                $califActual = 'SE';
-                                            }
-                                        }
-                                echo "<form action='./registrarCalif.php?id_grupo=" . $grupoAct['id_grupo'] . "' method='POST' class='alumnoData'>
-                                        
-                                        <p>" . $alumno['nombre'] . "</p>
-                                        <input type='number' name='califAlumno' min='0' max='10' step='0.1' placeholder='$califActual' required>
-                                        
-                                        <input type='hidden' name='id_alumno' value='" . $alumno['id_alumno'] . "'>
-                                        <input type='hidden' name='id_modulo' value='" . $modulo['id_modulo'] . "'>
-                                        
-                                        <button type='submit'>Registrar</button>
-                                        
-                                    </form>";
-                            }
-                        }
+        <main class="view-recursos">
+            <section class ="grupoGeneral">
                         
-                    ?>
-                </section>
-            </main>
-        </div>
+                        <?php   
+                            foreach($listaModulos as $modulo){
+                                echo "<h3>Modulo: ".$modulo['nombre_modulo']."<h3>";
 
-    </body>
+                                    foreach($listaResultados as $alumno){
+                                        foreach($listaCalificaciones as $calificacion){
+                                                if($calificacion['id_alumno'] == $alumno['id_alumno'] && $calificacion['id_modulo'] == $modulo['id_modulo']){
+                                                    $califActual = $calificacion['calificacion'];
+                                                    break;
+                                                } else {
+                                                    $califActual = 'SE';
+                                                }
+                                            }
+                                    echo "<form action='./registrarCalif.php?id_grupo=" . $grupoAct['id_grupo'] . "' method='POST' class='alumnoData'>
+                                            
+                                            <p>" . $alumno['nombre'] . "</p>
+                                            <input type='number' name='califAlumno' min='0' max='10' step='0.1' placeholder='$califActual' required>
+                                            
+                                            <input type='hidden' name='id_alumno' value='" . $alumno['id_alumno'] . "'>
+                                            <input type='hidden' name='id_modulo' value='" . $modulo['id_modulo'] . "'>
+                                            
+                                            <button type='submit'>Registrar</button>
+                                            
+                                        </form>";
+                                }
+                            }
+                            
+                        ?>
+            </section>
+        </main>
+   </div>
+</body>
 </html>

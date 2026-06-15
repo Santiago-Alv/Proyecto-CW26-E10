@@ -1,8 +1,10 @@
 <?php
-    
+    include '../../config/config_db.php';
     //$nomb_alumno 
     //$grupo
     //$modulo
+    $modulo_activo = 3;
+    $id_alumno= 2;
 
     $duda = "";
     if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['pregunta']))
@@ -10,9 +12,7 @@
         $duda = $_POST['pregunta'];
 
         $sql = "INSERT INTO duda (estado_duda, duda_text, respuesta, id_alumno, id_grupo, id_profesor)
-                VALUES ('P','$duda', 'respuesta', 1,1,1)";
-
-        include '../../config/config_db.php';
+                VALUES ('P','$duda', 'respuesta', $id_alumno,1,4)";
         $query = mysqli_query($conexion, $sql); 
 
     }

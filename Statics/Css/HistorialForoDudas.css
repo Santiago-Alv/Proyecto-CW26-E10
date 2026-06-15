@@ -20,14 +20,63 @@ table{
     border-radius: 1.5vh;
     margin: 2vw;
     border-collapse: collapse;
-    background-color: #D9D9D9;
     text-align:left;
 }
+.pendiente {
+    background-color: #D9D9D9;
+}
+.contestado {
+    background-color: #cfec87;
+}
 
-.RespHistorialForo{
+td {
+    padding-bottom: 0.5vw;
+    padding-left: 2vw;
+}
+.RespHistorialForo {
     width: 70vw;
     height: 30vh;
+    row-gap: 4;
     background-color: #B8B2B2;
+    vertical-align: top;
+}
+#contestar-submit, #elimduda-submit, .paraDuda{
+    padding: 1vw;
+    border-radius: 10vh;
+    border: none;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    margin-top: 1vh;
+    width: fit-content;
+    }
+#contestar-submit{
+    background-color: rgb(153, 212, 113);
+    color: black;
+}
+#elimduda-submit{
+    background-color: #FF9F9F;
+    color: black;
+}
+
+.encaduda{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 0;
+} 
+
+.botonduda {
+    display: flex;
+    justify-content: flex-end;
+}
+.paraDuda, .tituloDuda {
+    font-size: larger;
+}
+.paraDuda{
+    padding-left:0;
+}
+.tituloDuda{
+    padding-left: 2vw;
+    padding-bottom: 1vw;
 }
 
 

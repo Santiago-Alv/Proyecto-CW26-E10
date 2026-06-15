@@ -30,7 +30,7 @@ $nombre_admin = $_SESSION["nombre_administrador"];
         <main class="content">
             <div class="header-content">
                 <h1>Alumnos</h1>
-                <button class="btn-add">+ Añadir alumno</button>
+                <a href="./añadirAlumAdmin.php"><button class="btn-add">+ Añadir alumno</button></a>
             </div>
 
             <div class="search-container">

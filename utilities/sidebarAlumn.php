@@ -1,10 +1,8 @@
 <?php
-    // IMPORTANTE: Si la vista donde se inserta el sidebar (de alumno) no requiere conexión, se debe
-    //aun así poner el include con el config, para no causar problemas con las demas vistas, 
-    //ya que en esta vista NO se puede poner el include, dado que se pueden dublicar los include
-    //include '../../config/config_db.php';
+ /*
+    include '../../config/config_db.php';
 
-  /*  $sql = "SELECT id_modulo FROM modulo";
+   $sql = "SELECT id_modulo FROM modulo";
     $query = mysqli_query($conexion, $sql); 
 
     $num_modulo = array();
