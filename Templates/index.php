@@ -1,5 +1,5 @@
 <?php
-    include '../config/config_bd.php';
+    include '../config/config_db.php';
     include '../Dynamics/validaciones.php';
 
     session_start();
@@ -33,7 +33,7 @@
                 setcookie("user", $fila['nocta'], time() + (86400));
                 //header("Location: ./Profesor/homeProfesor.php");
             }
-            if($tipoUsuario == 'profesor' && hash_equals($fila["contraseña"],hash(sha256,$password))){
+            if($tipoUsuario == 'profesor' && hash_equals($fila["contraseña"],hash("sha256",$password))){
 
                 $_SESSION['usuario'] = $tipoUsuario;
                 $_SESSION['id_profesor'] = $fila['id_profesor'];
@@ -43,7 +43,7 @@
                 setcookie("user", $fila['numero_trabajador'], time() + (86400));
                 header("Location: ./Profesor/homeProfesor.php");
             }
-            if($tipoUsuario == 'administrador' && hash_equals($fila["contraseña"],hash(sha256,$password))){
+            if($tipoUsuario == 'administrador' && hash_equals($fila["contraseña"],hash("sha256",$password))){
                 
                 $_SESSION['usuario'] = $tipoUsuario;
                 $_SESSION['id_administrador'] = $fila['id_administrador'];
