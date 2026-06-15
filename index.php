@@ -19,19 +19,24 @@
             //añado esta linea para que no agarre el primer usuario, sino que busque entre todos los posibles usuarios
             //brute force al fallo la verdad
             while($fila = mysqli_fetch_assoc($query)){
-                /*
+                
+                echo '<br>';
                 var_dump($fila);
 
                 echo '<br>';
-                echo$password;
+                echo $password;
                 echo '<br>';
                 echo $fila["contraseña"];
                 
                 echo '<br>';
                 echo hash("sha256",$password);
-                var_dump(hash_equals($fila["contraseña"],hash("sha256",$password)));
-                */
-                if($tipoUsuario == 'alumno' && hash_equals($fila["contraseña"],hash("sha256",$password))){
+                $contra = $fila["contraseña"];
+                if($contra == NULL) $contra = "";
+                var_dump(hash_equals($contra,hash("sha256",$password)));
+                
+                $contra_bd = $fila["contraseña"];
+                if($fila["contraseña"] == NULL) $contra_bd = "";
+                if($tipoUsuario == 'alumno' && hash_equals($contra_bd,hash("sha256",$password))){
 
                     $_SESSION['usuario'] = $tipoUsuario;
                     $_SESSION['id_alumno'] = $fila['id_alumno'];
@@ -47,7 +52,7 @@
                     setcookie("user", $fila['nocta'], time() + (86400), "/");
                     //header("Location: ./Templates/Profesor/homeProfesor.php");
                 }
-                if($tipoUsuario == 'profesor' && hash_equals($fila["contraseña"],hash("sha256",$password))){
+                if($tipoUsuario == 'profesor' && hash_equals($contra_bd,hash("sha256",$password))){
 
                     $_SESSION['usuario'] = $tipoUsuario;
                     $_SESSION['id_profesor'] = $fila['id_profesor'];
@@ -55,9 +60,9 @@
                     $_SESSION['nombre_profesor'] = $fila['nombre_profesor'];
 
                     setcookie("user", $fila['numero_trabajador'], time() + (86400), "/");
-                    header("Location: ./Templates/profesor/homeProfesor.php");
+                    //header("Location: ./Templates/profesor/homeProfesor.php");
                 }
-                if($tipoUsuario == 'administrador' && hash_equals($fila["contraseña"],hash("sha256",$password))){
+                if($tipoUsuario == 'administrador' && hash_equals($contra_bd,hash("sha256",$password))){
                     
                     $_SESSION['usuario'] = $tipoUsuario;
                     $_SESSION['id_administrador'] = $fila['id_administrador'];
@@ -65,12 +70,12 @@
                     $_SESSION['nombre_administrador'] = $fila['nombre_administrador'];
 
                     setcookie("user", $fila['numero_trabajador'], time() + (86400), "/");
-                    header("Location: ./Templates/admin/searchAlAdmin.php");
+                    //header("Location: ./Templates/admin/searchAlAdmin.php");
                 }
             }
             
         } else {
-            header("Location: ./index.php");
+            //header("Location: ./index.php");
         }
         
     } else {
