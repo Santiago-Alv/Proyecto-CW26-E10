@@ -1,26 +1,27 @@
 <?php
     //include '../../config/config_bd.php';
 
-    $nombreProfesor = "Fersa y beto ";
+    $nombreProfesor = "Carlos Alf";
     $noctaProfesor = "122000045";
     $correoProfesor = "Ferto@prof.enp.unam";
     $contrasenaProfesor = "321Fersa.beto";
     $modulo_activo = "Sistemas";
-    $listaGrupos = array("61B, 61D");
+    $listaGrupos = array();
 
     
-    if(isset($_GET['nombre']) && isset($_GET['cuenta'])){
-        $nombreBuscado = $_GET['nombre'];
-        $noctaBuscado = $_GET['cuenta'];
+    if(isset($_GET['id'])){
+        //$nombreBuscado = $_GET['nombre']; //no llegan estos valores
+        //$noctaBuscado = $_GET['cuenta']; //no llegan estos valores
+        $id_profesor = $_GET['id'];
 
-        $sql = "SELECT * FROM profesor WHERE nombre LIKE '%" . $nombreBuscado . "%' OR nocta= '$noctaBuscado'";
+        $sql = "SELECT * FROM profesor WHERE id_profesor = $id_profesor";
         $resultado_query = mysqli_query($conexion, $sql);
 
         if($resultado_query && mysqli_num_rows($resultado_query) > 0){
             $fila = mysqli_fetch_assoc($resultado_query);
-            $id_profesor = $fila["id_profesor"];
-            $nombreProfesor = $fila['nombre'];
-            $noctaProfesor = $fila['nocta'];
+            //$id_profesor = $fila["id_profesor"];
+            $nombreProfesor = $fila['nombre_profesor'];
+            $noctaProfesor = $fila['numero_trabajador'];
 
             if(isset($fila["correo"])) $correoProfesor = $fila["correo"];
             if(isset($fila["contrasena"])) $contrasenaProfesor = $fila["contrasena"];
@@ -32,8 +33,10 @@
 
             if($query2){
                 while($fila2 = mysqli_fetch_assoc($query2)){
-                    $listaGrupos[] = $fila2["nombre_grupo"];
-                    $modulo_activo = $fila2["modulo_activo"];
+                    $grupito = array();
+                    $grupito["nombre_grupo"] = $fila2["nombre_grupo"];
+                    $grupito["modulo_activo"] = $fila2["modulo_activo"];
+                    $listaGrupos[] = $grupito;
                 }
             }
         }
@@ -79,7 +82,7 @@
                     <?php
                     if(!empty($listaGrupos)){
                         foreach($listaGrupos as $grupo){
-                            echo "<li>" . htmlspecialchars($grupo) . "</li>";
+                            echo "<li>" . htmlspecialchars($grupo["nombre_grupo"]) . " - Módulo activo: ". $grupo["modulo_activo"] ."</li>";
                         }
                     } else {
                         echo "<li>Sin grupos asignados</li>";
@@ -87,7 +90,7 @@
                     ?>
                 </ul>
             </div>
-            <p>Modulo activo (Módulo: <?php echo htmlspecialchars($modulo_activo); ?>)</p>
+            <!--<p>Modulo activo (Módulo: <?php echo htmlspecialchars($modulo_activo); ?>)</p>-->
             <p>Correo electrónico intitucional: <?php echo htmlspecialchars($correoProfesor); ?></p>
             <p>Contraseña: <?php echo htmlspecialchars($contrasenaProfesor); ?></p>
         </div>

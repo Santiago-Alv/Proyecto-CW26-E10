@@ -1,5 +1,6 @@
-<<<<<<< HEAD
-/config/config_bd.php
-=======
 /config/config_db.php
->>>>>>> origin/feature/otomiphp
+/config/playground.php
+/Statics/img/recursos/*
+!/Statics/img/recursos/.gitkeep
+
+**/tests*.*

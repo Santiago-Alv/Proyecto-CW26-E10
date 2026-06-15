@@ -1,12 +1,9 @@
 <?php
 
-//session_start();
+session_start();
+//var_dump($_SESSION);
 
-
-// consulta db
-
-// placeholder
-$nombre_admin = "Angela"; 
+$nombre_admin = $_SESSION["nombre_administrador"];
 ?>
 
 <!DOCTYPE html>
