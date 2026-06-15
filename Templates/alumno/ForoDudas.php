@@ -18,8 +18,8 @@
     }
 
     // placeholder
-    $tipo_usu = "Alumno";
-    $nombre_usu = "Juanito Juanito";
+    $nombre_alumn = "Juanito Juanito";
+    $grupo_alumn = "61B";
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -31,7 +31,7 @@
         <link rel="stylesheet" href="../../Statics/Css/alumGraph.css">
     </head>
     <body>
-        <?php include '../../utilities/navbar.php'; ?>
+        <?php include '../../utilities/navbarAlumno.php'; ?>
         <div class="main-layout">
             <?php include '../../utilities/sidebarAlumn.php'; ?>
             <main id= "contenido">

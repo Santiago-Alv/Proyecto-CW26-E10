@@ -12,11 +12,18 @@ main {
     flex-direction: row;
     justify-content: space-evenly;
 }
+#contenido{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 80vw;
+
+}
 h1{
     margin: 0;
     padding: 0;
 }
-
 #txt-modificar, #txt-grupo, input {
     padding: 1%;
     border-radius: 10vh;
@@ -87,7 +94,7 @@ h1{
 /*Contenedor de mensaje de confirmacion para elimninar */
 #confi-elimprof{
     width: 50%;
-    height: 70%;
+    height: 50%;
     display: flex;
     flex-direction: column;
     justify-content:space-between;

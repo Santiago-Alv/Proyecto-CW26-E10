@@ -1,130 +1,58 @@
-
-h2{
-    background-color: #D9D9D9;
-    padding: 1%;
-    margin: 2vw;
-    width: fit-content;
-}
 main {
     display: flex;
     flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    margin: 2vw;
+}
+h2{
+    width: fit-content;
+    background-color: #D9D9D9;
+    padding: 1%;
+    margin-bottom: 2vw;
 }
 
-#txt-modificar, #txt-grupo, input {
-    padding: 1%;
+#txt-contestar {
+    width: fit-content;
+    padding: 1vw;
     border-radius: 10vh;
-    margin: 1vh;
-    background-color: #D9D9D9;
+    margin-bottom: 1vw;
+    background-color: #edecec;
     color: black;
 }
-#txt-grupo, input {
-    margin-left: 5vw;
+
+#txt-duda{
+    width: 60vw;
+    height: fit-content;
+    padding: 2vh;
+    border-radius: 1vh;
+    margin-bottom: 1vw;
+    text-align: left;
+    background-color: #edecec;
+    color: black;
 }
-#txt-modificar{
-    width: 40%;
+.boton-enviar{
+    width: 60vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
     text-align: center;
-
 }
-#txt-grupo{
+#resp{
+    width: 60vw;
+    height: 20vh;
+    padding: 1vh;
+    border-radius: 1vh;
     font-size: 1.5vw;
-    width: 25%;
 }
-
-.input-datosprof{
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    height: 60%;
-    justify-content: space-evenly;
-}
-.boton-modprofe{
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    height: 60%;
-    justify-content: space-between;
-    align-items:end;
-    
-}
-.boton-mod-elim{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    
-}
-#acept-modprofe-submit, #elimprof-submit, #modprofe-submit{
+#contestar-submit{
     padding: 1vw;
     border-radius: 10vh;
     border: none;
     margin: 2vw;
     width: fit-content;
-}
-#acept-modprofe-submit{
-    background-color: #D9D9D9;
+    background-color: #d9d9d9;
     color: black;
 }
-#elimprof-submit{
-    background-color: #FF9F9F;
-    color: black;
-}
-#modprofe-submit{
-    background-color: #C9D8F3;
-    color: black;
-}
-.checkboxgrupos{
-    display: flex;
-    flex-direction: row;
-    justify-content:space-evenly;
-}
-
-/*Contenedor de mensaje de confirmacion para elimninar */
-#confi-elimprof{
-    width: 50%;
-    height: 70%;
-    display: flex;
-    flex-direction: column;
-    justify-content:space-between;
-    align-self:flex-start;
-}
-#NombProfAdmin{
-    flex-grow: 1;
-    align-self: flex-start;
-}
-.cont-confirma-elimprof{
-    flex-grow: 2;
-    width: 50vw;
-    height: 50vh;
-    border-radius: 1vh;
-    background-color: #D9D9D9;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-self:flex-start;
-}
-#preg-confirma-elimprof{
-    font-size: 5vh;
-    padding: 2vh;
-    text-align: center;
-}
-.botones-confelim{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-#aceptelim-submit, #cancelelim-submit{
-    font-size: 3 vh;
-    padding: 2vh;
-    border-radius: 10vh;
-    border: none;
-    margin: 2vh;
-}
-#aceptelim-submit{
-    background-color: #FF9F9F;
-}
-#cancelelim-submit{
-    background-color: #BFECC0;
-}
-
-
 
 
