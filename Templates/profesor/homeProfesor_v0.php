@@ -12,7 +12,7 @@ $listaGrupos = array();
             $listaGrupos[] = $fila;
         }
     } else {
-        header("Location: ../index.php");
+        header("Location: ../../index.php");
     }
 
 

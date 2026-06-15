@@ -11,6 +11,7 @@
         <title>Contestar dudas</title>
         <link rel="stylesheet" href="../../Statics/Css/AdminProfe.css">
         <link rel="stylesheet" href="../../Statics/Css/profeGraph.css">
+        <link rel="stylesheet" href="../../Statics/Css/subirRecurso.css">
     </head>
     <body>
         <?php include '../../utilities/navbar.php'; ?>
