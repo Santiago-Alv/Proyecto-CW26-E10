@@ -6,7 +6,8 @@
 // consulta db
 
 // placeholder
-$nombre_admin = "Angela"; 
+$tipo_usu = "Administrador";
+$nombre_usu = "Angela"; 
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -18,7 +19,7 @@ $nombre_admin = "Angela";
         <link rel="stylesheet" href="../../Statics/Css/adminGraph.css">
     </head>
     <body>
-        <?php include '../../utilities/navbarAdmin.php'; ?>
+        <?php include '../../utilities/navbar.php'; ?>
         <div class="main-layout">
             <?php include '../../utilities/sidebarAdmin.php'; ?>
 
@@ -38,10 +39,10 @@ $nombre_admin = "Angela";
                 </div> 
                 <div class="boton-modprofe">
                     <div class = "boton-mod-elim">
-                        <button type="submit" id="modprofe-submit">Modificar</button>
-                        <form action="historialpreguntas.php">
-                            <button type="submit" id="elimprof-submit">Eliminar</button>
+                        <form action="AdminModificarProf.php">
+                            <button type="submit" id="modprofe-submit">Modificar</button>
                         </form>
+                            <button type="submit" id="elimprof-submit">Eliminar</button>
                     </div>
                 </div>
             </main>   

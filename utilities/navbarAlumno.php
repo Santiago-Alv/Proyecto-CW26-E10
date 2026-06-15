@@ -1,5 +1,5 @@
 <?php
-// navbarAdmin.php
+// navbarAlumno.php
 ?>    
     <header class="top-header">
     <div class="logo">
@@ -14,6 +14,7 @@
             <span><</span>
             <span>></span>
             <!-- Sanitizar -->
-            <span>Administrador <?php echo htmlspecialchars($nombre_admin); ?></span>
+            <span>Alumno: <?php echo htmlspecialchars($nombre_alumn); ?></span>
+            <span>Grupo: <?php echo htmlspecialchars($grupo_alumn); ?></span>
         </div>
     </div>

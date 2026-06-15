@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #6a96e3; 
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Header principal */
+.top-header {
+    background-color: #0b1d3a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 2px solid #b8860b; 
+}
+
+.logo img {
+    height: 50px;
+}
+
+.btn-logout {
+    background-color: #ff8c00;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#nomb_proyecto{
+    color:#b8860b;
+    font-size:x-large;
+    padding: 5px;
+    border-color: #b8860b;
+    border-style: double;
+ }
+
+.sub-navbar {
+    background-color: #17376e;
+    color: white;
+    padding: 8px 20px;
+    font-size: 14px;
+}
+
+.breadcrumbs span {
+    margin-right: 10px;
+}
+
+.main-layout {
+    display: flex;
+    flex: 1;
+}
+
+.sidebar {
+    background-color: #2b4d82;
+    width: 220px;
+    padding: 20px 15px;
+    border-right: 2px solid #1a325a;
+    
+}
+
+.sidebar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+summary, .grupos a {
+    text-decoration: none;
+    color: black;
+    background-color: #d1e3fa;
+    border-radius: 15px;
+    display: block;
+    text-align: center;
+}
+summary{
+    padding: 12px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.grupos a {
+    padding: 5px;
+    margin-top: 5px;
+    margin-right: 30px;
+    font-weight:lighter;
+}
+
+
+
+
