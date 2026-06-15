@@ -1,6 +1,6 @@
 <?php
-    include '../config/config_db.php';
-    include '../Dynamics/validaciones.php';
+    include './config/config_db.php';
+    include './Dynamics/validaciones.php';
 
     session_start();
 
