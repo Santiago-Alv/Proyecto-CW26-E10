@@ -127,6 +127,18 @@
         }
     }
 
+    //--- LÓGICA DE IMÁGENES RANDOM ---
+    $listaImagenes = [
+        './Statics/img/img-login/imagennodesertexd.png',
+        './Statics/img/img-login/auditorio.jpeg',
+        './Statics/img/img-login/jacarandas.jpeg',
+        './Statics/img/img-login/biblio.jpeg',
+        './Statics/img/img-login/login-icon.jpg'//si quieren agregar mas pongan su ruta aca
+    ];
+
+    //índice random
+    $indiceRandom = array_rand($listaImagenes);
+    $imagenSeleccionada = $listaImagenes[$indiceRandom];
 
 ?>
 
@@ -145,9 +157,8 @@
                 <h1>¡Bienvenido a NodesErTE!</h1> <!--Titulo de Bienvenida-->
             </section>
 
-            <section class="generalContainer"> <!--Sección inferior-->
-                <article class="articleIcon"><img  class="icon" src="./Statics/img/login-icon.jpg" alt="Logo"></article> <!--Articulo para el logo-->
-
+            <section class="generalContainer"> <article class="articleIcon">
+                    <img class="icon" src="<?php echo $imagenSeleccionada; ?>" alt="Logo Aleatorio">
                 </article>
 
                 <article class="articleLogin"> <!--Articulo para el apartado de bienvenida-->
