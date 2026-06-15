@@ -25,6 +25,13 @@ body {
 .logo img {
     height: 50px;
 }
+#nomb_proyecto{
+    color:#b8860b;
+    font-size:x-large;
+    padding: 5px;
+    border-color: #b8860b;
+    border-style: double;
+ }
 
 .btn-logout {
     background-color: #ff8c00;
