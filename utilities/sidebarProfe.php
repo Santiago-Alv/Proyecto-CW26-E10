@@ -1,6 +1,6 @@
 <?php
 
-    $sql = "SELECT nombre_grupo FROM grupo WHERE id_profesor = 2";
+    $sql = "SELECT nombre_grupo FROM grupo WHERE id_profesor = 3";
     $query = mysqli_query($conexion, $sql); 
     $nomb_grupos = array();
     if($query)
@@ -25,7 +25,7 @@
                             echo "<details class = 'grupos'>";
                             echo "<summary> $nombregrupo</summary>";
                             echo "<a href='#'>Info</a>";
-                            echo "<a href='#'>Dudas</a>";
+                            echo "<a href='ForoDudaProfe.php'>Dudas</a>";
                             echo "<a href='#'>Recursos</a>";
                             echo "</details>";
                         }
