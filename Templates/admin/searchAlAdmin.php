@@ -6,10 +6,7 @@ session_start();
 // consulta db
 
 // placeholder
-$tipo_usu = "Administrador";
-$nombre_usu = "Angela";  
 
-$nombre_admin = $_SESSION["nombre_administrador"];
 ?>
 
 <!DOCTYPE html>

@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -22,7 +26,7 @@
                     include '../../config/config_db.php';
                     $conexion = connect();
 
-                    // datos y sanitizar y eso
+                    // datos y sancitizar y eso
                     $nombre_buscado = isset($_GET['nombre']) ? mysqli_real_escape_string($conexion, $_GET['nombre']) : '';
                     $cuenta_buscada = isset($_GET['cuenta']) ? mysqli_real_escape_string($conexion, $_GET['cuenta']) : '';
                     $texto_busqueda = "Todos los alumnos";//default porsi busca por noctaonada

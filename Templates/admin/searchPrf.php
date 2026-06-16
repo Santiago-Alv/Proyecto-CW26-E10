@@ -1,13 +1,11 @@
 <?php
 
-//session_start();
+session_start();
 
 
 // consulta db
 
 // placeholder
-$tipo_usu = "Administrador";
-$nombre_usu = "Angela"; 
 ?>
 
 <!DOCTYPE html>

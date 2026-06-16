@@ -1,6 +1,6 @@
 <?php
 include '../../config/config_db.php';
-//session_start();
+session_start();
 
 // consulta db
 
