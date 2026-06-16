@@ -2,6 +2,7 @@
     if(isset($_SESSION['usuario']) && $_SESSION['usuario'] == 'alumno'){
         $nombre_alumn = $_SESSION['nombre'];
         $grupo_alumn = $_SESSION['grupo'];
+        $tipo_usu = $_SESSION['usuario'];
     } else {
         include '../Dynamics/cerrar_sesion.php';
     }
