@@ -1,6 +1,6 @@
 <?php
 
-//session_start();
+session_start();
 //Prueba para ver si funciona (sin BD)
 include '../../Dynamics/contrasenia.php';
 include '../../config/config_db.php';

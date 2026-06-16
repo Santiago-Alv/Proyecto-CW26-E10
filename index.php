@@ -109,7 +109,7 @@
                     }
 
                     setcookie("user", $fila['nocta'], time() + (86400), "/");
-                    header("Location: ./Templates//alumno/Homealumno.php");
+                    header("Location: ./Templates/alumno/Homealumno.php");
                 }
                 if($tipoUsuario == 'profesor'){
 
@@ -119,7 +119,7 @@
                     $_SESSION['nombre_profesor'] = $fila['nombre_profesor'];
 
                     setcookie("user", $fila['numero_trabajador'], time() + (86400), "/");
-                    header("Location: ./Templates//profesor/homeProfesor.php");
+                    header("Location: ./Templates/profesor/homeProfesor.php");
                 }
                 if($tipoUsuario == 'administrador'){
                     
