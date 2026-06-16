@@ -1,6 +1,5 @@
 <?php
 include '../../config/config_db.php';
-include '../../Dynamics/contrasenia.php';
 //session_start();
 
 // consulta db
@@ -33,11 +32,9 @@ include '../../Dynamics/contrasenia.php';
         } 
         else {
             //Insertar datos a la base de datos si no se repite
-            $contraseña=generarpassword(4);
-            $contrasena_hasheada = hash("sha256", $contraseña);
 
-            $sql2 = "INSERT INTO alumno (nombre, nocta, id_grupo, apell_pat_alum, contraseña)
-                VALUES ('$nombre_alum', '$num_cuenta', $grupo_select, 'Nohaycampo', '" . $contrasena_hasheada . "')";
+            $sql2 = "INSERT INTO alumno (nombre, nocta, id_grupo, apell_pat_alum)
+                VALUES ('$nombre_alum', '$num_cuenta', $grupo_select, 'Nohaycampo')";
             $query = mysqli_query($conexion, $sql2); 
             
             header("Location: exitoAñadirAlum.php?numc=".urlencode($num_cuenta));//lleva variable de numero de cuenta
@@ -48,6 +45,5 @@ include '../../Dynamics/contrasenia.php';
     {
        echo "error";
     }  
-
 ?>
 
