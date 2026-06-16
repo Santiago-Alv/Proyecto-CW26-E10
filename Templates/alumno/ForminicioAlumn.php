@@ -19,7 +19,7 @@ session_start();
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Modulo alumno</title>
         <link rel="stylesheet" href="../../Statics/Css/AlumGraph.css">
-        <link rel="stylesheet" href="../../Statics/Css/ForminicioAlumn.css">
+        <link rel="stylesheet" href="../../Statics/Css/forminialumno.css">
         <?php if ($mostrar_bienvenida): ?>
             <meta http-equiv="refresh" content="5;url=../Alumno/Homealumno.php">
         <?php endif; ?>
@@ -28,7 +28,7 @@ session_start();
         <?php include '../../utilities/navbarAlumno.php'; ?>
         <div class="main-layout">
         <div class="sidebar-bloqueada">
-            <?php include '../../utilities/sidebarAlumno.php'; ?>
+            <?php include '../../utilities/sidebarAlumn.php'; ?>
         </div>
         <main id= "contenido">
             <div id = "tituloModulo">

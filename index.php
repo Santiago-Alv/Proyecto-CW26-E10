@@ -4,7 +4,6 @@
 
     session_start();
 
-
     if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["userLog"]) && isset($_POST["passwordLog"])){
 
         $usuario = sanitizarEntrada($conexion,$_POST['userLog']);

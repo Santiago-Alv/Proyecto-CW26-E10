@@ -1,6 +1,6 @@
 <?php
 
-//session_start();
+session_start();    
 
 
 // consulta db
@@ -10,13 +10,14 @@
     $num_cuenta = $_GET["numc"];
     $contraseña=generarpassword(4);
     $contrasena_hasheada = hash("sha256", $contraseña);
-
+    
     $sql = "UPDATE alumno SET contraseña = '$contrasena_hasheada' 
                     WHERE nocta=$num_cuenta";
     $query = mysqli_query($conexion, $sql); 
+    
 
 // placeholder
-$tipo_usu = "Administrador";
+$tipo_usu = "Profesor";
 $nombre_usu = "Angela";  
 ?>
 
@@ -26,14 +27,16 @@ $nombre_usu = "Angela";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Alumnos</title>
-    <link rel="stylesheet" href="../../Statics/Css/adminGraph.css">
+    <link rel="stylesheet" href="../../Statics/Css/profeGraph.css">
+    <link rel="stylesheet" href="../../Statics/Css/agregarAlumProfe.css">
+    <link rel="stylesheet" href="../../Statics/Css/subirRecurso.css">
 </head>
 <body>
 
-    <?php include '../../utilities/navbar.php'; ?>
+    <?php include '../../utilities/navbarProfe.php'; ?>
 
     <div class="main-layout">
-        <?php include '../../utilities/sidebarAdmin.php'; ?>
+        <?php include '../../utilities/sidebarProfe.php'; ?>
 
         <main class="content">
             <div class="header-content">
@@ -45,7 +48,7 @@ $nombre_usu = "Angela";
                     echo "<div class='search-title'>";
                         echo "<span>Sus datos son los siguientes:</span>";
                     echo "</div>";
-                    echo "<form action='añadirAlumAdmin.php' class='aceptagregar-form'>";
+                    echo "<form action='agregAlumProfe.php' class='aceptagregar-form'>";
                         echo "<p>Número de cuenta: $num_cuenta</p>";
                         echo "<p>Contraseña: $contraseña</p>";
                     

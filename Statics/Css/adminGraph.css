@@ -113,6 +113,7 @@ body {
 
 .search-container {
     background-color: transparent;
+    
 }
 
 .search-title {
@@ -124,12 +125,19 @@ body {
     border: 1px solid #ccc;
 }
 
-.search-form, .agregar-form, .aceptagregar-form {
+.search-form, .agregar-form{
     display: flex;
     flex-direction: column;
     gap: 10px;
     max-width: 400px;
     margin-left: 20px;
+}
+.aceptagregar-form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 20px;
+    width: fit-content;
 }
 
 .search-form input, .agregar-form input, .agregar-form select, .aceptagregar-form p {

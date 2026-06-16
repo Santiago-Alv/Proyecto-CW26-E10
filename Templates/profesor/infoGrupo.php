@@ -68,10 +68,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['moduloAct'])){
        <?php include '../../utilities/sidebarProfe.php'; ?>
 
        <main class="view-recursos">
-           <div style="display: flex; gap: 15px; margin-bottom: 20px;">
-               <h1 style="font-size: 40px; margin:0;"><?php echo htmlspecialchars($grupo['nombre_grupo']); ?></h1>
-               <button class="btn-verde">Agregar alumno</button>
-           </div>
+            <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+                <h1 style="font-size: 40px; margin:0;"><?php echo htmlspecialchars($grupo['nombre_grupo']); ?></h1>
+                <form action= 'agregAlumProfe.php' method= 'POST'> 
+                    <input type='hidden' name = 'idgrupo' value = <?php echo $id_grupo;?>>
+                    <button class="btn-verde">Agregar alumno</button>
+                </form>
+            </div>
 
            <div class="layout-info-grupo">
                <div class="columna-alumnos">

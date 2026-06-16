@@ -5,8 +5,8 @@
     //$grupo
     //$modulo
     //$id_grupo = $_SESSION['grupo'];
-    $id_grupo = 3;
-    $modulo_activo = 3;
+    $id_grupo = 4;
+    $modulo_activo = 2;
     $id_alumno= 2;
 
     $duda = "";

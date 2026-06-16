@@ -12,6 +12,8 @@ body {
     height: 100vh;
 }
 
+
+
 /* Header principal */
 .navbar-superior {
     background-color: #0b1d3a;
@@ -60,40 +62,51 @@ body {
     flex: 1;
 }
 
-.sidebar {
-    background-color: #2b4d82;
-    width: 220px;
-    padding: 20px 15px;
-    border-right: 2px solid #1a325a;
-    
+
+/* === agregar/buscarAlumno ==== */
+
+.opModProfe {
+    width: 80vw;
+    display: flex; 
+    flex-direction: column !important;
+    gap: 2%;
 }
 
-.sidebar ul {
-    list-style: none;
+.search-title {
+    width: 20vw;
+    margin-left: 1%;
+    background-color: #e2e8f0;
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+}
+
+.search-form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-}
-/*sidebar profe*/
-summary, .grupos a {
-    text-decoration: none;
-    color: black;
-    background-color: #d1e3fa;
-    border-radius: 15px;
-    display: block;
-    text-align: center;
-}
-summary{
-    padding: 12px;
-    font-weight: bold;
-    margin: 10px;
+    gap: 10px;
+    max-width: 400px;
+    margin-left: 20px;
 }
 
-.grupos a {
-    padding: 5px;
-    margin-top: 5px;
-    margin-right: 30px;
-    font-weight:lighter;
+.search-form input {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #e2e8f0;
+}
+
+.btn-search {
+    background-color: #e2e8f0;
+    border: none;
+    padding: 10px;
+    border-radius: 15px;
+    width: 100px;
+    cursor: pointer;
+    margin: 0 auto; 
+    margin-top: 10px;
 }
 
 

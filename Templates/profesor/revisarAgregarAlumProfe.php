@@ -1,6 +1,6 @@
 <?php
 include '../../config/config_db.php';
-session_start();
+//session_start();
 
 // consulta db
     $contraseña = "";
@@ -27,7 +27,7 @@ session_start();
         // Evaluar: si resultado es 1 el alumno ya existe
         if ($resultado == 1) 
         {
-            header("Location: repetidoAñadirAlum.php");
+            header("Location: repetidoAñadirAlumProfe.php");
             exit();
         } 
         else {
@@ -37,7 +37,7 @@ session_start();
                 VALUES ('$nombre_alum', '$num_cuenta', $grupo_select, 'Nohaycampo')";
             $query = mysqli_query($conexion, $sql2); 
             
-            header("Location: exitoAñadirAlum.php?numc=".urlencode($num_cuenta));//lleva variable de numero de cuenta
+            header("Location: exitoAñadirAlumProfe.php?numc=".urlencode($num_cuenta));//lleva variable de numero de cuenta
             exit();
         }
     }
@@ -45,5 +45,6 @@ session_start();
     {
        echo "error";
     }  
+
 ?>
 

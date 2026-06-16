@@ -26,7 +26,7 @@ session_start();
         <main class="content">
             <div class="header-content">
                 <h1>Profesores</h1>
-                <button class="btn-add">+ Añadir profesor</button>
+                <a href="./AñadirPrfAdmin.php"><button class="btn-add">+ Añadir profesor</button></a>
             </div>
 
             <div class="search-container">
@@ -35,11 +35,12 @@ session_start();
                 </div>
                 <form action="resulSearchPrf.php" method="GET" class="search-form">
                     <input type="text" name="nombre" placeholder="Nombre del profesor">
-    
+                    <!-- 
                     <div class="grupo-radios">
                         <label><input type="radio" name="grupo" value="61B"> 61B</label>
                         <label><input type="radio" name="grupo" value="61D"> 61D</label>
                     </div>
+                    -->
 
                     <button type="submit" class="btn-search">Buscar</button>
                 </form>

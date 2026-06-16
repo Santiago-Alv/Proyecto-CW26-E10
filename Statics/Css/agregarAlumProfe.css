@@ -1,0 +1,62 @@
+.content {
+    padding: 5vh;
+}
+/*botones y formularios*/
+.agregar-form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin-left: 20px;
+}
+.aceptagregar-form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 20px;
+    width: fit-content;
+}
+.agregar-form input, .agregar-form select, .aceptagregar-form p {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #e2e8f0;
+}
+.agregar-form select{
+    max-width: 200px;
+}
+.btn-agregar, .btn-aceptagregar {
+    background-color: #e2e8f0;
+    border: none;
+    padding: 10px;
+    border-radius: 15px;
+    width: 100px;
+    cursor: pointer;
+    margin: 0 auto; 
+    margin-top: 10px;
+}
+/*Para tabla de aviso de existencia previa de alumno*/
+.avisa-repeticion{
+    background-color: #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    width: 50vw;
+    height: 50vh;
+}
+#aviso-repetalumno{
+    font-size: 3vw;
+}
+#repetido-submit{
+    background-color: rgb(180, 220, 121);
+    border: none;
+    padding: 10px;
+    border-radius: 15px;
+    width: 100px;
+    cursor: pointer;
+    margin: 0 auto; 
+    margin-top: 10px;
+}
