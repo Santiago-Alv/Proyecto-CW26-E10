@@ -1,7 +1,7 @@
 <?php
     include './config/config_db.php';
     include './Dynamics/validaciones.php';
-
+    
     session_start();
 
     if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["userLog"]) && isset($_POST["passwordLog"])){

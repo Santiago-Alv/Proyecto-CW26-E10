@@ -1,13 +1,64 @@
 <?php
+    include '../../config/config_db.php';
 
-//session_start();
+    session_start();
+    
+    $nombre_alumn ="";
+    $grupo_alumn ="";
+    $asistencias = array();
+    $countAsist =0;
+    $calificaciones = array();
+    $calif_tot =0;
 
+    if(isset($_GET['numMod'])){
+        //Agregar isset a toda logica pendiente
+        $num_modulo = $_GET['numMod'];
+    }
+    //var_dump($_SESSION);
+    if (isset($_SESSION['usuario']) && $_SESSION['usuario'] == 'alumno') 
+    {  
+        if (isset($_SESSION['id_alumno']) && isset($_SESSION['nombre']) && isset($_SESSION['grupo']))
+        $id_alumn= $_SESSION['id_alumno'];
+        $nombre_alumn= $_SESSION['nombre'];
+        $grupo_alumn= $_SESSION['grupo'];
 
-// consulta db
+        $sql = "SELECT estatus FROM asistencia WHERE id_alumno = $id_alumn";
+        $query = mysqli_query($conexion, $sql); 
+        if($query)
+        {
+            while($fila = mysqli_fetch_assoc($query))
+            {   
+                $asistencias[]= $fila;
+            }
+        }
+        if($asistencias){
+            foreach($asistencias as $asist){
+                if($asist['estatus'] == 'A' || $asist['estatus'] == 'J'){
+                    $countAsist++;
+                }
+            }
+            $countAsist/=(count($asistencias)*.01);
+            //var_dump($countAsist);
+        }
+        $sql1 = "SELECT calificacion FROM calif_mod WHERE id_alumno = $id_alumn";
+        $query1 = mysqli_query($conexion, $sql1); 
+        if($query1)
+        {
+            while($fila = mysqli_fetch_assoc($query1))
+            {   
+                $calificaciones[]= $fila;
+            }
+        }
+        if($calificaciones){
+            foreach ($calificaciones as $calif) {
+                $calif_tot += $calif["calificacion"];
+            }
+            $calif_tot = number_format($calif_tot / count($calificaciones), 2);
+        }
 
+    }
 // placeholder
-$nombre_alumn = "Panchito"; 
-$grupo_alumn = "61D";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,11 +82,11 @@ $grupo_alumn = "61D";
                     <div class="cuadros-contenido">
                         <div class="tarjeta">
                             <div class="tarjeta-titulo">Asistencia total</div>
-                            <div class="tarjeta-valor">88%</div>
+                            <div class="tarjeta-valor"><?php echo $countAsist;?>%</div>
                         </div>
                         <div class="tarjeta">
                             <div class="tarjeta-titulo">Calificación actual</div>
-                            <div class="tarjeta-valor">9</div>
+                            <div class="tarjeta-valor"><?php echo $calif_tot;?></div>
                         </div>
                     </div>
                     <div class="contenedor-d"><!--aui va foto lista-->

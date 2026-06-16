@@ -1,13 +1,18 @@
 <?php
-
-//session_start();
-
-
+session_start();
+    $nombre_alumn ="";
+    $grupo_alumn ="";
+    if (isset($_SESSION['usuario']) && $_SESSION['usuario'] == 'alumno') 
+    {  
+        if (isset($_SESSION['id_alumno']) && isset($_SESSION['nombre']) && isset($_SESSION['grupo']))
+        $id_alumn= $_SESSION['id_alumno'];
+        $nombre_alumn= $_SESSION['nombre'];
+        $grupo_alumn= $_SESSION['grupo'];
+        
+    }
 // consulta db
 
 // placeholder
-$nombre_alumn = "Panchito"; 
-$grupo_alumn = "61D";
 ?>
 <!DOCTYPE html>
 <html lang="es">
