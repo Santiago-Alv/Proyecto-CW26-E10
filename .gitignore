@@ -3,4 +3,5 @@
 /Statics/img/recursos/*
 !/Statics/img/recursos/.gitkeep
 /config/config_bd.php
+/config/adminInsert.php
 **/tests*.*
