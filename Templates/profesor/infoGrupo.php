@@ -122,10 +122,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['moduloAct'])){
                                $ruta_carita = "../../Statics/img/emocionR.png";
                            }
                        }
-                       $indiceAlumno = ($califTotal* $alumno['asistencia'])/100;
+                       if($alumno['asistencia'] > 0 && $califTotal != 'SE'){
+                            $indiceAlumno = ($califTotal* $alumno['asistencia'])/100;
                        
-                       $indiceGrupo += $indiceAlumno;
-                       $countIndice++;
+                            $indiceGrupo += $indiceAlumno;
+                            $countIndice++; 
+                       }
                    ?>
                        <div class="fila-alumno">
                            <span style="font-weight:bold; width: 20%;">
