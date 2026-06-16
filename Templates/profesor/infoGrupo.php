@@ -147,7 +147,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['moduloAct'])){
                            }
                        }
                        if($countAsist > 0 && $califTotal != 'SE'){
-                            $indiceAlumno = ($califTotal* $countAsist)/1000;
+                            $indiceAlumno = 1000/($califTotal* $countAsist);
                        
                             $indiceGrupo += $indiceAlumno;
                             $countIndice++; 
