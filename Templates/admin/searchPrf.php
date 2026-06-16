@@ -37,11 +37,12 @@ $nombre_usu = "Angela";
                 </div>
                 <form action="resulSearchPrf.php" method="GET" class="search-form">
                     <input type="text" name="nombre" placeholder="Nombre del profesor">
-    
+                    <!-- 
                     <div class="grupo-radios">
                         <label><input type="radio" name="grupo" value="61B"> 61B</label>
                         <label><input type="radio" name="grupo" value="61D"> 61D</label>
                     </div>
+                    -->
 
                     <button type="submit" class="btn-search">Buscar</button>
                 </form>
