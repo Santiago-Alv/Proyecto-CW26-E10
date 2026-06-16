@@ -12,7 +12,7 @@ body{
 }
 main {
     box-sizing: border-box;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     background-color: #5F8ADC;
     display: flex;

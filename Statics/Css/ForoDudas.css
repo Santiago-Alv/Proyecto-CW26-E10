@@ -1,11 +1,15 @@
 main {
     box-sizing: border-box;
-    padding: 3vw;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
 }
+#contenido_foro{
+    margin: 3vw;
+}
 .input-pregunta {
-    width: 80vw;
+    width: 70vw;
     height: 50vh;
     display: flex;
     flex-direction: column;
@@ -25,7 +29,7 @@ main {
     flex-grow: 9;
 }
 .botonesforo {
-    width: 80vw;
+    width: 70vw;
     height: 10vh;
     font-size: 1.5vw;
     display: flex;
