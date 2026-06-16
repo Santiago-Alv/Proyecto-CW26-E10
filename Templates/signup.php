@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
        $mensaje = "El correo o el número de trabajador ya están registrados.";
        $tipo_alerta = "error";
    } else {
-       $password_hash = password_hash($password_raw, PASSWORD_DEFAULT);
+       $password_hash = hash("sha256",$password_raw);
 
 
        // Insertamos en la tabla administrador
