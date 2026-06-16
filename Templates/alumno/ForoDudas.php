@@ -31,7 +31,6 @@
         <title>Foro de dudas de alumno</title>
         <link rel="stylesheet" href="../../Statics/Css/ForoDudas.css">
         <link rel="stylesheet" href="../../Statics/Css/AlumGraph.css">
-        <link rel="stylesheet" href="../../Statics/Css/ModuloAlumno.css">
         
     </head>
     <body>
