@@ -11,7 +11,7 @@
     $contraseña=generarpassword(4);
     $contrasena_hasheada = hash("sha256", $contraseña);
     
-    $sql = "UPDATE alumno SET contraseña = ' . $contrasena_hasheada . ' 
+    $sql = "UPDATE alumno SET contraseña = '$contrasena_hasheada' 
                     WHERE nocta=$num_cuenta";
     $query = mysqli_query($conexion, $sql); 
     
@@ -29,6 +29,7 @@ $nombre_usu = "Angela";
     <title>Gestión de Alumnos</title>
     <link rel="stylesheet" href="../../Statics/Css/profeGraph.css">
     <link rel="stylesheet" href="../../Statics/Css/agregarAlumProfe.css">
+    <link rel="stylesheet" href="../../Statics/Css/subirRecurso.css">
 </head>
 <body>
 

@@ -11,7 +11,7 @@
     $contraseña=generarpassword(4);
     $contrasena_hasheada = hash("sha256", $contraseña);
 
-    $sql = "UPDATE alumno SET contraseña = ' . $contrasena_hasheada . ' 
+    $sql = "UPDATE alumno SET contraseña = '$contrasena_hasheada' 
                     WHERE nocta=$num_cuenta";
     $query = mysqli_query($conexion, $sql); 
 

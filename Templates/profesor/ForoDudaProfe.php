@@ -1,11 +1,9 @@
 <?php
     include '../../config/config_db.php';
     session_start();
-    if(isset($_GET['id_grupo'])){
-        //Agregar isset a toda logica pendiente
-    }
+    $id_grupo = isset($_GET['id_grupo']) ? (int)$_GET['id_grupo'] : 1; // convierte a int y si no hay se convierte en 1
+    
     //var_dump($_SESSION['id_profesor']);
-    $id_grupo = $_GET['id_grupo'];
     $modulo_activo= 2;
     $sql = "SELECT duda_text, respuesta,estado_duda, id_alumno,id_duda FROM duda WHERE id_grupo = $id_grupo";
     $query = mysqli_query($conexion, $sql); 
