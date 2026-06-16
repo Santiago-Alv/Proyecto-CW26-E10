@@ -5,7 +5,7 @@
     <div class="logo">
         <img src="../../Statics/img/logo-unam.png" alt="Logo UNAM"> 
     </div>
-    <h1 id="nomb_proyecto">No desErTE</h1>
+    <h1 id="nomb_proyecto">NodesErTE</h1>
     <button class="btn-logout">Cerrar Sesión</button>
     </header>
 
