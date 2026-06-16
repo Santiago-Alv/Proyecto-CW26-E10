@@ -1,8 +1,7 @@
 <?php
     include '../../config/config_db.php';
 
-    $tipo_usu = "Profesor";
-    $nombre_usu = "Angie";
+session_start();
 
     //$modulo_activo = 3;
     //$id_alumno= 2;

@@ -43,12 +43,15 @@
                     $_SESSION['id_alumno'] = $fila['id_alumno'];
                     $_SESSION['nocta'] = $fila['nocta'];
                     $_SESSION['nombre'] = $fila['nombre'];
-                    $_SESSION['grupo'] = $fila['id_grupo'];
-                    $sql2 = "SELECT nombre_grupo FROM grupo WHERE id_grupo = ". $fila['id_grupo'] ."";
+                    $_SESSION['id_grupo'] = $fila['id_grupo'];
+                    $sql2 = "SELECT nombre_grupo,modulo_activo FROM grupo WHERE id_grupo = ". $fila['id_grupo'] ."";
                     if($query2 = mysqli_query($conexion,$sql2)){
                         $fila2 = mysqli_fetch_assoc($query2);
                         $_SESSION['grupo'] = $fila2['nombre_grupo'];
+                        $_SESSION['moduloActivo'] = $fila2['modulo_activo'];
                     }
+
+
 
                     setcookie("user", $fila['nocta'], time() + (86400), "/");
                     header("Location: ./Templates/alumno/Homealumno.php");

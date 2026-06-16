@@ -14,7 +14,7 @@ session_start();
         <link rel="stylesheet" href="../../Statics/Css/alumGraph.css">
     </head>
     <body>
-        <?php include '../../utilities/navbar.php'; ?>
+        <?php include '../../utilities/navbarAlumno.php'; ?>
         <div class="main-layout">
             <?php include '../../utilities/sidebarAlumn.php'; ?>
             <main id= "contenido">

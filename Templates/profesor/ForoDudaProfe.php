@@ -14,6 +14,7 @@
     //var_dump($_SESSION['id_profesor']);
     if (isset($_SESSION['usuario']) && $_SESSION['usuario'] == 'profesor') 
     {   
+        
         $sql = "SELECT duda_text, respuesta,estado_duda, id_alumno,id_duda FROM duda WHERE id_grupo = $id_grupo";
         $query = mysqli_query($conexion, $sql); 
         if($query)
@@ -25,36 +26,29 @@
             }
         }
 
-        $sql1 = "SELECT modulo_activo FROM grupo WHERE id_grupo = $id_grupo";
+        $sql1 = "SELECT modulo_activo,nombre_grupo FROM grupo WHERE id_grupo = $id_grupo";
         $query1 = mysqli_query($conexion, $sql1); 
-        $modacts = $query1;
-
-        $sql3 = "SELECT nombre_grupo FROM grupo WHERE id_grupo= $id_grupo";
-        $query3 = mysqli_query($conexion, $sql3); 
-        
-        if($query3 && $query1)
-        {
-            while($fila = mysqli_fetch_assoc($query3))
-            {   
-                $nombgrupos[]= $fila;
-            }
-            while($fila = mysqli_fetch_assoc($query1))
-            {
-                $modulo_activo[]=$fila;
+        if($query1){
+            while($fila = mysqli_fetch_assoc($query1)){
+                $nombgrupos["nombre_grupo"]= $fila['nombre_grupo'];
+                $modulo_activo ["modulo_activo"] = $fila['modulo_activo'];
             }
         }
+
         if(count($nombgrupos)>0)
         {
+            
             foreach($nombgrupos as $nombgrupo)
             {
-                $grupo = $nombgrupo["nombre_grupo"];
+                
+                $grupo = $nombgrupo;
             }
         }
         if(count($modulo_activo)>0)
         {
             foreach($modulo_activo as $modacts)
             {
-                $modact = $modacts["modulo_activo"];
+                $modact = $modacts;
             }
         }
     }else {
@@ -148,7 +142,7 @@
                                 echo "</tr>";
                                 //var_dump($grupo);
                                 echo "<tr >";
-                                    echo "<td>Grupo:". $grupo['nombre_grupo'] ."</td>";
+                                    echo "<td>Grupo:$grupo</td>";
                                 echo "</tr>";
                                 echo "<tr >";
                                     echo "<td>Respuesta:</td>";

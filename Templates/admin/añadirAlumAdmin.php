@@ -1,6 +1,7 @@
 <?php
 
-//session_start();
+
+session_start();
 
 
 // consulta db
@@ -19,9 +20,6 @@ include '../../config/config_db.php';
     }
 
 
-// placeholder
-$tipo_usu = "Administrador";
-$nombre_usu = "Angela";  
 ?>
 
 <!DOCTYPE html>

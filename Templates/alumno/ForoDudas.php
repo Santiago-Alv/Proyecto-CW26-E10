@@ -5,9 +5,9 @@
     //$grupo
     //$modulo
     //$id_grupo = $_SESSION['grupo'];
-    $id_grupo = 4;
-    $modulo_activo = 2;
-    $id_alumno= 2;
+    $id_grupo = $_SESSION['id_grupo'];
+    $modulo_activo = $_SESSION['moduloActivo'];
+    $id_alumno= $_SESSION['id_alumno'];
 
     $duda = "";
     if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['pregunta']))

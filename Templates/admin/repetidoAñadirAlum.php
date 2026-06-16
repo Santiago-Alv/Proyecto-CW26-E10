@@ -6,9 +6,7 @@
 // consulta db
 include '../../config/config_db.php';
 
-// placeholder
-$tipo_usu = "Administrador";
-$nombre_usu = "Angela";  
+session_start();
 ?>
 
 <!DOCTYPE html>

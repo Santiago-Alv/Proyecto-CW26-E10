@@ -1,6 +1,7 @@
 <?php
 
-//session_start();
+
+session_start();
 
 
 // consulta db
@@ -15,9 +16,7 @@
                     WHERE nocta=$num_cuenta";
     $query = mysqli_query($conexion, $sql); 
 
-// placeholder
-$tipo_usu = "Administrador";
-$nombre_usu = "Angela";  
+  
 ?>
 
 <!DOCTYPE html>
