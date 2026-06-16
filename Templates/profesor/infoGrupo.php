@@ -1,12 +1,58 @@
 <?php
 session_start();
 include '../../config/config_db.php';
-$conexion = connect();
+
 
 $id_grupo = isset($_GET['id_grupo']) ? (int)$_GET['id_grupo'] : 1; // convierte a int y si no hay se convierte en 1
-$sql_grupo = "SELECT nombre_grupo FROM grupo WHERE id_grupo = $id_grupo";
+$sql_grupo = "SELECT nombre_grupo,modulo_activo FROM grupo WHERE id_grupo = $id_grupo";
 $res_grupo = mysqli_query($conexion, $sql_grupo);
 $grupo = mysqli_fetch_assoc($res_grupo);
+
+$indiceGrupo = 0;
+
+$listaModulos = array();
+
+$sql_modul = "SELECT * FROM modulo";
+$query_modul = mysqli_query($conexion,$sql_modul);
+if($query_modul){
+    while($fila = mysqli_fetch_assoc($query_modul)){
+        $listaModulos[] = $fila;
+    }
+}
+
+$moduloActivoName = "";
+
+foreach($listaModulos as $modulo){
+    if($grupo['modulo_activo'] == $modulo['id_modulo']){
+        $moduloActivoName = $modulo['nombre_modulo'];
+        break;
+    }
+}
+
+
+if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['moduloAct'])){
+
+    $findModule = false;
+
+    $moduloActivo = $_POST['moduloAct'];
+
+    foreach($listaModulos as $modulo){
+        if($moduloActivo == $modulo['id_modulo']){
+            $findModule = true;
+            $moduloActivoName = $modulo['nombre_modulo'];
+            break;
+        }
+    }
+
+    if($findModule){
+
+        $sql_update = "UPDATE grupo SET modulo_activo = $moduloActivo WHERE id_grupo = ". $_GET['id_grupo'] ."";
+        $query_update = mysqli_query($conexion,$sql_update);
+
+    } else {
+        echo "INVALID MODULE";
+    }
+} 
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -31,9 +77,27 @@ $grupo = mysqli_fetch_assoc($res_grupo);
                    <?php
                    $sql_alum = "SELECT * FROM alumno WHERE id_grupo = $id_grupo";
                    $res_alum = mysqli_query($conexion, $sql_alum);
+                   $countIndice = 0; 
                    
                    while ($alumno = mysqli_fetch_assoc($res_alum)){
+                    $califTotal = 0;
+                    $countCalif = 0;
                        $id_al = $alumno['id_alumno'];
+                       $sql_calif = "SELECT calificacion FROM calif_mod WHERE id_alumno = $id_al";
+                       $res_calif = mysqli_query($conexion,$sql_calif);
+                       if($res_calif){
+                            while($calif_res = mysqli_fetch_assoc($res_calif)){
+                                
+                                $califTotal += $calif_res['calificacion'];   
+                                $countCalif ++;
+                            }
+                            if($countCalif > 0){
+                                $califTotal/=$countCalif;
+                            } else {
+                                $califTotal = 'SE';
+                            }
+                            
+                       }
                        // IMPORTANTE: Reseteamos la variable en cada vuelta para que no se herede el ciclo anterior
                        $ruta_carita = "";
                        $sql_animo = "SELECT emocion
@@ -58,14 +122,19 @@ $grupo = mysqli_fetch_assoc($res_grupo);
                                $ruta_carita = "../../Statics/img/emocionR.png";
                            }
                        }
+                       $indiceAlumno = ($califTotal* $alumno['asistencia'])/100;
+                       
+                       $indiceGrupo += $indiceAlumno;
+                       $countIndice++;
                    ?>
                        <div class="fila-alumno">
                            <span style="font-weight:bold; width: 20%;">
                                <?php echo htmlspecialchars($alumno['nombre'] . ' ' . $alumno['apell_pat_alum']); ?>
                            </span>
-                           <span>MODULO1</span><span>MODULO2</span>
-                           <span>Asistencia: <?php echo $alumno['asistencia']; ?>%</span>
-                           <span>Deserción: --</span>
+                           
+                           <span>Calificación total:  <?php echo $califTotal ?> </span>
+                           <span>Asistencia: <?php echo $alumno['asistencia']*10; ?>%</span>
+                           <span>Deserción: <?php echo $indiceAlumno; ?>%</span>
                            
                            <span style="display: flex; align-items: center; justify-content: center; width: 40px;">
                                <?php if ($ruta_carita != ""): ?>
@@ -80,13 +149,35 @@ $grupo = mysqli_fetch_assoc($res_grupo);
 
                <div class="columna-acciones">
                    <div class="circulo-desercion">
-                       <h2>80%</h2>
+                       <?php 
+                            if($countIndice > 0){
+                                echo "<h2>". $indiceGrupo/$countIndice . " % </h2>";
+                            } else {
+                                 echo "<h2></h2>";
+                            }
+                             
+                        ?>
                        <p>Índice de<br>deserción</p>
                    </div>
-
-                   <select class="input-gris" style="width: 100%;">
-                       <option>Seleccionar módulo ↓</option>
+                <form action="" method="POST">
+                     <select name="moduloAct" class="input-gris" style="width: 100%;" onchange= "this.form.submit()" >
+                       <?php echo"<option>Modulo Actual: $moduloActivoName</option>"; ?>
+                        <?php 
+                            
+                            if(count($listaModulos)>0)
+                            {
+                                foreach($listaModulos as $modulo)
+                                {
+                                    $id_modulo = $modulo["id_modulo"];
+                                    $nombre_modulo = $modulo["nombre_modulo"];
+                                    echo "<option value='$id_modulo'>$nombre_modulo</option>";
+                                    
+                                }
+                            } 
+                        ?>
                    </select>
+                </form>
+                  
 
                    <a href="listaAsistencia.php?id_grupo=<?php echo $id_grupo; ?>" class="btn-lateral">Lista de asistencia</a>
                    <a href="crearAsistencia.php?id_grupo=<?php echo $id_grupo; ?>" class="btn-lateral">Crear asistencia</a>

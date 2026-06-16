@@ -10,7 +10,7 @@
 
 <div class="sub-navbar-ruta">
     <div class="ruta-contenido">
-        <span class="icono-home"><a href="homeProfesor_v0.php">🏠</a></span> 
+        <span class="icono-home"><a href="homeProfesor.php">🏠</a></span> 
         <span class="separador">&lt;</span> 
         <span class="separador">&gt;</span> 
         <span class="usuario-actual">Profesor Jirafales</span>

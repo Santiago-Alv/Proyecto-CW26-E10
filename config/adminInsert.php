@@ -7,7 +7,7 @@
 
     $contraseña = hasheaPassword($contraseña);
 
-    $sql = "INSERT INTO profesor (nombre_administrador,numero_trabajador,contraseña) VALUES ('$usuario','$numeroTrabajador','$contraseña')";
+    $sql = "UPDATE profesor SET contraseña = '$contraseña' WHERE id_profesor = 312";
 
     $query = mysqli_query($conexion,$sql);
 

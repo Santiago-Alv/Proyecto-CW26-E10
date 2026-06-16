@@ -38,7 +38,7 @@
                 
                 $contra_bd = $fila["contraseña"];
                 if($fila["contraseña"] == NULL) $contra_bd = "";
-                if($tipoUsuario == 'alumno' && hash_equals($contra_bd,hash("sha256",$password))){
+                if($tipoUsuario == 'alumno' && password_verify($password,$contra_bd)){
 
                     $_SESSION['usuario'] = $tipoUsuario;
                     $_SESSION['id_alumno'] = $fila['id_alumno'];
@@ -54,7 +54,7 @@
                     setcookie("user", $fila['nocta'], time() + (86400), "/");
                     //header("Location: ./Templates/Profesor/homeProfesor.php");
                 }
-                if($tipoUsuario == 'profesor' && hash_equals($contra_bd,hash("sha256",$password))){
+                if($tipoUsuario == 'profesor' && password_verify($password,$contra_bd)){
 
                     $_SESSION['usuario'] = $tipoUsuario;
                     $_SESSION['id_profesor'] = $fila['id_profesor'];
@@ -64,7 +64,7 @@
                     setcookie("user", $fila['numero_trabajador'], time() + (86400), "/");
                     header("Location: ./Templates/profesor/homeProfesor.php");
                 }
-                if($tipoUsuario == 'administrador' && hash_equals($contra_bd,hash("sha256",$password))){
+                if($tipoUsuario == 'administrador' &&  password_verify($password,$contra_bd)){
                     
                     $_SESSION['usuario'] = $tipoUsuario;
                     $_SESSION['id_administrador'] = $fila['id_administrador'];

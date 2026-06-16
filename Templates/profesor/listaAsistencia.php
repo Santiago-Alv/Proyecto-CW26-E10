@@ -1,4 +1,6 @@
 <?php
+
+session_start();
 include '../../config/config_db.php';
 $conexion = connect();
 

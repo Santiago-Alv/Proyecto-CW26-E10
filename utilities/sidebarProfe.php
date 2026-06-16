@@ -2,7 +2,7 @@
 
 // include '../config/config_db.php'; 
 
-$sql = "SELECT id_grupo, nombre_grupo FROM grupo WHERE id_profesor = 3";
+$sql = "SELECT id_grupo, nombre_grupo FROM grupo WHERE id_profesor = ".$_SESSION['id_profesor']."";
 $query = mysqli_query($conexion, $sql); 
 $grupos = array();
 
@@ -17,17 +17,17 @@ if($query) {
     <nav class="sidebar-menu">
         <?php 
         if(count($grupos) > 0) {
-            foreach($grupos as $grupo) {
-                $id_grupo = $grupo['id_grupo'];
-                $nombre_grupo = htmlspecialchars($grupo['nombre_grupo']);
+            foreach($grupos as $grupoSide) {
+                $id_grupoSide = $grupoSide['id_grupo'];
+                $nombre_grupoSide = htmlspecialchars($grupoSide['nombre_grupo']);
                 echo "<details class='grupo-acordeon'>";
 
-                echo "<summary class='btn-sidebar summary-grupo'>Grupo $nombre_grupo</summary>";
+                echo "<summary class='btn-sidebar summary-grupo'>Grupo $nombre_grupoSide</summary>";
                 echo "<div class='enlaces-grupo'>";
                 // get
-                echo "<a href='infoGrupo.php?id_grupo=$id_grupo' class='btn-sublink'>Info</a>";
-                echo "<a href='ForoDudaProfe.php?id_grupo=$id_grupo' class='btn-sublink'>Dudas</a>";
-                echo "<a href='recursosProfesor.php?id_grupo=$id_grupo' class='btn-sublink'>Recursos</a>";
+                echo "<a href='infoGrupo.php?id_grupo=$id_grupoSide' class='btn-sublink'>Info</a>";
+                echo "<a href='ForoDudaProfe.php?id_grupo=$id_grupoSide' class='btn-sublink'>Dudas</a>";
+                echo "<a href='recursosProfesor.php?id_grupo=$id_grupoSide' class='btn-sublink'>Recursos</a>";
                 echo "</div>";
                 
                 echo "</details>";
