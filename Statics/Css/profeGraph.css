@@ -13,7 +13,7 @@ body {
 }
 
 /* Header principal */
-.top-header {
+.navbar-superior {
     background-color: #0b1d3a;
     display: flex;
     justify-content: space-between;
@@ -22,11 +22,11 @@ body {
     border-bottom: 2px solid #b8860b; 
 }
 
-.logo img {
+.navbar-logo img {
     height: 50px;
 }
 
-.btn-logout {
+.navbar-logout {
     background-color: #ff8c00;
     color: #000;
     border: none;
@@ -44,7 +44,7 @@ body {
     border-style: double;
  }
 
-.sub-navbar {
+.sub-navbar-ruta {
     background-color: #17376e;
     color: white;
     padding: 8px 20px;
@@ -74,7 +74,7 @@ body {
     flex-direction: column;
     gap: 15px;
 }
-
+/*sidebar profe*/
 summary, .grupos a {
     text-decoration: none;
     color: black;

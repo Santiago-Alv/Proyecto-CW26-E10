@@ -1,25 +1,27 @@
 <?php
-    
+    include '../../config/config_db.php';
     //$nomb_alumno 
     //$grupo
     //$modulo
+    //$id_grupo = $_SESSION['grupo'];
+    $id_grupo = 3;
+    $modulo_activo = 3;
+    $id_alumno= 2;
 
     $duda = "";
     if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['pregunta']))
     {
         $duda = $_POST['pregunta'];
 
-        $sql = "INSERT INTO duda (estado_duda, duda_text, respuesta, id_alumno, id_grupo, id_profesor)
-                VALUES ('P','$duda', 'respuesta', 1,1,1)";
-
-        include '../../config/config_db.php';
+        $sql = "INSERT INTO duda (estado_duda, duda_text, id_alumno, id_grupo, id_modulo)
+                VALUES ('P','$duda', $id_alumno,$id_grupo,$modulo_activo)";
         $query = mysqli_query($conexion, $sql); 
 
     }
 
     // placeholder
-    $tipo_usu = "Alumno";
-    $nombre_usu = "Juanito Juanito";
+    $nombre_alumn = "Juanito Juanito";
+    $grupo_alumn = "61B";
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -28,10 +30,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Foro de dudas de alumno</title>
         <link rel="stylesheet" href="../../Statics/Css/ForoDudas.css">
-        <link rel="stylesheet" href="../../Statics/Css/alumGraph.css">
+        <link rel="stylesheet" href="../../Statics/Css/AlumGraph.css">
     </head>
     <body>
-        <?php include '../../utilities/navbar.php'; ?>
+        <?php include '../../utilities/navbarAlumno.php'; ?>
         <div class="main-layout">
             <?php include '../../utilities/sidebarAlumn.php'; ?>
             <main id= "contenido">

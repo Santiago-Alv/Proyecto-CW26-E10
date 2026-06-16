@@ -1,4 +1,5 @@
 <?php
+
 // include '../config/config_db.php'; 
 
 $sql = "SELECT id_grupo, nombre_grupo FROM grupo WHERE id_profesor = 3";
@@ -25,7 +26,7 @@ if($query) {
                 echo "<div class='enlaces-grupo'>";
                 // get
                 echo "<a href='infoGrupo.php?id_grupo=$id_grupo' class='btn-sublink'>Info</a>";
-                echo "<a href='dudasGrupo.php?id_grupo=$id_grupo' class='btn-sublink'>Dudas</a>";
+                echo "<a href='ForoDudaProfe.php?id_grupo=$id_grupo' class='btn-sublink'>Dudas</a>";
                 echo "<a href='recursosProfesor.php?id_grupo=$id_grupo' class='btn-sublink'>Recursos</a>";
                 echo "</div>";
                 
