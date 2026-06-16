@@ -1,6 +1,6 @@
 <?php
 // navbarAdmin.php
-$nombre_admin = "Angela"; // Placeholder
+// Placeholder
 $tipo_usu = "Administrador";
 $nombre_usu = "Angela"; 
 ?>    

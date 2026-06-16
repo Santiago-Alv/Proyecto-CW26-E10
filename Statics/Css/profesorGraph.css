@@ -52,8 +52,7 @@ main {
     height: 86vh;
     
     background-color: #5F8ADC;
- 
-  
+
     display: flex;
     flex-direction: row;
     overflow: auto;

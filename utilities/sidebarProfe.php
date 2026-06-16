@@ -26,7 +26,7 @@ if($query) {
                 echo "<div class='enlaces-grupo'>";
                 // get
                 echo "<a href='infoGrupo.php?id_grupo=$id_grupo' class='btn-sublink'>Info</a>";
-                echo "<a href='ContestaDuda.php?id_grupo=$id_grupo' class='btn-sublink'>Dudas</a>";
+                echo "<a href='ForoDudaProfe.php?id_grupo=$id_grupo' class='btn-sublink'>Dudas</a>";
                 echo "<a href='recursosProfesor.php?id_grupo=$id_grupo' class='btn-sublink'>Recursos</a>";
                 echo "</div>";
                 
