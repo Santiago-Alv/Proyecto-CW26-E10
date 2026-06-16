@@ -1,5 +1,5 @@
 <?php
-    include 'config.php';
+    //include 'config.php';
 
     $mostrar_bienvenida = false;
     if (isset($_POST['recursos'])) {
