@@ -52,7 +52,7 @@
                     }
 
                     setcookie("user", $fila['nocta'], time() + (86400), "/");
-                    //header("Location: ./Templates/Profesor/homeProfesor.php");
+                    header("Location: ./Templates/alumno/Homealumno.php");
                 }
                 if($tipoUsuario == 'profesor' && hash_equals($contra_bd,hash("sha256",$password))){
 
@@ -107,7 +107,7 @@
                     }
 
                     setcookie("user", $fila['nocta'], time() + (86400), "/");
-                    //header("Location: ./Profesor/homeProfesor.php");
+                    header("Location: ./Templates//alumno/Homealumno.php");
                 }
                 if($tipoUsuario == 'profesor'){
 
@@ -117,7 +117,7 @@
                     $_SESSION['nombre_profesor'] = $fila['nombre_profesor'];
 
                     setcookie("user", $fila['numero_trabajador'], time() + (86400), "/");
-                    //header("Location: ./Profesor/homeProfesor.php");
+                    header("Location: ./Templates//profesor/homeProfesor.php");
                 }
                 if($tipoUsuario == 'administrador'){
                     
@@ -127,7 +127,7 @@
                     $_SESSION['nombre_administrador'] = $fila['nombre_administrador'];
 
                     setcookie("user", $fila['numero_trabajador'], time() + (86400), "/");
-                    //header("Location: ./admin/searchAlAdmin.php");
+                    header("Location: ./Templates/admin/searchAlAdmin.php");
                 }
             }
 
