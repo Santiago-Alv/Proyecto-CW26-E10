@@ -1,7 +1,8 @@
 <?php
-     // placeholder
-    $tipo_usu = "Alumno";
-    $nombre_usu = "Juanito Juanito"; 
+
+session_start();
+ 
+
 ?>
 <!DOCTYPE html>
 <html lang="es">

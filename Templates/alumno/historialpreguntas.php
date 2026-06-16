@@ -1,7 +1,8 @@
 <?php
     include '../../config/config_db.php';
+    session_start();
     $modulo_activo = 3;
-    $id_alumno= 2;
+    $id_alumno= $_SESSION['id_alumno'];
 
     $sql = "SELECT duda_text, respuesta,estado_duda FROM duda WHERE id_alumno = $id_alumno";
     $query = mysqli_query($conexion, $sql); 
@@ -15,9 +16,7 @@
         }
     }
 
-     // placeholder
-    $nombre_alumn = "Juanito Juanito";
-    $grupo_alumn = "61B";
+
 ?>
 <!DOCTYPE html>
 <html lang="es">

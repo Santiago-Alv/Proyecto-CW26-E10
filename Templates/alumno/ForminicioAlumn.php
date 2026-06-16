@@ -1,18 +1,16 @@
 <?php
-    //include 'config.php';
+include '../../config/config_db.php';
 
     $mostrar_bienvenida = false;
     if (isset($_POST['recursos'])) {
         $mostrar_bienvenida = true;
     }
-//session_start();
+session_start();
 
 
 // consulta db
 
-// placeholder
-$nombre_alumn = "Panchito"; 
-$grupo_alumn = "61D";
+
 ?>
 <!DOCTYPE html>
 <html lang="es">

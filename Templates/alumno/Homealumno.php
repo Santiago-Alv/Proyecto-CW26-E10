@@ -1,13 +1,10 @@
 <?php
 
-//session_start();
+session_start();
 
 
 // consulta db
 
-// placeholder
-$nombre_alumn = "Panchito"; 
-$grupo_alumn = "61D";
 ?>
 <!DOCTYPE html>
 <html lang="en">

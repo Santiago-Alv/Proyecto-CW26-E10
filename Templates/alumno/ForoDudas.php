@@ -1,5 +1,6 @@
 <?php
     include '../../config/config_db.php';
+    session_start();
     //$nomb_alumno 
     //$grupo
     //$modulo
@@ -19,9 +20,7 @@
 
     }
 
-    // placeholder
-    $nombre_alumn = "Juanito Juanito";
-    $grupo_alumn = "61B";
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
