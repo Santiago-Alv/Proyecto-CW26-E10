@@ -1,8 +1,19 @@
+<?php
+
+    if(isset($_SESSION['usuario']) && $_SESSION['usuario'] == 'profesor'){
+        $nombre_usu = $_SESSION['nombre_profesor'];
+        $tipo_usu = $_SESSION['usuario'];
+
+    } else {
+        include '../Dynamics/cerrar_sesion.php';
+    }
+?>
+
 <header class="navbar-superior">
     <div class="navbar-logo">
         <img src="../../Statics/img/logo-unam.png" alt="Logo UNAM" class="img-logo">
     </div>
-    <h1 id="nomb_proyecto">No desErTE</h1>
+    <a id="nomb_proyecto" href="./homeProfesor.php">No desErTE</a>
     <div class="navbar-logout">
         <a href="./../../Dynamics/cerrar_sesion.php" class="btn-logout">Cerrar Sesión</a>
     </div>
@@ -10,9 +21,6 @@
 
 <div class="sub-navbar-ruta">
     <div class="ruta-contenido">
-        <span class="icono-home"><a href="homeProfesor.php">🏠</a></span> 
-        <span class="separador">&lt;</span> 
-        <span class="separador">&gt;</span> 
-        <span class="usuario-actual">Profesor Jirafales</span>
+        <?php echo "<span class='usuario-actual'>Profesor: $nombre_usu </span>"; ?>
     </div>
 </div>

@@ -1,11 +1,16 @@
 <?php
-// navbarAlumno.php
+    if(isset($_SESSION['usuario']) && $_SESSION['usuario'] == 'alumno'){
+        $nombre_alumn = $_SESSION['nombre'];
+        $grupo_alumn = $_SESSION['grupo'];
+    } else {
+        include '../Dynamics/cerrar_sesion.php';
+    }
 ?>    
     <header class="top-header">
     <div class="logo">
         <img src="../../Statics/img/logo-unam.png" alt="Logo UNAM"> 
     </div>
-    <h1 id="nomb_proyecto">No desErTE</h1>
+    <a id="nomb_proyecto" href="./Homealumno.php">No desErTE</a>
     <div class="navbar-logout">
         <a href="./../../Dynamics/cerrar_sesion.php" class="btn-logout">Cerrar Sesión </a>
     </div>
@@ -14,9 +19,6 @@
 
     <div class="sub-navbar">
         <div class="breadcrumbs">
-            <span>🏠</span>
-            <span><</span>
-            <span>></span>
             <!-- Sanitizar -->
             <span>Alumno: <?php echo htmlspecialchars($nombre_alumn); ?></span>
             <span>Grupo: <?php echo htmlspecialchars($grupo_alumn); ?></span>
