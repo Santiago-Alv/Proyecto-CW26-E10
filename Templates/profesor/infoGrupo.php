@@ -11,6 +11,7 @@ $grupo = mysqli_fetch_assoc($res_grupo);
 $indiceGrupo = 0;
 
 $listaModulos = array();
+$listaAsistencias = array();
 
 $sql_modul = "SELECT * FROM modulo";
 $query_modul = mysqli_query($conexion,$sql_modul);
@@ -80,11 +81,31 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['moduloAct'])){
                    $countIndice = 0; 
                    
                    while ($alumno = mysqli_fetch_assoc($res_alum)){
+                    
                     $califTotal = 0;
                     $countCalif = 0;
+                    $countAsist = 0;
                        $id_al = $alumno['id_alumno'];
                        $sql_calif = "SELECT calificacion FROM calif_mod WHERE id_alumno = $id_al";
                        $res_calif = mysqli_query($conexion,$sql_calif);
+
+                        $sql5 = "SELECT * FROM asistencia WHERE id_alumno = $id_al";
+                        $query5 = mysqli_query($conexion,$sql5);
+                        if($query5){
+                            while($fila5 = mysqli_fetch_assoc($query5)){
+                                $listaAsistencias[] = $fila5;
+                            }
+                        }
+                        if($listaAsistencias != NULL){
+                            foreach($listaAsistencias as $asist){
+                                if($asist['estatus'] == 'A' || $asist['estatus'] == 'J'){
+                                    $countAsist++;
+                                }
+                            }
+                            $countAsist/=(count($listaAsistencias)*.01);
+                            //var_dump($countAsist);
+                        }
+
                        if($res_calif){
                             while($calif_res = mysqli_fetch_assoc($res_calif)){
                                 
@@ -122,8 +143,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['moduloAct'])){
                                $ruta_carita = "../../Statics/img/emocionR.png";
                            }
                        }
-                       if($alumno['asistencia'] > 0 && $califTotal != 'SE'){
-                            $indiceAlumno = ($califTotal* $alumno['asistencia'])/100;
+                       if($countAsist > 0 && $califTotal != 'SE'){
+                            $indiceAlumno = ($califTotal* $countAsist)/1000;
                        
                             $indiceGrupo += $indiceAlumno;
                             $countIndice++; 
@@ -137,7 +158,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['moduloAct'])){
                            </span>
                            
                            <span>Calificación total:  <?php echo $califTotal ?> </span>
-                           <span>Asistencia: <?php echo $alumno['asistencia']*10; ?>%</span>
+                           <span>Asistencia: <?php echo $countAsist; ?>%</span>
                            <span>Deserción: <?php echo $indiceAlumno; ?>%</span>
                            
                            <span style="display: flex; align-items: center; justify-content: center; width: 40px;">
