@@ -74,12 +74,13 @@ body {
     gap: 15px;
 }
 
-.sidebar a {
+#botonDuda {
     text-decoration: none;
     color: black;
     background-color: #d1e3fa;
-    padding: 12px;
+    padding: 8px;
     border-radius: 15px;
+    margin: 2px;
     display: block;
     text-align: center;
     font-weight: bold;
@@ -106,4 +107,69 @@ body {
     display: block;
     text-align: center;
     font-weight:lighter;
+}
+.btn-sidebar {
+   background-color: #cbd5e1;
+   color: #1a1a1a;
+   display: block;
+   text-decoration: none;
+   text-align: center;
+   padding: 12px 20px;
+   border-radius: 20px;
+   font-weight: bold;
+   font-size: 15px;
+   box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+   transition: all 0.2s ease;
+   cursor: pointer;
+}
+
+.btn-sidebar.activo {
+   background-color: #e2e8f0;
+   border: 2px solid #0b2545;
+}
+
+.modulo summary {
+   list-style: none;
+   outline: none;
+}
+
+.btn-sidebar:hover {
+   background-color: #b2c2d7;
+}
+
+
+.modulo[open] .btn-sidebar {
+   background-color: #e2e8f0;
+   border: 2px solid #0b2545;
+   border-bottom-left-radius: 5px;
+   border-bottom-right-radius: 5px;
+}
+
+
+.enlaces-grupo {
+   background-color: #0b2545;
+   border-radius: 0 0 15px 15px;
+   padding: 10px 0;
+   display: flex;
+   flex-direction: column;
+   margin-top: -2px;
+   box-shadow: inset 0 3px 5px rgba(0,0,0,0.2); /* Sombra */
+}
+
+
+.enlaces-grupo a {
+   color: #24282e;
+   background-color: #d1e3fa;
+   text-decoration: none;
+   padding: 8px 20px;
+   margin-bottom: 5px;
+   font-size: 14px;
+   text-align: center;
+   transition: background-color 0.2s, color 0.2s;
+}
+
+
+.enlaces-grupo a:hover {
+   color: #ffffff;
+   background-color: rgba(255, 255, 255, 0.1);
 }
