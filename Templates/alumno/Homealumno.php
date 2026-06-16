@@ -1,13 +1,38 @@
 <?php
+session_start();
+include '../../config/config_db.php'; 
+$conexion = connect();
+if (!isset($_SESSION['id_alumno'])) {
+    header("Location: ../../index.php"); 
+    exit();
+}
 
-//session_start();
+$id_alumno_sesion = (int)$_SESSION['id_alumno'];
+$sql_alumno = "SELECT nombre, id_grupo FROM alumno WHERE id_alumno = $id_alumno_sesion";
+$res_alumno = mysqli_query($conexion, $sql_alumno);
 
-
-// consulta db
-
-// placeholder
-$nombre_alumn = "Panchito"; 
-$grupo_alumn = "61D";
+if ($res_alumno && mysqli_num_rows($res_alumno) > 0) {
+    $datos_alumno = mysqli_fetch_assoc($res_alumno);
+    
+    $nombre_alumn = $datos_alumno['nombre'];
+    $id_grupo_real = (int)$datos_alumno['id_grupo'];
+    
+    //parasidebar
+    $_SESSION['id_grupo'] = $id_grupo_real;
+    $sql_grupo = "SELECT nombre_grupo FROM grupo WHERE id_grupo = $id_grupo_real";
+    $res_grupo = mysqli_query($conexion, $sql_grupo);
+    
+    if ($res_grupo && mysqli_num_rows($res_grupo) > 0) {
+        $datos_grupo = mysqli_fetch_assoc($res_grupo);
+        $grupo_alumn = $datos_grupo['nombre_grupo'];
+    } else {
+        $grupo_alumn = "S/G";
+    }
+    
+} else {
+    $nombre_alumn = "Alumno";
+    $grupo_alumn = "S/G";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
