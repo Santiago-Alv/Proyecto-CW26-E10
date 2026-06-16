@@ -31,22 +31,25 @@
         <title>Foro de dudas de alumno</title>
         <link rel="stylesheet" href="../../Statics/Css/ForoDudas.css">
         <link rel="stylesheet" href="../../Statics/Css/AlumGraph.css">
+        
     </head>
     <body>
         <?php include '../../utilities/navbarAlumno.php'; ?>
         <div class="main-layout">
             <?php include '../../utilities/sidebarAlumn.php'; ?>
             <main id= "contenido">
-                <form action="" method = "POST" class="input-pregunta">
-                    <label for="pregunta">¿Qué duda tienes? <br>Menciona el tema o la duda en general que tengas.<br></label>
-                    <textarea name="pregunta" id="ipt-pregunta" placeholder="Escribe tu duda aquí" required></textarea>
-                    <button type="submit" id="pregunta-submit">Enviar</button>
-                </form>     
-                <div class="botonesforo">
-                        <form action="historialpreguntas.php">
-                            <button type="submit" id="historial-submit">Ver historial</button>
-                        </form>
-                </div>           
+                <div id="contenido_foro">
+                    <form action="" method = "POST" class="input-pregunta">
+                        <label for="pregunta">¿Qué duda tienes? <br>Menciona el tema o la duda en general que tengas.<br></label>
+                        <textarea name="pregunta" id="ipt-pregunta" placeholder="Escribe tu duda aquí" required></textarea>
+                        <button type="submit" id="pregunta-submit">Enviar</button>
+                    </form>     
+                    <div class="botonesforo">
+                            <form action="historialpreguntas.php">
+                                <button type="submit" id="historial-submit">Ver historial</button>
+                            </form>
+                    </div> 
+                </div>                     
             </main>  
         </div>  
     </body>
