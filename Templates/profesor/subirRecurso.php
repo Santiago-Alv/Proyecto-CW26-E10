@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['btn_subir'])) {
 </head>
 <body>
 
-    <?php include '../../utilities/navbar.php'; ?>
+    <?php include '../../utilities/navbarProfe.php'; ?>
 
     <div class="main-layout">
         <?php 
