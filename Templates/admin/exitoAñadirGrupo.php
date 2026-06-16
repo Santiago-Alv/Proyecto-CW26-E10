@@ -47,7 +47,7 @@ $modulo = '';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión de Alumnos</title>
+    <title>Gestión de Grupos</title>
     <link rel="stylesheet" href="../../Statics/Css/adminGraph.css">
 </head>
 <body>
@@ -59,7 +59,7 @@ $modulo = '';
 
         <main class="content">
             <div class="header-content">
-                <h1>Creación de alumno exitosa</h1>
+                <h1>Creación de grupo exitosa</h1>
             </div>
             <div class="search-container">
                 <?php
