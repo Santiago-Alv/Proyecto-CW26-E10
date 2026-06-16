@@ -7,7 +7,6 @@
     $id_grupo = 4;
     $modulo_activo = 2;
     $id_alumno= 2;
-
     $duda = "";
     if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['pregunta']))
     {
