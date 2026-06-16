@@ -8,6 +8,24 @@
 
     //Insertar datos a la base de datos si no se repite
     $num_cuenta = $_GET["numc"];
+    $sql = "SELECT contraseña FROM alumno WHERE nocta = '$num_cuenta'";
+    $query = mysqli_query($conexion, $sql); 
+    $contraseña = array();
+    if($query)
+    {
+        while($fila = mysqli_fetch_assoc($query))
+        {   
+            $contraseña[]= $fila;
+            //var_dump($fila);
+        }
+    }
+    if(count($contraseña)>0)
+    {
+        foreach($contraseña as $contra)
+        {
+            $password = $contra["contraseña"];
+        }
+    }
     
 
 // placeholder
@@ -37,13 +55,13 @@ $nombre_usu = "Angela";
             </div>
             <div class="search-container">
                 <?php
-                    $contraseña = "Hola123";// $_POST["contraseña-aleatorio"]
+                    
                     echo "<div class='search-title'>";
                         echo "<span>Sus datos son los siguientes:</span>";
                     echo "</div>";
                     echo "<form action='agregAlumProfe.php' class='aceptagregar-form'>";
                         echo "<p>Número de cuenta: $num_cuenta</p>";
-                        echo "<p>Contraseña: $contraseña</p>";
+                        echo "<p>Contraseña: $password</p>";
                     
                         echo "<button type='submit' class='btn-aceptagregar'>Aceptar</button>";
                     echo "</form>";

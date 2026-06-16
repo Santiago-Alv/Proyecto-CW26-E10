@@ -2,14 +2,20 @@
     padding: 5vh;
 }
 /*botones y formularios*/
-.agregar-form, .aceptagregar-form {
+.agregar-form{
     display: flex;
     flex-direction: column;
     gap: 10px;
     max-width: 400px;
     margin-left: 20px;
 }
-
+.aceptagregar-form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 20px;
+    width: fit-content;
+}
 .agregar-form input, .agregar-form select, .aceptagregar-form p {
     padding: 10px;
     border-radius: 10px;
