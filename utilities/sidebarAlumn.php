@@ -1,21 +1,6 @@
 <?php
- /*
-    include '../../config/config_db.php';
 
-   $sql = "SELECT id_modulo FROM modulo";
-    $query = mysqli_query($conexion, $sql); 
-
-    $num_modulo = array();
-
-    if($query)
-    {
-        while($fila = mysqli_fetch_assoc($query))
-        {   
-            $num_modulo = $fila["id_modulo"];
-            var_dump($num_modulo[$x]);
-        }
-    }
-*/
+$id_grupo_alumno = isset($_SESSION['id_grupo']) ? (int)$_SESSION['id_grupo'] : 1;//sinohay ps el 1 pq el get no puede quedar vacio
 ?>
 
     <aside class="sidebar">
@@ -30,7 +15,7 @@
                         echo "<summary class='btn-sidebar'>Modulo $cuentamod </summary>";
                             echo "<div class='enlaces-grupo'>";
                                 echo "<a href= 'EstadoModuloAlumno.php?numMod= $cuentamod'>Estado</a>";
-                                echo "<a href='#'>Recursos</a>";
+                                echo "<a href='recursosAlumno.php?id_grupo=$id_grupo_alumno&id_modulo=$cuentamod'>Recursos</a>";
                             echo "</div>";
                         echo "</details>";
                         echo "</li>";

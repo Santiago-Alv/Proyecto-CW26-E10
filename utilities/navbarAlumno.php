@@ -4,7 +4,7 @@
         $grupo_alumn = $_SESSION['grupo'];
         $tipo_usu = $_SESSION['usuario'];
     } else {
-        include '../Dynamics/cerrar_sesion.php';
+        include './../Dynamics/cerrar_sesion.php';
     }
 ?>    
     <header class="top-header">
@@ -13,7 +13,7 @@
     </div>
     <a id="nomb_proyecto" href="./Homealumno.php">No desErTE</a>
     <div class="navbar-logout">
-        <a href="./../../Dynamics/cerrar_sesion.php" class="btn-logout">Cerrar Sesión </a>
+        <a href="./../Dynamics/cerrar_sesion.php" class="btn-logout">Cerrar Sesión </a>
     </div>
     
     </header>
