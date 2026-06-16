@@ -28,7 +28,7 @@ $nombre_usu = "Angela";
         <main class="content">
             <div class="header-content">
                 <h1>Profesores</h1>
-                <button class="btn-add">+ Añadir profesor</button>
+                <a href="./AñadirPrfAdmin.php"><button class="btn-add">+ Añadir profesor</button></a>
             </div>
 
             <div class="search-container">
