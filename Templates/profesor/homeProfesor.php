@@ -1,6 +1,6 @@
 <?php
     include '../../config/config_db.php';
-
+    session_start();
     
 
 ?>
@@ -25,7 +25,7 @@
 </head>
 <body>
 
-    <?php include '../../utilities/navbar.php'; ?>
+    <?php include '../../utilities/navbarProfe.php'; ?>
 
     <div class="main-layout">
         <?php include '../../utilities/sidebarProfe.php'; ?>

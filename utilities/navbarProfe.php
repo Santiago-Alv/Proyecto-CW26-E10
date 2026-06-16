@@ -1,3 +1,15 @@
+<?php
+    $usuario = "";
+    $nombprofe = "";
+    //var_dump($_SESSION);
+    if (isset($_SESSION['usuario'])){
+        $usuario = $_SESSION['usuario'];
+        if (isset($_SESSION['nombre_profesor']))
+        {
+            $nombprofe= $_SESSION['nombre_profesor']; 
+        } 
+    }
+?>
 <header class="navbar-superior">
     <div class="navbar-logo">
         <img src="../../Statics/img/logo-unam.png" alt="Logo UNAM" class="img-logo">
@@ -13,6 +25,6 @@
         <span class="icono-home"><a href="homeProfesor_v0.php">🏠</a></span> 
         <span class="separador">&lt;</span> 
         <span class="separador">&gt;</span> 
-        <span class="usuario-actual">Profesor Jirafales</span>
+        <span class="usuario-actual"><?php echo $usuario;echo " "; echo $nombprofe?></span>
     </div>
 </div>

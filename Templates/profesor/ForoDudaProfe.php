@@ -1,40 +1,66 @@
 <?php
-    include '../../config/config_db.php';
     session_start();
-    $id_grupo = isset($_GET['id_grupo']) ? (int)$_GET['id_grupo'] : 1; // convierte a int y si no hay se convierte en 1
-    
-    //var_dump($_SESSION['id_profesor']);
-    $modulo_activo= 2;
-    $sql = "SELECT duda_text, respuesta,estado_duda, id_alumno,id_duda FROM duda WHERE id_grupo = $id_grupo";
-    $query = mysqli_query($conexion, $sql); 
+    include '../../config/config_db.php';
+    $id_grupo = 0;
+    $modulo_activo = array();
     $dudas_resps = array();
-    if($query)
-    {
-        while($fila = mysqli_fetch_assoc($query))
-        {   
-            $dudas_resps[]= $fila;
-            //var_dump($fila);
-        }
-    }
-
-    $sql3 = "SELECT nombre_grupo FROM grupo WHERE id_grupo= $id_grupo";
-    $query3 = mysqli_query($conexion, $sql3); 
     $nombgrupos = array();
-    $grupo;
-        if($query3)
+    $grupo = "";
+    $modact = "";
+    if(isset($_GET['id_grupo'])){
+        //Agregar isset a toda logica pendiente
+        $id_grupo = $_GET['id_grupo'];
+    }
+    //var_dump($_SESSION['id_profesor']);
+    if (isset($_SESSION['usuario']) && $_SESSION['usuario'] == 'profesor') 
+    {   
+        $sql = "SELECT duda_text, respuesta,estado_duda, id_alumno,id_duda FROM duda WHERE id_grupo = $id_grupo";
+        $query = mysqli_query($conexion, $sql); 
+        if($query)
+        {
+            while($fila = mysqli_fetch_assoc($query))
+            {   
+                $dudas_resps[]= $fila;
+                //var_dump($fila);
+            }
+        }
+
+        $sql1 = "SELECT modulo_activo FROM grupo WHERE id_grupo = $id_grupo";
+        $query1 = mysqli_query($conexion, $sql1); 
+        $modacts = $query1;
+
+        $sql3 = "SELECT nombre_grupo FROM grupo WHERE id_grupo= $id_grupo";
+        $query3 = mysqli_query($conexion, $sql3); 
+        
+        if($query3 && $query1)
         {
             while($fila = mysqli_fetch_assoc($query3))
             {   
                 $nombgrupos[]= $fila;
+            }
+            while($fila = mysqli_fetch_assoc($query1))
+            {
+                $modulo_activo[]=$fila;
             }
         }
         if(count($nombgrupos)>0)
         {
             foreach($nombgrupos as $nombgrupo)
             {
-                $grupo= $nombgrupo["nombre_grupo"];
+                $grupo = $nombgrupo["nombre_grupo"];
             }
         }
+        if(count($modulo_activo)>0)
+        {
+            foreach($modulo_activo as $modacts)
+            {
+                $modact = $modacts["modulo_activo"];
+            }
+        }
+    }else {
+        header("Location: ../../index.php");
+    }
+
      // placeholder
     $tipo_usu = "Profesor";
     $nombre_usu = "Angie";
@@ -50,12 +76,12 @@
         <link rel="stylesheet" href="../../Statics/Css/profeGraph.css">
         -->
         <!-- Para barra lateral -->
-        <link rel="stylesheet" href="../../Statics/Css/AdminProfe.css">
+   
         <link rel="stylesheet" href="../../Statics/Css/adminGraph.css">
         <link rel="stylesheet" href="../../Statics/Css/subirRecurso.css">
     </head>
     <body>
-        <?php include '../../utilities/navbar.php'; ?>
+        <?php include '../../utilities/navbarProfe.php'; ?>
         <div class="main-layout">
             <?php include '../../utilities/sidebarProfe.php'; ?>
             <main id= "contenido">
@@ -118,7 +144,7 @@
                                     echo "<td class='tituloDuda'>$duda</td>";
                                 echo "</tr>";
                                 echo"<tr>";
-                                    echo "<td>Modulo $modulo_activo</td>";                         
+                                    echo "<td>Modulo $modact</td>";                         
                                 echo "</tr>";
                                 echo "<tr >";
                                     echo "<td>Alumno: $nombre_alum</td>";
