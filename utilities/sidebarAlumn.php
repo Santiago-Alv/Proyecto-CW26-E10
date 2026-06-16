@@ -19,7 +19,7 @@
 ?>
 
     <aside class="sidebar">
-        <nav>
+        <nav class = "sidebar-menu">
             <ul>
                 <li><a id="botonDuda" href="ForoDudas.php">Dudas al<br>profesor</a></li>
                 <?php
@@ -27,9 +27,11 @@
                     {
                         echo "<li>";
                         echo "<details class = 'modulo' >";
-                        echo "<summary>Modulo $cuentamod </summary>";
-                        echo "<a href= 'EstadoModuloAlumno.php?numMod= $cuentamod'>Estado</a>";
-                        echo "<a href='#'>Recursos</a>";
+                        echo "<summary class='btn-sidebar'>Modulo $cuentamod </summary>";
+                            echo "<div class='enlaces-grupo'>";
+                                echo "<a href= 'EstadoModuloAlumno.php?numMod= $cuentamod'>Estado</a>";
+                                echo "<a href='#'>Recursos</a>";
+                            echo "</div>";
                         echo "</details>";
                         echo "</li>";
                     }
