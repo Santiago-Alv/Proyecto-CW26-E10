@@ -25,20 +25,14 @@ include '../../config/config_db.php';
         <main class="content">
             <div class="header-content">
                 <h1>Grupos</h1>
-                <a href="./añadirGrupo.php"><button class="btn-add">+ Añadir grupo</button></a>
+                
             </div>
 
             <div class="search-container">
                 <div class="search-title">
-                    <span>🔍 Buscar Grupos</span>
+                    <a href="./añadirGrupo.php"><button class="btn-add">+ Añadir grupo</button></a>
                 </div>
-                <form action="resulSearchPrf.php" method="GET" class="search-form">
-                    <input type="text" name="nombre" placeholder="Nombre del Grupo">
-    
-
-
-                    <button type="submit" class="btn-search">Buscar</button>
-                </form>
+                    
             </div>
         </main>
     </div>

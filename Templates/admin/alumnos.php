@@ -5,8 +5,12 @@
     $noctaBuscado = "";
     $listaResultados = array();
     $listaAsistencias = array();
+    $moduloAsistencias = array();
+    $listaAnimo = array();
+    $asistModulo = 0;
     $countAsist = 0;
-
+    
+    session_start();
     if(isset($_GET['id'])){
         //$nombreBuscado = $_GET['nombre'];
         //$noctaBuscado = $_GET['cuenta'];
@@ -22,8 +26,9 @@
                 $nombreAlumno = $fila["nombre"];
                 $noctaAlumno = $fila["nocta"];
                 $id_grupo = $fila["id_grupo"];
+                $contra = $fila['contraseña'];
             }
-
+            if($contra == NULL) $contra = "Sin contraseña";
             $sql2 = "SELECT nombre_grupo, modulo_activo FROM grupo WHERE id_grupo = $id_grupo";
             $query2 = mysqli_query($conexion,$sql2);
             if($query2){
@@ -51,17 +56,28 @@
                     $listaAsistencias[] = $fila5;
                 }
             }
+
+            $sql_animo = "SELECT * FROM estadodeanimo WHERE id_alumno = $id_alumno";
+            $queryAnimo = mysqli_query($conexion,$sql_animo);
+            if($queryAnimo){
+                while($res_animo = mysqli_fetch_assoc($queryAnimo)){
+                    $listaAnimo[] = $res_animo;
+                }
+            }
+
         }
 
-        if($listaResultados){
+        if($listaResultados != NULL){
             $promedioAlumno = 0;
             foreach ($listaResultados as $califs) {
                 $promedioAlumno += $califs["calificacion"];
             }
             $promedioAlumno = number_format($promedioAlumno / count($listaResultados), 2);
+        } else {
+            $promedioAlumno = '0';
         }
 
-        if($listaAsistencias){
+        if($listaAsistencias != NULL){
             foreach($listaAsistencias as $asist){
                 if($asist['estatus'] == 'A' || $asist['estatus'] == 'J'){
                     $countAsist++;
@@ -69,6 +85,8 @@
             }
             $countAsist/=(count($listaAsistencias)*.01);
             //var_dump($countAsist);
+        } else {
+            $countAsist = '0';
         }
 
 
@@ -111,9 +129,6 @@
                     echo "<p>Número de cuenta: $noctaAlumno</p>";
                     echo "<p>Grupo $grupoAlumno</p>";
                     echo "<p>Modulo activo (Módulo $moduloAct)</p>";
-                    echo "<br>";
-                    echo "<p>Correo electrónico institucional</p>";
-                    echo "<p>Contraseña: 123Abc</p>";
                 ?>
             </div>
 
@@ -147,9 +162,31 @@
                         foreach($listaResultados as $califs){
                             echo "<tr>";
                                 echo "<td class='nombre-modulo'>". $califs['name_modulo'] . ":</td>";
-                                echo "<td></td>";
+                                foreach($listaResultados as $resultado){
+
+                                    if($listaAsistencias != NULL){
+                                        foreach($listaAsistencias as $asist){
+                                            if($asist['estatus'] == 'A' || $asist['estatus'] == 'J' && $asist['id_modulo'] == $resultado['id_modulo']){
+                                                $asistModulo++;
+                                            }
+                                        }
+                                        $asistModulo/=(count($listaAsistencias)*.01);
+                                    } else {
+                                        $asistModulo = 'N/A';
+                                    }
+                                    if($listaAnimo != NULL){
+                                        foreach($listaAnimo as $animo){
+                                            if($animo['id_modulo'] == $resultado['id_modulo']){ 
+                                                $animoModulo = $animo['emocion'];
+                                            }   
+                                        }
+                                    } else {
+                                        $animoModulo = 'N/A';
+                                    }
+                                }
+                                echo "<td>$asistModulo%</td>";
                                 echo "<td>" . $califs['calificacion'] . "</td>";
-                                echo "<td></td>";
+                                echo "<td>$animoModulo</td>";
                             echo "</tr>";
                         }
 
