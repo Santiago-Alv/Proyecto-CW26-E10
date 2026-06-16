@@ -1,9 +1,13 @@
 <?php
     include '../../config/config_db.php';
-    $id_grupo = 2;
-    $id_profesor= 3;
-    $modulo_activo= 3;
-    $sql = "SELECT duda_text, respuesta,estado_duda, id_alumno FROM duda WHERE id_profesor= $id_profesor AND id_grupo = $id_grupo";
+    session_start();
+    if(isset($_GET['id_grupo'])){
+        //Agregar isset a toda logica pendiente
+    }
+    //var_dump($_SESSION['id_profesor']);
+    $id_grupo = $_GET['id_grupo'];
+    $modulo_activo= 2;
+    $sql = "SELECT duda_text, respuesta,estado_duda, id_alumno,id_duda FROM duda WHERE id_grupo = $id_grupo";
     $query = mysqli_query($conexion, $sql); 
     $dudas_resps = array();
     if($query)
@@ -18,6 +22,7 @@
     $sql3 = "SELECT nombre_grupo FROM grupo WHERE id_grupo= $id_grupo";
     $query3 = mysqli_query($conexion, $sql3); 
     $nombgrupos = array();
+    $grupo;
         if($query3)
         {
             while($fila = mysqli_fetch_assoc($query3))
@@ -43,7 +48,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>DUDAS de alumnos</title>
         <link rel="stylesheet" href="../../Statics/Css/HistorialForoDudas.css">
+        <!-- Causa problemas:
         <link rel="stylesheet" href="../../Statics/Css/profeGraph.css">
+        -->
+        <!-- Para barra lateral -->
+        <link rel="stylesheet" href="../../Statics/Css/AdminProfe.css">
+        <link rel="stylesheet" href="../../Statics/Css/adminGraph.css">
+        <link rel="stylesheet" href="../../Statics/Css/subirRecurso.css">
     </head>
     <body>
         <?php include '../../utilities/navbar.php'; ?>
@@ -63,6 +74,7 @@
                             $respuesta = $duda_resp["respuesta"];
                             $estado_duda = $duda_resp["estado_duda"];
                             $id_alumno = $duda_resp["id_alumno"];
+                            $id_duda= $duda_resp["id_duda"];
                             
                             $sql2 = "SELECT nombre FROM alumno WHERE id_alumno= $id_alumno";
                             $query2 = mysqli_query($conexion, $sql2); 
@@ -93,11 +105,13 @@
                                     echo "<td class='encaduda'>
                                         <p class='paraDuda'>Duda:</p>
                                         <div class='botonduda'>
-                                        <form action=''>
-                                        <button type='submit' id='contestar-submit'>Contestar</button>
+                                        <form action='ContestaDuda.php' method = 'POST'>
+                                            <input type='hidden' name='idduda' value= '$id_duda'>
+                                            <button type='submit' id='contestar-submit'>Contestar</button>
                                         </form>
-                                        <form action=''>
-                                        <button type='submit' id='elimduda-submit'>Eliminar</button>
+                                        <form action='revisaEliminarDuda.php' method = 'POST'>
+                                            <input type='hidden' name='idduda' value= '$id_duda'>
+                                            <button type='submit' id='elimduda-submit'>Eliminar</button>
                                         </form>
                                         </div>
                                         </td>";
@@ -105,20 +119,21 @@
                                 echo "<tr>";
                                     echo "<td class='tituloDuda'>$duda</td>";
                                 echo "</tr>";
-                                echo"<tr class = 'moduloDuda'>";
+                                echo"<tr>";
                                     echo "<td>Modulo $modulo_activo</td>";                         
                                 echo "</tr>";
-                                echo "<tr class= 'nombalumno'>";
+                                echo "<tr >";
                                     echo "<td>Alumno: $nombre_alum</td>";
                                 echo "</tr>";
-                                echo "<tr class= 'grupo'>";
-                                    echo "<td>Grupo: $grupo</td>";
+                                //var_dump($grupo);
+                                echo "<tr >";
+                                    echo "<td>Grupo:". $grupo['nombre_grupo'] ."</td>";
                                 echo "</tr>";
-                                echo "<tr class= 'RespDuda'>";
+                                echo "<tr >";
                                     echo "<td>Respuesta:</td>";
                                 echo "</tr>";
-                                echo "<tr class = 'RespHistorialForo'>";
-                                    echo "<td>$respuesta</td>";
+                                echo "<tr>";
+                                    echo "<td class = 'RespHistorialForo'>$respuesta</td>";
                                 echo "</tr>";
                                 echo "</tbody>";
                             echo "</table>";

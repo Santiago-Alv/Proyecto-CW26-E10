@@ -13,7 +13,7 @@ $nombre_admin = "Angela";
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Eliminar profesor Administrador</title>
+        <title>Eliminar alumno admin</title>
         <link rel="stylesheet" href="../../Statics/Css/AdminAlumno.css">
         <link rel="stylesheet" href="../../Statics/Css/adminGraph.css">
     </head>

@@ -8,7 +8,6 @@
     $modulo_activo = "Sistemas";
     $listaGrupos = array();
 
-    
     if(isset($_GET['id'])){
         //$nombreBuscado = $_GET['nombre']; //no llegan estos valores
         //$noctaBuscado = $_GET['cuenta']; //no llegan estos valores
@@ -66,9 +65,17 @@
             <h2><?php echo htmlspecialchars($nombreProfesor); ?></h2>
         </div>
         <div class="acciones-perfil">
+            
             <button class="btn-secundario">Ver resultado de formulario</button>
-            <button class="btn-secundario">Modificar</button>
-            <button class="btn-peligro">Eliminar</button>
+            <form action ="AdminModificarProf.php" method='POST'>
+                <input type='hidden' name='idprofe' value= <?php echo $id_profesor; ?>>
+                <button class="btn-secundario">Modificar</button>
+            </form>
+            <form action="AdminEliminarProfe.php" method='POST'>
+                <input type='hidden' name='idprofe' value= <?php echo $id_profesor; ?>>
+                <input type='hidden' name='nombprofe' value= <?php echo $nombreProfesor; ?>>
+                <button class="btn-peligro">Eliminar</button>
+            </form>
         </div>
     </div>
 

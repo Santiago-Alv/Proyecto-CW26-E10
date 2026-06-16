@@ -1,6 +1,37 @@
 <?php
+    session_start();
 
-$grupoAct="61B";
+    include '../../config/config_db.php';
+    $listaGrupos = array();
+    $grupoAct = array();
+    
+    if (isset($_SESSION['usuario']) && $_SESSION['usuario'] == 'profesor') {
+
+        $sql = "SELECT id_grupo, nombre_grupo FROM grupo WHERE id_profesor = " . $_SESSION['id_profesor'] . "";
+        $query = mysqli_query($conexion,$sql);
+        while($fila = mysqli_fetch_assoc($query)){
+            $listaGrupos[] = $fila;
+        }
+
+        if(isset($_GET['id_grupo'])){
+            foreach($listaGrupos as $grupo){
+                if($_GET['id_grupo'] == $grupo['id_grupo']){
+                    $grupoAct['nombre_grupo'] = $grupo['nombre_grupo'];
+                    $grupoAct['id_grupo'] = $grupo['id_grupo'];
+                }
+            }
+            if(count($grupoAct) == 0){
+            header("Location: ./homeProfesor.php");
+            }
+        } else{
+            header("Location: ./homeProfesor.php");
+        }
+
+    } else {
+        header("Location: ../index.php");
+    }
+
+
 
 ?>
 
@@ -10,7 +41,7 @@ $grupoAct="61B";
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href = "..\..\Statics\Css\profesorGraph.css">
-        <?php echo "<title> $grupoAct </title>"; ?>
+        <?php echo "<title>". $grupoAct['nombre_grupo'] ." </title>"; ?>
     </head>
     <body>
         <header>
@@ -30,8 +61,11 @@ $grupoAct="61B";
 
         <div class="mainCont">
             <aside>
-                <a class="menuOp" href="./grupoProfesor.php"> 61B </a>
-                <a class="menuOp" href="./grupoProfesor.php"> 61D </a>
+                <?php
+                    foreach($listaGrupos as $grupo){
+                        echo "<a class='menuOp' href='./grupoProfesor.php?id_grupo=". $grupo['id_grupo'] ." '> " . $grupo['nombre_grupo'] . " </a>";
+                    }
+                ?>
                 <a class="menuOp"> RECURSOS </a>
                 <a class="menuOp"> DUDAS </a>
             </aside>
@@ -39,7 +73,7 @@ $grupoAct="61B";
             <main>
                 <section class="grupoGeneral">
                     <article class="grupoConfig">
-                        <h2> 61B </h2>
+                        <?php echo "<h2>".$grupoAct['nombre_grupo']."</h2>"; ?>
                         <a href="./agregarAlumno.php" >Agregar Alumno</a>
                         <a href="./buscarAlumno.php">Buscar Alumno </a>
                         <a>Seleccionar módulo </a>
@@ -54,8 +88,8 @@ $grupoAct="61B";
                 <section class="grupoData">
                     <div class="indiceGrupo">86%</div>
                     <h3>Indice de Deserción</h3>
-                    <a>Lista de asistencia</a>
-                    <a>Registrar calificación</a>
+                    <a >Lista de asistencia</a>
+                    <?php echo "<a href='./registrarCalif.php?id_grupo=".$grupoAct['id_grupo']."'>Registrar calificación</a>"; ?>
                 </section>
             </main>
         </div>

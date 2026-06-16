@@ -16,8 +16,8 @@
     }
 
      // placeholder
-    $tipo_usu = "Alumno";
-    $nombre_usu = "Juanito Juanito";
+    $nombre_alumn = "Juanito Juanito";
+    $grupo_alumn = "61B";
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -26,10 +26,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Historial de foro de dudas de alumno</title>
         <link rel="stylesheet" href="../../Statics/Css/HistorialForoDudas.css">
-        <link rel="stylesheet" href="../../Statics/Css/alumGraph.css">
+        <link rel="stylesheet" href="../../Statics/Css/AlumGraph.css">
     </head>
     <body>
-        <?php include '../../utilities/navbar.php'; ?>
+        <?php include '../../utilities/navbarAlumno.php'; ?>
         <div class="main-layout">
             <?php include '../../utilities/sidebarAlumn.php'; ?>
             <main id= "contenido">
