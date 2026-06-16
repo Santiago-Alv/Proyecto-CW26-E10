@@ -37,9 +37,7 @@
                 $grupo= $nombgrupo["nombre_grupo"];
             }
         }
-     // placeholder
-    $tipo_usu = "Profesor";
-    $nombre_usu = "Angie";
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -57,7 +55,7 @@
         <link rel="stylesheet" href="../../Statics/Css/subirRecurso.css">
     </head>
     <body>
-        <?php include '../../utilities/navbar.php'; ?>
+        <?php include '../../utilities/navbarProfe.php'; ?>
         <div class="main-layout">
             <?php include '../../utilities/sidebarProfe.php'; ?>
             <main id= "contenido">
