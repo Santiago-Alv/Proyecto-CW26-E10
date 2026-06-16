@@ -62,8 +62,6 @@
     }
 
      // placeholder
-    $tipo_usu = "Profesor";
-    $nombre_usu = "Angie";
 ?>
 <!DOCTYPE html>
 <html lang="es">

@@ -34,6 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['btn_eliminar'])) {
     <meta charset="UTF-8">
     <title>Recursos Profesor</title>
     <link rel="stylesheet" href="../../Statics/Css/subirRecurso.css">
+   
 </head>
 <body>
     <?php include '../../utilities/navbar.php'; ?>
