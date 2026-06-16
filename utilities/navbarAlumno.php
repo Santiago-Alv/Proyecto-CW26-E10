@@ -6,7 +6,10 @@
         <img src="../../Statics/img/logo-unam.png" alt="Logo UNAM"> 
     </div>
     <h1 id="nomb_proyecto">No desErTE</h1>
-    <button class="btn-logout">Cerrar Sesión</button>
+    <div class="navbar-logout">
+        <a href="./../../Dynamics/cerrar_sesion.php" class="btn-logout">Cerrar Sesión </a>
+    </div>
+    
     </header>
 
     <div class="sub-navbar">
