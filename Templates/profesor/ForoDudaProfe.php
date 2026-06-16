@@ -1,9 +1,13 @@
 <?php
     include '../../config/config_db.php';
-    $id_grupo = 2;
-    $id_profesor= 3;
-    $modulo_activo= 3;
-    $sql = "SELECT duda_text, respuesta,estado_duda, id_alumno,id_duda FROM duda WHERE id_profesor= $id_profesor AND id_grupo = $id_grupo";
+    session_start();
+    if(isset($_GET['id_grupo'])){
+        //Agregar isset a toda logica pendiente
+    }
+    //var_dump($_SESSION['id_profesor']);
+    $id_grupo = $_GET['id_grupo'];
+    $modulo_activo= 2;
+    $sql = "SELECT duda_text, respuesta,estado_duda, id_alumno,id_duda FROM duda WHERE id_grupo = $id_grupo";
     $query = mysqli_query($conexion, $sql); 
     $dudas_resps = array();
     if($query)
@@ -18,6 +22,7 @@
     $sql3 = "SELECT nombre_grupo FROM grupo WHERE id_grupo= $id_grupo";
     $query3 = mysqli_query($conexion, $sql3); 
     $nombgrupos = array();
+    $grupo;
         if($query3)
         {
             while($fila = mysqli_fetch_assoc($query3))
@@ -43,10 +48,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>DUDAS de alumnos</title>
         <link rel="stylesheet" href="../../Statics/Css/HistorialForoDudas.css">
+        <!-- Causa problemas:
         <link rel="stylesheet" href="../../Statics/Css/profeGraph.css">
+        -->
+        <!-- Para barra lateral -->
+        <link rel="stylesheet" href="../../Statics/Css/AdminProfe.css">
+        <link rel="stylesheet" href="../../Statics/Css/adminGraph.css">
+        <link rel="stylesheet" href="../../Statics/Css/subirRecurso.css">
     </head>
     <body>
-        <?php include '../../utilities/navbarProfe.php'; ?>
+        <?php include '../../utilities/navbar.php'; ?>
         <div class="main-layout">
             <?php include '../../utilities/sidebarProfe.php'; ?>
             <main id= "contenido">
@@ -114,8 +125,9 @@
                                 echo "<tr >";
                                     echo "<td>Alumno: $nombre_alum</td>";
                                 echo "</tr>";
+                                //var_dump($grupo);
                                 echo "<tr >";
-                                    echo "<td>Grupo: $grupo</td>";
+                                    echo "<td>Grupo:". $grupo['nombre_grupo'] ."</td>";
                                 echo "</tr>";
                                 echo "<tr >";
                                     echo "<td>Respuesta:</td>";

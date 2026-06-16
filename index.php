@@ -19,7 +19,7 @@
             //añado esta linea para que no agarre el primer usuario, sino que busque entre todos los posibles usuarios
             //brute force al fallo la verdad
             while($fila = mysqli_fetch_assoc($query)){
-                
+                /*
                 echo '<br>';
                 var_dump($fila);
 
@@ -30,9 +30,11 @@
                 
                 echo '<br>';
                 echo hash("sha256",$password);
+                
                 $contra = $fila["contraseña"];
                 if($contra == NULL) $contra = "";
                 var_dump(hash_equals($contra,hash("sha256",$password)));
+                */
                 
                 $contra_bd = $fila["contraseña"];
                 if($fila["contraseña"] == NULL) $contra_bd = "";
@@ -42,7 +44,7 @@
                     $_SESSION['id_alumno'] = $fila['id_alumno'];
                     $_SESSION['nocta'] = $fila['nocta'];
                     $_SESSION['nombre'] = $fila['nombre'];
-                    $_SESSION['grupo'] = "";
+                    $_SESSION['grupo'] = $fila['id_grupo'];
                     $sql2 = "SELECT nombre_grupo FROM grupo WHERE id_grupo = ". $fila['id_grupo'] ."";
                     if($query2 = mysqli_query($conexion,$sql2)){
                         $fila2 = mysqli_fetch_assoc($query2);
@@ -60,7 +62,7 @@
                     $_SESSION['nombre_profesor'] = $fila['nombre_profesor'];
 
                     setcookie("user", $fila['numero_trabajador'], time() + (86400), "/");
-                    //header("Location: ./Templates/profesor/homeProfesor.php");
+                    header("Location: ./Templates/profesor/homeProfesor.php");
                 }
                 if($tipoUsuario == 'administrador' && hash_equals($contra_bd,hash("sha256",$password))){
                     
@@ -70,7 +72,7 @@
                     $_SESSION['nombre_administrador'] = $fila['nombre_administrador'];
 
                     setcookie("user", $fila['numero_trabajador'], time() + (86400), "/");
-                    //header("Location: ./Templates/admin/searchAlAdmin.php");
+                    header("Location: ./Templates/admin/searchAlAdmin.php");
                 }
             }
             

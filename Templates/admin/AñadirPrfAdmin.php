@@ -2,7 +2,7 @@
 
 //session_start();
 //Prueba para ver si funciona (sin BD)
-include '../../Dynamics/Contrasenias.php';
+include '../../Dynamics/contrasenia.php';
 include '../../config/config_db.php';
 
 $estado = 'formulario'; //Posibles: 'formulario', 'error_existe', 'exito'
@@ -16,7 +16,7 @@ if (isset($_POST['trabajador'])) {
     if ($num_trabajador === '12345') {
         $estado = 'error_existe';
     } else {
-        $contrasena_generada = "contra" . rand(1000, 9999);
+        //$contrasena_generada = "contra" . rand(1000, 9999);
         $numero_trabajador_creado = $num_trabajador;
         $estado = 'exito';
     }
@@ -30,7 +30,7 @@ if (isset($_POST['trabajador'])) {
             $estado = 'error_existe';
         } else {
             $contrasena_generada = generarpassword(4);
-            $contrasena_hasheada = hash("sha256", generarpassword(4));
+            $contrasena_hasheada = hash("sha256", $contrasena_generada);
 
             $sql2 = "INSERT INTO profesor (nombre_profesor, numero_trabajador, contraseña) 
                 VALUES ('" . $nombre_profe . "', " . $num_trabajador . ", '" . $contrasena_hasheada . "')";
@@ -62,7 +62,7 @@ $nombre_admin = "Angela";
 </head>
 <body>
 
-    <?php include '../../utilities/navbarAdmin.php'; ?>
+    <?php include '../../utilities/navbar.php'; ?>
 
     <div class="main-layout">
         <?php include '../../utilities/sidebarAdmin.php'; ?>

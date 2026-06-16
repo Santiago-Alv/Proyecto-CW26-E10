@@ -4,9 +4,9 @@
     $tipo_usu = "Profesor";
     $nombre_usu = "Angie";
 
-    $modulo_activo = 3;
-    $id_alumno= 2;
-    $id_profesor= 3;
+    //$modulo_activo = 3;
+    //$id_alumno= 2;
+    //$id_profesor= 3;
     $respuesta = "";
     $id_duda = 0;
 
@@ -36,8 +36,9 @@
     if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['respuesta']) && $id_duda > 0)
     {
         $respuesta = $_POST['respuesta'];
+        $id_duda = $_POST['idduda'];
 
-        $sql2 = "UPDATE duda SET estado_duda='R', respuesta='$respuesta', id_profesor= $id_profesor WHERE id_duda= $id_duda";
+        $sql2 = "UPDATE duda SET estado_duda='R', respuesta='$respuesta' WHERE id_duda= $id_duda";
         $query2 = mysqli_query($conexion, $sql2); 
 
         header("Location: ForoDudaProfe.php");//regresa a pagina de foro de dudas

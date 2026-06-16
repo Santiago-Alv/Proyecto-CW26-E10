@@ -3,6 +3,8 @@
     //$nomb_alumno 
     //$grupo
     //$modulo
+    //$id_grupo = $_SESSION['grupo'];
+    $id_grupo = 3;
     $modulo_activo = 3;
     $id_alumno= 2;
 
@@ -11,8 +13,8 @@
     {
         $duda = $_POST['pregunta'];
 
-        $sql = "INSERT INTO duda (estado_duda, duda_text, respuesta, id_alumno, id_grupo, id_profesor)
-                VALUES ('P','$duda', 'respuesta', $id_alumno,1,4)";
+        $sql = "INSERT INTO duda (estado_duda, duda_text, id_alumno, id_grupo, id_modulo)
+                VALUES ('P','$duda', $id_alumno,$id_grupo,$modulo_activo)";
         $query = mysqli_query($conexion, $sql); 
 
     }
@@ -28,7 +30,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Foro de dudas de alumno</title>
         <link rel="stylesheet" href="../../Statics/Css/ForoDudas.css">
-        <link rel="stylesheet" href="../../Statics/Css/alumGraph.css">
+        <link rel="stylesheet" href="../../Statics/Css/AlumGraph.css">
     </head>
     <body>
         <?php include '../../utilities/navbarAlumno.php'; ?>
