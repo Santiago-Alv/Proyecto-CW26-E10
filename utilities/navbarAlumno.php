@@ -11,7 +11,7 @@
 
     <div class="sub-navbar">
         <div class="breadcrumbs">
-            <span>🏠</span>
+            <span><a href="Homealumno.php">🏠</a></span>
             <span><</span>
             <span>></span>
             <!-- Sanitizar -->

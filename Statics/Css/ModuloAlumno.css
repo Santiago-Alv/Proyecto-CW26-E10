@@ -3,8 +3,9 @@ body{
 }
 #tituloModulo{
     padding: 2%;
+    
 }
-h1{
+#NumMod{
     background-color: #D9D9D9;
     padding: 1%;
     width: fit-content;

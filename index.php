@@ -1,7 +1,7 @@
 <?php
     include './config/config_db.php';
     include './Dynamics/validaciones.php';
-
+    
     session_start();
 
     if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["userLog"]) && isset($_POST["passwordLog"])){
@@ -51,7 +51,7 @@
                     }
 
                     setcookie("user", $fila['nocta'], time() + (86400), "/");
-                    //header("Location: ./Templates/Profesor/homeProfesor.php");
+                    header("Location: ./Templates/alumno/Homealumno.php");
                 }
                 if($tipoUsuario == 'profesor' && hash_equals($contra_bd,hash("sha256",$password))){
 

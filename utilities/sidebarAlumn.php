@@ -28,7 +28,7 @@
                         echo "<li>";
                         echo "<details class = 'modulo' >";
                         echo "<summary>Modulo $cuentamod </summary>";
-                        echo "<a href= 'EstadoModuloAlumno.php'>Estado</a>";
+                        echo "<a href= 'EstadoModuloAlumno.php?numMod= $cuentamod'>Estado</a>";
                         echo "<a href='#'>Recursos</a>";
                         echo "</details>";
                         echo "</li>";
