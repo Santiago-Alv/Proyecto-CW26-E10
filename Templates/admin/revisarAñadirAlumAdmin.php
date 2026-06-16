@@ -3,6 +3,7 @@ include '../../config/config_db.php';
 //session_start();
 
 // consulta db
+    $contraseña = "";
 
     if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nombre']) && isset($_POST['cuenta']) && isset($_POST['grupoalumn']))
     {
@@ -31,7 +32,8 @@ include '../../config/config_db.php';
         } 
         else {
             //Insertar datos a la base de datos si no se repite
-            $sql2 = "INSERT INTO alumno (nombre, nocta, id_grupo, apell_pat_alum) 
+
+            $sql2 = "INSERT INTO alumno (nombre, nocta, id_grupo, apell_pat_alum)
                 VALUES ('$nombre_alum', '$num_cuenta', $grupo_select, 'Nohaycampo')";
             $query = mysqli_query($conexion, $sql2); 
             
@@ -43,6 +45,5 @@ include '../../config/config_db.php';
     {
        echo "error";
     }  
-
 ?>
 

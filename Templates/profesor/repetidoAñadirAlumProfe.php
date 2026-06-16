@@ -19,6 +19,7 @@ $nombre_usu = "Angela";
     <title>Gestión de Alumnos</title>
     <link rel="stylesheet" href="../../Statics/Css/profeGraph.css">
     <link rel="stylesheet" href="../../Statics/Css/agregarAlumProfe.css">
+    <link rel="stylesheet" href="../../Statics/Css/subirRecurso.css">
 </head>
 <body>
 

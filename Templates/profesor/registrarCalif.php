@@ -22,17 +22,17 @@
                     $sql7 = "UPDATE calif_mod SET calificacion = $calificacion WHERE id_alumno = $id_alumno AND id_modulo = $id_modulo";
                     $query7 = mysqli_query($conexion,$sql7);
                     if ($query7) {
-                        echo "Calificación guardada con éxito.";
+                        //echo "Calificación guardada con éxito.";
                     } else {
-                        echo "Error: " . mysqli_error($conexion);
+                        //echo "Error: " . mysqli_error($conexion);
                     }
                 } else {
                     $sql5 = "INSERT INTO calif_mod (id_alumno,id_modulo,calificacion) VALUES ($id_alumno,$id_modulo,$calificacion)";
                     $query5 = mysqli_query($conexion,$sql5);
                     if ($query5) {
-                        echo "Calificación guardada con éxito.";
+                        //echo "Calificación guardada con éxito.";
                     } else {
-                        echo "Error: " . mysqli_error($conexion);
+                        //echo "Error: " . mysqli_error($conexion);
                     }
                 }
             }

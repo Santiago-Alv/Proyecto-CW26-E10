@@ -5,9 +5,15 @@ session_start();
 
 // consulta db
     include '../../config/config_db.php';
-
+    include '../../Dynamics/contrasenia.php';
     //Insertar datos a la base de datos si no se repite
     $num_cuenta = $_GET["numc"];
+    $contraseña=generarpassword(4);
+    $contrasena_hasheada = hash("sha256", $contraseña);
+    
+    $sql = "UPDATE alumno SET contraseña = '$contrasena_hasheada' 
+                    WHERE nocta=$num_cuenta";
+    $query = mysqli_query($conexion, $sql); 
     
 
 // placeholder
@@ -23,6 +29,7 @@ $nombre_usu = "Angela";
     <title>Gestión de Alumnos</title>
     <link rel="stylesheet" href="../../Statics/Css/profeGraph.css">
     <link rel="stylesheet" href="../../Statics/Css/agregarAlumProfe.css">
+    <link rel="stylesheet" href="../../Statics/Css/subirRecurso.css">
 </head>
 <body>
 
@@ -37,7 +44,7 @@ $nombre_usu = "Angela";
             </div>
             <div class="search-container">
                 <?php
-                    $contraseña = "Hola123";// $_POST["contraseña-aleatorio"]
+                    
                     echo "<div class='search-title'>";
                         echo "<span>Sus datos son los siguientes:</span>";
                     echo "</div>";

@@ -1,16 +1,25 @@
 <?php
 
-// include '../config/config_db.php'; 
+// include '../config/config_db.php';
+$grupos = array(); 
+if (isset($_SESSION['usuario']) && $_SESSION['usuario'] == 'profesor') 
+    {   
+        if (isset($_SESSION['id_profesor'])){
+        $id_profe = $_SESSION['id_profesor'];
 
 $sql = "SELECT id_grupo, nombre_grupo FROM grupo WHERE id_profesor = ".$_SESSION['id_profesor']."";
 $query = mysqli_query($conexion, $sql); 
 $grupos = array();
+        
+        
+        if($query) {
+            while($fila = mysqli_fetch_assoc($query)) {   
+                $grupos[] = $fila;
+            }
+        }
 
-if($query) {
-    while($fila = mysqli_fetch_assoc($query)) {   
-        $grupos[] = $fila;
+        }
     }
-}
 ?>
 
     <aside class="sidebar-izquierdo">

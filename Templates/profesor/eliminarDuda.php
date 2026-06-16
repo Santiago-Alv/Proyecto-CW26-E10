@@ -12,7 +12,7 @@ include '../../config/config_db.php';
         $sql = "DELETE FROM duda WHERE id_duda = $id_duda";
         $query = mysqli_query($conexion, $sql); 
 
-        header("Location: ForoDudaProfe.php");
+        header("Location: homeProfesor.php");
         exit();
     }
     else

@@ -5,10 +5,15 @@
 
 // consulta db
     include '../../config/config_db.php';
-
+    include '../../Dynamics/contrasenia.php';
     //Insertar datos a la base de datos si no se repite
     $num_cuenta = $_GET["numc"];
-    
+    $contraseña=generarpassword(4);
+    $contrasena_hasheada = hash("sha256", $contraseña);
+
+    $sql = "UPDATE alumno SET contraseña = '$contrasena_hasheada' 
+                    WHERE nocta=$num_cuenta";
+    $query = mysqli_query($conexion, $sql); 
 
 // placeholder
 $tipo_usu = "Administrador";
@@ -36,7 +41,7 @@ $nombre_usu = "Angela";
             </div>
             <div class="search-container">
                 <?php
-                    $contraseña = "Hola123";// $_POST["contraseña-aleatorio"]
+                    
                     echo "<div class='search-title'>";
                         echo "<span>Sus datos son los siguientes:</span>";
                     echo "</div>";

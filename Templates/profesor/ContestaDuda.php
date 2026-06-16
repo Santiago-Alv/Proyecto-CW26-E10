@@ -41,7 +41,7 @@
         $sql2 = "UPDATE duda SET estado_duda='R', respuesta='$respuesta' WHERE id_duda= $id_duda";
         $query2 = mysqli_query($conexion, $sql2); 
 
-        header("Location: ForoDudaProfe.php");//regresa a pagina de foro de dudas
+        header("Location: homeProfesor.php");//regresa a pagina de foro de dudas
             exit();
     }
 ?>

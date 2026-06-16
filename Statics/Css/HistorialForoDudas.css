@@ -16,7 +16,7 @@ main {
     flex-grow: 1;
 }
 table{
-    width: 80vw;
+    width: 60vw;
     height: 50vh;
     border-radius: 1.5vh;
     margin: 2vw;
@@ -36,7 +36,7 @@ td {
 }
 
 .RespHistorialForo {
-    width: 70vw;
+    width: 60vw;
     height: 30vh;
     padding-top: 2vh ;
     background-color: #B8B2B2;
