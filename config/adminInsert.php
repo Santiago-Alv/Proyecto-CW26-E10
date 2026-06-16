@@ -3,11 +3,11 @@
     include '../Dynamics/validaciones.php';
     $usuario = "Angela";
     $numeroTrabajador = "452379";
-    $contraseña = "lol";
+    $contraseña = "lol2";
 
-    $contraseña = hasheaPassword($contraseña);
+    $contraseña = hash("sha256",$contraseña);
 
-    $sql = "UPDATE profesor SET contraseña = '$contraseña' WHERE id_profesor = 312";
+    $sql = "UPDATE profesor SET contraseña = '$contraseña' WHERE id_profesor = 4";
 
     $query = mysqli_query($conexion,$sql);
 

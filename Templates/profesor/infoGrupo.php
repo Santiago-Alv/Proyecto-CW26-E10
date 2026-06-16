@@ -130,6 +130,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['moduloAct'])){
                        
                             $indiceGrupo += $indiceAlumno;
                             $countIndice++; 
+                       } else {
+                            $indiceAlumno = 0;
                        }
                    ?>
                        <div class="fila-alumno">
