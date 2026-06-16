@@ -19,10 +19,25 @@ header {
 }
 
 nav{
-    width: 100%;
+    width: 100vw;
     height: 4vh;
     display: flex;
     background-color: #0A3265;
+}
+
+.navbar-superior {
+    background-color: #0b1d3a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 2px solid #b8860b; 
+}
+.sub-navbar-ruta {
+    background-color: #17376e;
+    color: white;
+    padding: 8px 20px;
+    font-size: 14px;
 }
 
 .mainCont{
@@ -97,6 +112,10 @@ main {
     left: 10%;
 }
 
+.navbar-logo img {
+    height: 50px;
+}
+
 header a {
 
     width: 10vw;
@@ -110,11 +129,18 @@ header a {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
+    
 
     left: 80%;
 }
 
+#nomb_proyecto{
+    color:#b8860b;
+    font-size:x-large;
+    padding: 5px;
+    border-color: #b8860b;
+    border-style: double;
+ }
 .breadcrumbs {
     color: white;
     font-size: 1.8vh;

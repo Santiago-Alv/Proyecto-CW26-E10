@@ -2,7 +2,7 @@
     <div class="navbar-logo">
         <img src="../../Statics/img/logo-unam.png" alt="Logo UNAM" class="img-logo">
     </div>
-    <h1 id="nomb_proyecto">No desErTE</h1>
+    <h1 id="nomb_proyecto">NodesErTE</h1>
     <div class="navbar-logout">
         <a href="./../../Dynamics/cerrar_sesion.php" class="btn-logout">Cerrar Sesión</a>
     </div>
