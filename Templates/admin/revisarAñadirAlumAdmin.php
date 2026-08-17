@@ -33,8 +33,8 @@ session_start();
         else {
             //Insertar datos a la base de datos si no se repite
 
-            $sql2 = "INSERT INTO alumno (nombre, nocta, id_grupo, apell_pat_alum)
-                VALUES ('$nombre_alum', '$num_cuenta', $grupo_select, 'Nohaycampo')";
+            $sql2 = "INSERT INTO alumno (nombre, nocta, id_grupo)
+                VALUES ('$nombre_alum', '$num_cuenta', $grupo_select)";
             $query = mysqli_query($conexion, $sql2); 
             
             header("Location: exitoAñadirAlum.php?numc=".urlencode($num_cuenta));//lleva variable de numero de cuenta

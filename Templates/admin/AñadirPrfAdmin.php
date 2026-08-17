@@ -76,9 +76,10 @@ $nombre_admin = "Angela";
                     <span class="plus-icon">+ </span>Agregar Profesor
                 </div>
 
-                <p style="margin: 0 0 20px 20px; font-size: 13px; color: #333;">
+                <!-- <p style="margin: 0 0 20px 20px; font-size: 13px; color: #333;">
                     IDEA: <strong>Modo Prueba:</strong> Escribe <strong>12345</strong>
                 </p>
+            -->
                 <form action="" method="POST" class="search-form">
                     <div class="input-grupo">
                         <input type="text" name="nombre" placeholder="Nombre" required>

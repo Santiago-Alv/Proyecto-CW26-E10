@@ -1,5 +1,7 @@
 <?php
     include '../../config/config_db.php';
+
+    session_start();
     $id_profesor = 0;
     if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['idprofe']))
     {

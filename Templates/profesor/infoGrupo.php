@@ -179,7 +179,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['moduloAct'])){
                    <div class="circulo-desercion">
                        <?php 
                             if($countIndice > 0){
-                                echo "<h2>". $indiceGrupo/$countIndice . " % </h2>";
+                                echo "<h2>". round($indiceGrupo/$countIndice, 2) . " % </h2>";
                             } else {
                                  echo "<h2></h2>";
                             }

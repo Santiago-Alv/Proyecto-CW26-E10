@@ -1,12 +1,18 @@
 <?php
     include '../../config/config_db.php';
 
+    /*
     $nombreProfesor = "Carlos Alf";
     $noctaProfesor = "122000045";
     $correoProfesor = "Ferto@prof.enp.unam";
     $contrasenaProfesor = "321Fersa.beto";
     $modulo_activo = "Sistemas";
     $listaGrupos = array();
+    */
+    session_start();
+
+    $correoProfesor;
+    $contrasenaProfesor;
 
     if(isset($_GET['id'])){
         //$nombreBuscado = $_GET['nombre']; //no llegan estos valores
@@ -22,8 +28,8 @@
             $nombreProfesor = $fila['nombre_profesor'];
             $noctaProfesor = $fila['numero_trabajador'];
 
-            if(isset($fila["correo"])) $correoProfesor = $fila["correo"];
-            if(isset($fila["contrasena"])) $contrasenaProfesor = $fila["contrasena"];
+            if(isset($fila["correo_institucional"])) $correoProfesor = $fila["correo_institucional"];
+            if(isset($fila["contraseña"])) $contrasenaProfesor = $fila["contraseña"];
         }
 
         if(!empty($id_profesor)){
@@ -98,8 +104,8 @@
                 </ul>
             </div>
             <!--<p>Modulo activo (Módulo: <?php echo htmlspecialchars($modulo_activo); ?>)</p>-->
-            <p>Correo electrónico intitucional: <?php echo htmlspecialchars($correoProfesor); ?></p>
-            <p>Contraseña: <?php echo htmlspecialchars($contrasenaProfesor); ?></p>
+            <!-- <p>Correo electrónico intitucional: <?php echo htmlspecialchars($correoProfesor); ?></p> -->
+            <!-- <p>Contraseña: <?php echo htmlspecialchars($contrasenaProfesor); ?></p> -->
         </div>
         <div class="espacio-vacioxd"></div>
     </div>

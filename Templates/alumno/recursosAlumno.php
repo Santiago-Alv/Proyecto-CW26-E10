@@ -65,8 +65,8 @@ $id_modulo_actual = isset($_GET['id_modulo']) ? (int)$_GET['id_modulo'] : 1;
                                 </div>
         
                                 <div class="caja-url">
-                                    <a href="<?php echo htmlspecialchars($recurso['url_recurso']); ?>" target="_blank" style="color: #2ecc71; text-decoration: none; font-weight: bold;">
-                                        Oprimir enlace del recurso: <?php echo htmlspecialchars($recurso['url_recurso']); ?>
+                                    <a href="<?php echo htmlspecialchars($recurso['url_recurso']); ?>" target="_blank" style="text-decoration: none; font-weight: bold;">
+                                        <?php echo htmlspecialchars($recurso['url_recurso']); ?>
                                     </a>
                                 </div>
                             </div>
